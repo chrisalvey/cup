@@ -175,7 +175,7 @@ function setupEventListeners() {
             'Messi Around', 'Ronaldo Coaster', 'Kickin\' It Old School', 'The Own Goalers',
             'Penalty of the Century', 'Offsides Again', 'Yellow Card Collectors',
             'VAR We There Yet', 'Net Gains Only', 'Goooooal Diggers',
-            'The Hand of Gob', 'Pitch Please', 'In It to Win It (Hopefully)',
+            'The Hand of Gob', 'In It to Win It (Hopefully)',
             'Red Card Redemption', 'Park the Bus FC', 'Total Foxtal',
             'Throw In the Towel', 'Not in My Box', 'Extra Time Enjoyers',
             'Bend It Like Beckham\'s Accountant', 'The Nil-Nil Thrillers',
