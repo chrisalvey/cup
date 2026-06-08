@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2026 Fantasy</title>
+    <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body class="leaderboard-page">
+    <div class="container">
+        <h1>⚽ World Cup 2026 Fantasy</h1>
+        <div class="subtitle">USA / Canada / Mexico • June 11 – July 19, 2026</div>
+        <div class="last-updated" id="lastUpdated">Loading…</div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="participants">Leaderboard</button>
+            <button class="tab" data-tab="standings">Team Standings</button>
+        </div>
+
+        <div class="medal-progress-text" id="progressStats">Loading…</div>
+
+        <div id="participantsTab" class="tab-content active">
+            <div id="participantsContent" class="loading">Loading…</div>
+        </div>
+
+        <div id="standingsTab" class="tab-content">
+            <div id="standingsContent" class="loading">Loading…</div>
+        </div>
+
+        <div class="prize-pool-section">
+            <h3>🏆 Prize Pool</h3>
+            <p class="prize-description">Top 3 finishers split the pot:</p>
+            <div class="prize-breakdown">
+                <div class="prize-place">🥇 1st Place: 50%</div>
+                <div class="prize-place">🥈 2nd Place: 30%</div>
+                <div class="prize-place">🥉 3rd Place: 20%</div>
+            </div>
+            <p class="prize-note">Winner announced after the Final (July 19).</p>
+        </div>
+
+        <div class="instructions-section">
+            <h2>📋 How It Works</h2>
+            <div class="instructions-content">
+                <div class="instruction-item">
+                    <strong>🎯 Format:</strong>
+                    <p>Participants picked 5–15 national teams with a 100-point budget. Favorites cost more; underdogs cost less.</p>
+                </div>
+                <div class="instruction-item">
+                    <strong>⚽ Scoring:</strong>
+                    <p>Win = 3 pts &nbsp;•&nbsp; Draw = 1 pt &nbsp;•&nbsp; Loss = 0 pts (all stages)</p>
+                    <p>Bonus: R32 +2 &nbsp;•&nbsp; R16 +3 &nbsp;•&nbsp; QF +5 &nbsp;•&nbsp; SF +8 &nbsp;•&nbsp; Final +10 &nbsp;•&nbsp; Champion +15</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-nav-section">
+            <a href="schedule.html" class="nav-link">📅 View Match Schedule &amp; Results</a>
+        </div>
+    </div>
+
+    <script type="module" src="leaderboard.js?v=1"></script>
+</body>
+</html>

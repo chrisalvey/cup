@@ -1,0 +1,17 @@
+{
+  "name": "worldcup-fantasy-draft",
+  "version": "1.0.0",
+  "description": "World Cup 2026 Fantasy Draft",
+  "scripts": {
+    "scrape": "node scrape-results.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisalvey/worldcup.git"
+  },
+  "author": "Chris Alvey",
+  "license": "MIT"
+}

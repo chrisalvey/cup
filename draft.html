@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup 2026 Fantasy Draft</title>
+    <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body class="draft-page">
+    <div class="container">
+        <h1>⚽ World Cup 2026 Fantasy Draft</h1>
+        <div class="subtitle">USA / Canada / Mexico • June 11 – July 19, 2026</div>
+
+        <div id="countdownTimer" class="countdown-timer">
+            <div class="countdown-label">Draft Closes In:</div>
+            <div class="countdown-display">
+                <div class="countdown-unit"><div class="countdown-number" id="days">00</div><div class="countdown-text">Days</div></div>
+                <div class="countdown-unit"><div class="countdown-number" id="hours">00</div><div class="countdown-text">Hours</div></div>
+                <div class="countdown-unit"><div class="countdown-number" id="minutes">00</div><div class="countdown-text">Mins</div></div>
+                <div class="countdown-unit"><div class="countdown-number" id="seconds">00</div><div class="countdown-text">Secs</div></div>
+            </div>
+        </div>
+
+        <div id="draftClosedBanner" class="draft-closed-banner" style="display:none;">
+            <h2>⏰ Draft Has Closed</h2>
+            <p>The deadline to submit your draft has passed.</p>
+            <p>The World Cup has begun! Follow the action on the leaderboard.</p>
+            <a href="index.html" class="view-results-btn">View Leaderboard →</a>
+            <p style="font-size:13px;margin-top:15px;opacity:0.85;">Redirecting to leaderboard shortly…</p>
+        </div>
+
+        <div class="results-link-banner">
+            <div class="banner-content">
+                <strong>📊 Track the leaderboard:</strong>
+                <a href="index.html" class="results-link">chrisalvey.github.io/worldcup</a>
+            </div>
+        </div>
+
+        <div class="instructions-section">
+            <h2>📋 How to Play</h2>
+            <div class="instructions-content">
+                <div class="instruction-item">
+                    <strong>🎯 Objective:</strong>
+                    <p>Pick 5–15 national teams you think will perform best. You have 100 points to spend.</p>
+                </div>
+                <div class="instruction-item">
+                    <strong>⚽ Scoring:</strong>
+                    <p>Win = 3 pts &nbsp;•&nbsp; Draw = 1 pt &nbsp;•&nbsp; Loss = 0 pts (applies to all matches including knockouts)</p>
+                    <p>Bonus pts for advancing: R32 +2 &nbsp;•&nbsp; R16 +3 &nbsp;•&nbsp; QF +5 &nbsp;•&nbsp; SF +8 &nbsp;•&nbsp; Final +10 &nbsp;•&nbsp; Champion +15</p>
+                </div>
+                <div class="instruction-item">
+                    <strong>💰 Budget:</strong>
+                    <p>Teams are priced by expected performance. Favorites cost more; underdogs cost less.</p>
+                </div>
+                <div class="instruction-item">
+                    <strong>💵 Entry &amp; Prizes:</strong>
+                    <p>$5 entry fee (PayPal or Venmo below). Top 3 split the pot: 50% / 30% / 20%.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="successMessage" class="success-message" style="display:none;">
+            <h2>✅ Draft Submitted!</h2>
+            <p>Your team has been saved. Good luck!</p>
+            <p><strong>Team:</strong> <span id="successTeamName"></span></p>
+            <a href="index.html" class="view-results-btn">View Leaderboard →</a>
+        </div>
+
+        <form id="draftForm">
+            <div class="form-section">
+                <h2>Your Information</h2>
+                <div class="input-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="teamName">Team Name *</label>
+                    <div class="input-with-button">
+                        <input type="text" id="teamName" name="teamName" maxlength="50" required>
+                        <button type="button" id="generateNameBtn" class="generate-btn">🎲 Random</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Draft Status</h2>
+                <div class="stats-bar">
+                    <div class="stat"><div class="stat-label">Points Spent</div><div class="stat-value"><span id="pointsSpent">0</span> / 100</div></div>
+                    <div class="stat"><div class="stat-label">Remaining</div><div class="stat-value" id="pointsRemaining">100</div></div>
+                    <div class="stat"><div class="stat-label">Teams Selected</div><div class="stat-value" id="teamsCount">0</div></div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-label">Budget</div>
+                    <div class="progress-bar"><div id="progressFill" class="progress-bar-fill" style="width:0%">0 / 100</div></div>
+                </div>
+                <div id="warningMessage" class="warning-message">⚠️ Please select between 5 and 15 teams</div>
+                <div class="selected-teams-header">
+                    <h2>Your Team</h2>
+                    <button type="button" id="clearAllBtn" class="clear-all-btn" disabled>Clear All</button>
+                </div>
+                <div id="selectedTeams" class="selected-teams empty"></div>
+            </div>
+
+            <div class="form-section">
+                <h2>Select Teams</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search teams…">
+                </div>
+                <div class="sort-controls">
+                    <strong>Sort by:</strong>
+                    <label><input type="radio" name="sort" value="name" checked> Name</label>
+                    <label><input type="radio" name="sort" value="priceHigh"> Price ↑</label>
+                    <label><input type="radio" name="sort" value="priceLow"> Price ↓</label>
+                </div>
+                <div id="teamGrid" class="team-grid"></div>
+            </div>
+
+            <div id="validationError" class="validation-error-banner" style="display:none;">
+                <div class="error-icon">⚠️</div>
+                <div class="error-content">
+                    <h3>Cannot Submit:</h3>
+                    <ul id="validationErrorList"></ul>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" id="submitBtn" class="btn-disabled">Submit Draft</button>
+            </div>
+        </form>
+
+        <!-- Confirmation dialog -->
+        <div id="confirmationOverlay" class="confirmation-overlay" style="display:none;">
+            <div class="confirmation-dialog">
+                <h3>Confirm Your Draft</h3>
+                <p>Are you sure you want to submit?</p>
+                <div class="draft-summary">
+                    <strong>Team Name:</strong> <span id="confirmTeamName"></span><br>
+                    <strong>Total Points:</strong> <span id="confirmTotalPoints"></span> / 100<br><br>
+                    <strong>Teams:</strong>
+                    <div id="confirmTeamList" class="confirm-team-list"></div>
+                </div>
+                <div class="confirmation-buttons">
+                    <button type="button" id="cancelConfirm" class="btn-cancel">Cancel</button>
+                    <button type="button" id="confirmSubmit" class="btn-confirm">Yes, Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="prize-pool-section">
+            <h3>🏆 Prize Pool</h3>
+            <p class="prize-description">Top 3 finishers split the pot:</p>
+            <div class="prize-breakdown">
+                <div class="prize-place">🥇 1st: 50%</div>
+                <div class="prize-place">🥈 2nd: 30%</div>
+                <div class="prize-place">🥉 3rd: 20%</div>
+            </div>
+            <p class="prize-note">Final amounts announced after the draft closes.</p>
+        </div>
+
+        <div class="donation-section">
+            <div class="donation-title">Entry is $5</div>
+            <div class="donation-buttons">
+                <a href="https://paypal.me/ThomasAlvey/5" target="_blank" rel="noopener noreferrer" class="donation-btn paypal-btn">PayPal</a>
+                <a href="https://venmo.com/u/Thomas-Alvey-2?txn=pay&amount=5&note=WorldCup%20Entry" target="_blank" rel="noopener noreferrer" class="donation-btn venmo-btn">Venmo</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
