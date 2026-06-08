@@ -36,7 +36,7 @@ function fetchHTML(url) {
     return new Promise((resolve, reject) => {
         const options = {
             headers: {
-                'User-Agent': 'WorldCup-Fantasy-Bot/1.0 (https://github.com/chrisalvey/worldcup; chrisalvey@users.noreply.github.com) Node.js'
+                'User-Agent': 'WorldCup-Fantasy-Bot/1.0 (https://github.com/chrisalvey/cup; chrisalvey@users.noreply.github.com) Node.js'
             }
         };
         https.get(url, options, res => {
