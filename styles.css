@@ -262,6 +262,22 @@ h1 {
 .nav-link:hover { background: rgba(0,230,118,0.15); }
 
 /* ── Banner ── */
+.draft-link-banner {
+    background: rgba(255, 214, 0, 0.08);
+    border: 1px solid rgba(255, 214, 0, 0.4);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.draft-link-banner .results-link {
+    color: var(--neon-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 8px;
+}
+.draft-link-banner .results-link:hover { text-decoration: underline; }
+
 .results-link-banner { background: rgba(0,230,118,0.06); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; margin-bottom: 16px; text-align: center; }
 .results-link { color: var(--neon-green); text-decoration: none; font-weight: 600; }
 .results-link:hover { text-decoration: underline; }

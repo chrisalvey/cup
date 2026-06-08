@@ -11,6 +11,12 @@ let resultsData = null;
 let normalizedLookup = null;
 
 function init() {
+    // Hide draft link once deadline has passed
+    const draftBanner = document.getElementById('draftLinkBanner');
+    if (draftBanner && new Date() >= DRAFT_DEADLINE) {
+        draftBanner.style.display = 'none';
+    }
+
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', function() {
             const tabName = this.dataset.tab;
