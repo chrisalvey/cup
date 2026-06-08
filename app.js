@@ -167,9 +167,25 @@ function setupEventListeners() {
     });
 
     document.getElementById('generateNameBtn').addEventListener('click', () => {
-        const adjectives = ['Flying', 'Golden', 'Mighty', 'Electric', 'Blazing', 'Fearless', 'Legendary', 'Unstoppable', 'Epic', 'Stellar'];
-        const nouns = ['Eagles', 'Lions', 'Wolves', 'Thunder', 'Sharks', 'Dragons', 'Warriors', 'Titans', 'Rockets', 'Vipers'];
-        document.getElementById('teamName').value = `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${nouns[Math.floor(Math.random() * nouns.length)]}`;
+        const names = [
+            // Classic style
+            'Flying Eagles', 'Golden Lions', 'Mighty Wolves', 'Electric Thunder', 'Blazing Sharks',
+            'Fearless Dragons', 'Legendary Warriors', 'Unstoppable Titans', 'Epic Rockets', 'Stellar Vipers',
+            // Soccer puns
+            'Messi Around', 'Ronaldo Coaster', 'Kickin\' It Old School', 'The Own Goalers',
+            'Penalty of the Century', 'Offsides Again', 'Yellow Card Collectors',
+            'VAR We There Yet', 'Net Gains Only', 'Goooooal Diggers',
+            'The Hand of Gob', 'Pitch Please', 'In It to Win It (Hopefully)',
+            'Red Card Redemption', 'Park the Bus FC', 'Total Foxtal',
+            'Throw In the Towel', 'Not in My Box', 'Extra Time Enjoyers',
+            'Bend It Like Beckham\'s Accountant', 'The Nil-Nil Thrillers',
+            'Keeper of the Dream', 'Ball Possession Issues', 'Studs Up FC',
+            'No Goalkeeper No Problem', 'The Stoppage Time Heroes',
+            'Bicycle Kick Fantasies', 'Corner Flag Celebrators',
+            'We Thought It Was Wide', 'Pub League All-Stars',
+            'Shin Guards Not Included', 'The Diving Champions',
+        ];
+        document.getElementById('teamName').value = names[Math.floor(Math.random() * names.length)];
     });
 
     document.getElementById('draftForm').addEventListener('submit', handleSubmit);
