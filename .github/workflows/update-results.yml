@@ -51,7 +51,7 @@ jobs:
           git add results.json
           git commit -m "⚽ Update match results - $(date -u +'%Y-%m-%d %H:%M UTC')"
           git fetch origin main
-          git rebase --autostash origin/main
+          git rebase -X theirs --autostash origin/main
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
