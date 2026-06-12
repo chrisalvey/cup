@@ -27,6 +27,20 @@
       "l": 1,
       "gf": 1,
       "ga": 2
+    },
+    "Canada": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
+    },
+    "Bosnia-Herzegovina": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
     }
   },
   "matches": [
@@ -51,11 +65,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Canada",
+      "away": "Bosnia-Herzegovina",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "B",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-12T20:34:36.151Z",
-    "matchesPlayed": 2,
+    "lastUpdated": "2026-06-12T21:31:12.201Z",
+    "matchesPlayed": 3,
     "stage": "group",
     "source": "Wikipedia"
   }
