@@ -5,7 +5,7 @@ const fs = require('fs');
 const https = require('https');
 const cheerio = require('cheerio');
 
-const GROUP_STAGE_URL = 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_group_stage';
+const GROUP_STAGE_URL = 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup';
 const KNOCKOUT_URL    = 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage';
 
 // Wikipedia name → canonical name used in teams.json
@@ -26,10 +26,21 @@ const TEAM_NAME_MAP = {
     'Curaçao':              'Curacao',
 };
 
+// Build team → group lookup from teams.json
+const TEAM_GROUP = {};
+try {
+    const teams = JSON.parse(fs.readFileSync('teams.json', 'utf-8'));
+    teams.forEach(t => { TEAM_GROUP[t.name] = t.group; });
+} catch { /* ignore if file missing */ }
+
 function normalizeTeam(name) {
     if (!name) return name;
     name = name.trim().replace(/\[\w+\]/g, '').trim();
     return TEAM_NAME_MAP[name] || name;
+}
+
+function groupForTeam(name) {
+    return TEAM_GROUP[name] || null;
 }
 
 function fetchHTML(url) {
@@ -63,7 +74,7 @@ function parseGroupStage(html) {
     // Wikipedia group stage page has match result tables inside collapsible sections.
     // Each match is typically in a table with class "footballbox" or similar structure.
     // Look for tables that contain score information.
-    $('table.footballbox, table.vevent').each((_, table) => {
+    $('table.footballbox, table.vevent, table.fevent').each((_, table) => {
         const $t = $(table);
         const homeEl = $t.find('.fhome, [itemprop="homeTeam"] span, .home').first();
         const awayEl = $t.find('.faway, [itemprop="awayTeam"] span, .away').first();
@@ -83,11 +94,7 @@ function parseGroupStage(html) {
         const dateEl = $t.find('.fdate, [itemprop="startDate"]').first();
         const venueEl = $t.find('.fground, [itemprop="location"]').first();
 
-        // Determine group from nearest heading
-        let group = null;
-        const heading = $t.closest('div, section').prevAll('h3, h2').first().text();
-        const gMatch = heading.match(/Group\s+([A-L])/i);
-        if (gMatch) group = gMatch[1].toUpperCase();
+        const group = groupForTeam(home) || groupForTeam(away) || null;
 
         matches.push({
             home, away, homeScore, awayScore,
@@ -135,7 +142,7 @@ function parseKnockoutStage(html, teamStats) {
     // Track which teams have reached each round
     const roundReached = {};
 
-    $('table.footballbox, table.vevent').each((_, table) => {
+    $('table.footballbox, table.vevent, table.fevent').each((_, table) => {
         const $t = $(table);
         const homeEl = $t.find('.fhome, [itemprop="homeTeam"] span, .home').first();
         const awayEl = $t.find('.faway, [itemprop="awayTeam"] span, .away').first();

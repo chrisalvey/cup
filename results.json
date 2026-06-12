@@ -1,10 +1,62 @@
 {
-  "teams": {},
-  "matches": [],
+  "teams": {
+    "Mexico": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 2,
+      "ga": 0
+    },
+    "South Africa": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 0,
+      "ga": 2
+    },
+    "South Korea": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 2,
+      "ga": 1
+    },
+    "Czechia": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 2
+    }
+  },
+  "matches": [
+    {
+      "home": "Mexico",
+      "away": "South Africa",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "A",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "South Korea",
+      "away": "Czechia",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "A",
+      "date": "",
+      "venue": "",
+      "played": true
+    }
+  ],
   "metadata": {
-    "lastUpdated": null,
-    "matchesPlayed": 0,
-    "stage": "pre-tournament",
+    "lastUpdated": "2026-06-12T12:56:42.498Z",
+    "matchesPlayed": 2,
+    "stage": "group",
     "source": "Wikipedia"
   }
 }

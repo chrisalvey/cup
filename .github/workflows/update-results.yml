@@ -5,6 +5,7 @@ on:
     # Every 30 minutes during tournament hours (10 AM – midnight UTC)
     # Tournament: June 11 – July 19, 2026
     - cron: '0,30 10-23 11-19 6 *'   # June 11–19
+    - cron: '0,30 10-23 20-30 6 *'   # June 20–30
     - cron: '0,30 10-23 * 7 *'        # All of July
   workflow_dispatch:
 
