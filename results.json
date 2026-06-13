@@ -41,6 +41,20 @@
       "l": 0,
       "gf": 1,
       "ga": 1
+    },
+    "USA": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 4,
+      "ga": 1
+    },
+    "Paraguay": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 4
     }
   },
   "matches": [
@@ -76,11 +90,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "USA",
+      "away": "Paraguay",
+      "homeScore": 4,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "D",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-12T23:59:12.213Z",
-    "matchesPlayed": 3,
+    "lastUpdated": "2026-06-13T11:53:00.776Z",
+    "matchesPlayed": 4,
     "stage": "group",
     "source": "Wikipedia"
   }
