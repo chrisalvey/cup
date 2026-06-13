@@ -42,6 +42,20 @@
       "gf": 1,
       "ga": 1
     },
+    "Qatar": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
+    },
+    "Switzerland": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
+    },
     "USA": {
       "w": 1,
       "d": 0,
@@ -92,6 +106,17 @@
       "played": true
     },
     {
+      "home": "Qatar",
+      "away": "Switzerland",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "B",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "USA",
       "away": "Paraguay",
       "homeScore": 4,
@@ -104,8 +129,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-13T20:14:20.727Z",
-    "matchesPlayed": 4,
+    "lastUpdated": "2026-06-13T21:44:38.289Z",
+    "matchesPlayed": 5,
     "stage": "group",
     "source": "Wikipedia"
   }
