@@ -111,6 +111,20 @@
       "l": 1,
       "gf": 0,
       "ga": 2
+    },
+    "Germany": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 3,
+      "ga": 1
+    },
+    "Curacao": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 3
     }
   },
   "matches": [
@@ -201,11 +215,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Germany",
+      "away": "Curacao",
+      "homeScore": 3,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "E",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-14T16:04:17.377Z",
-    "matchesPlayed": 8,
+    "lastUpdated": "2026-06-14T17:56:48.621Z",
+    "matchesPlayed": 9,
     "stage": "group",
     "source": "Wikipedia"
   }
