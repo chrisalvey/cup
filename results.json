@@ -98,6 +98,20 @@
       "gf": 1,
       "ga": 4
     },
+    "Australia": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 2,
+      "ga": 0
+    },
+    "Turkey": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 0,
+      "ga": 2
+    },
     "Germany": {
       "w": 1,
       "d": 0,
@@ -192,6 +206,17 @@
       "played": true
     },
     {
+      "home": "Australia",
+      "away": "Turkey",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "D",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Germany",
       "away": "Curacao",
       "homeScore": 7,
@@ -204,8 +229,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-14T19:39:02.215Z",
-    "matchesPlayed": 8,
+    "lastUpdated": "2026-06-14T21:09:49.749Z",
+    "matchesPlayed": 9,
     "stage": "group",
     "source": "Wikipedia"
   }
