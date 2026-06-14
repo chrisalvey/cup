@@ -125,6 +125,20 @@
       "l": 1,
       "gf": 1,
       "ga": 7
+    },
+    "Netherlands": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 2,
+      "ga": 2
+    },
+    "Japan": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 2,
+      "ga": 2
     }
   },
   "matches": [
@@ -226,11 +240,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Netherlands",
+      "away": "Japan",
+      "homeScore": 2,
+      "awayScore": 2,
+      "stage": "group",
+      "group": "F",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-14T21:09:49.749Z",
-    "matchesPlayed": 9,
+    "lastUpdated": "2026-06-14T22:39:38.527Z",
+    "matchesPlayed": 10,
     "stage": "group",
     "source": "Wikipedia"
   }
