@@ -168,6 +168,20 @@
       "gf": 1,
       "ga": 5
     },
+    "Belgium": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
+    },
+    "Egypt": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
+    },
     "Spain": {
       "w": 0,
       "d": 1,
@@ -317,6 +331,17 @@
       "played": true
     },
     {
+      "home": "Belgium",
+      "away": "Egypt",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "G",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Spain",
       "away": "Cape Verde",
       "homeScore": 0,
@@ -329,8 +354,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-15T19:46:12.483Z",
-    "matchesPlayed": 13,
+    "lastUpdated": "2026-06-15T22:17:13.657Z",
+    "matchesPlayed": 14,
     "stage": "group",
     "source": "Wikipedia"
   }
