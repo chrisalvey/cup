@@ -167,6 +167,20 @@
       "l": 1,
       "gf": 1,
       "ga": 5
+    },
+    "Spain": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 0,
+      "ga": 0
+    },
+    "Cape Verde": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 0,
+      "ga": 0
     }
   },
   "matches": [
@@ -301,11 +315,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Spain",
+      "away": "Cape Verde",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "H",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-15T15:44:34.409Z",
-    "matchesPlayed": 12,
+    "lastUpdated": "2026-06-15T19:46:12.483Z",
+    "matchesPlayed": 13,
     "stage": "group",
     "source": "Wikipedia"
   }
