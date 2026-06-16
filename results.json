@@ -182,6 +182,20 @@
       "gf": 1,
       "ga": 1
     },
+    "Iran": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 2,
+      "ga": 2
+    },
+    "New Zealand": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 2,
+      "ga": 2
+    },
     "Spain": {
       "w": 0,
       "d": 1,
@@ -356,6 +370,17 @@
       "played": true
     },
     {
+      "home": "Iran",
+      "away": "New Zealand",
+      "homeScore": 2,
+      "awayScore": 2,
+      "stage": "group",
+      "group": "G",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Spain",
       "away": "Cape Verde",
       "homeScore": 0,
@@ -379,8 +404,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-16T00:10:19.089Z",
-    "matchesPlayed": 15,
+    "lastUpdated": "2026-06-16T15:04:02.537Z",
+    "matchesPlayed": 16,
     "stage": "group",
     "source": "Wikipedia"
   }
