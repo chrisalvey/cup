@@ -223,6 +223,20 @@
       "l": 0,
       "gf": 1,
       "ga": 1
+    },
+    "France": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 3,
+      "ga": 1
+    },
+    "Senegal": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 3
     }
   },
   "matches": [
@@ -401,11 +415,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "France",
+      "away": "Senegal",
+      "homeScore": 3,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "I",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-16T19:02:13.512Z",
-    "matchesPlayed": 16,
+    "lastUpdated": "2026-06-16T21:59:47.283Z",
+    "matchesPlayed": 17,
     "stage": "group",
     "source": "Wikipedia"
   }
