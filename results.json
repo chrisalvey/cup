@@ -279,6 +279,20 @@
       "l": 1,
       "gf": 1,
       "ga": 3
+    },
+    "Portugal": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
+    },
+    "Congo DR": {
+      "w": 0,
+      "d": 1,
+      "l": 0,
+      "gf": 1,
+      "ga": 1
     }
   },
   "matches": [
@@ -501,11 +515,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Portugal",
+      "away": "Congo DR",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "K",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-17T16:53:58.902Z",
-    "matchesPlayed": 20,
+    "lastUpdated": "2026-06-17T19:24:31.018Z",
+    "matchesPlayed": 21,
     "stage": "group",
     "source": "Wikipedia"
   }
