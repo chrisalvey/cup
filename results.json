@@ -9,10 +9,10 @@
     },
     "South Africa": {
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 1,
-      "gf": 0,
-      "ga": 2
+      "gf": 1,
+      "ga": 3
     },
     "South Korea": {
       "w": 1,
@@ -23,10 +23,10 @@
     },
     "Czechia": {
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 1,
-      "gf": 1,
-      "ga": 2
+      "gf": 2,
+      "ga": 3
     },
     "Canada": {
       "w": 0,
@@ -361,6 +361,17 @@
       "played": true
     },
     {
+      "home": "Czechia",
+      "away": "South Africa",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "A",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Canada",
       "away": "Bosnia-Herzegovina",
       "homeScore": 1,
@@ -604,8 +615,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-18T16:29:21.028Z",
-    "matchesPlayed": 24,
+    "lastUpdated": "2026-06-18T19:03:01.016Z",
+    "matchesPlayed": 25,
     "stage": "group",
     "source": "Wikipedia"
   }
