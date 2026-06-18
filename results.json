@@ -38,9 +38,9 @@
     "Bosnia-Herzegovina": {
       "w": 0,
       "d": 1,
-      "l": 0,
-      "gf": 1,
-      "ga": 1
+      "l": 1,
+      "gf": 2,
+      "ga": 5
     },
     "Qatar": {
       "w": 0,
@@ -50,11 +50,11 @@
       "ga": 1
     },
     "Switzerland": {
-      "w": 0,
+      "w": 1,
       "d": 1,
       "l": 0,
-      "gf": 1,
-      "ga": 1
+      "gf": 5,
+      "ga": 2
     },
     "Brazil": {
       "w": 0,
@@ -394,6 +394,17 @@
       "played": true
     },
     {
+      "home": "Switzerland",
+      "away": "Bosnia-Herzegovina",
+      "homeScore": 4,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "B",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Brazil",
       "away": "Morocco",
       "homeScore": 1,
@@ -615,8 +626,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-18T19:03:01.016Z",
-    "matchesPlayed": 25,
+    "lastUpdated": "2026-06-18T21:33:25.659Z",
+    "matchesPlayed": 26,
     "stage": "group",
     "source": "Wikipedia"
   }
