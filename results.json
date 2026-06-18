@@ -294,6 +294,20 @@
       "gf": 1,
       "ga": 1
     },
+    "Uzbekistan": {
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "gf": 1,
+      "ga": 3
+    },
+    "Colombia": {
+      "w": 1,
+      "d": 0,
+      "l": 0,
+      "gf": 3,
+      "ga": 1
+    },
     "England": {
       "w": 1,
       "d": 0,
@@ -556,6 +570,17 @@
       "played": true
     },
     {
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "homeScore": 1,
+      "awayScore": 3,
+      "stage": "group",
+      "group": "K",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "England",
       "away": "Croatia",
       "homeScore": 4,
@@ -579,8 +604,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-18T02:00:52.875Z",
-    "matchesPlayed": 23,
+    "lastUpdated": "2026-06-18T12:50:39.734Z",
+    "matchesPlayed": 24,
     "stage": "group",
     "source": "Wikipedia"
   }
