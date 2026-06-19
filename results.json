@@ -1,10 +1,10 @@
 {
   "teams": {
     "Mexico": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 0,
-      "gf": 2,
+      "gf": 3,
       "ga": 0
     },
     "South Africa": {
@@ -17,9 +17,9 @@
     "South Korea": {
       "w": 1,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 2,
-      "ga": 1
+      "ga": 2
     },
     "Czechia": {
       "w": 0,
@@ -29,10 +29,10 @@
       "ga": 3
     },
     "Canada": {
-      "w": 0,
+      "w": 1,
       "d": 1,
       "l": 0,
-      "gf": 1,
+      "gf": 7,
       "ga": 1
     },
     "Bosnia-Herzegovina": {
@@ -45,9 +45,9 @@
     "Qatar": {
       "w": 0,
       "d": 1,
-      "l": 0,
+      "l": 1,
       "gf": 1,
-      "ga": 1
+      "ga": 7
     },
     "Switzerland": {
       "w": 1,
@@ -372,6 +372,17 @@
       "played": true
     },
     {
+      "home": "Mexico",
+      "away": "South Korea",
+      "homeScore": 1,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "A",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Canada",
       "away": "Bosnia-Herzegovina",
       "homeScore": 1,
@@ -398,6 +409,17 @@
       "away": "Bosnia-Herzegovina",
       "homeScore": 4,
       "awayScore": 1,
+      "stage": "group",
+      "group": "B",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Canada",
+      "away": "Qatar",
+      "homeScore": 6,
+      "awayScore": 0,
       "stage": "group",
       "group": "B",
       "date": "",
@@ -626,8 +648,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-18T23:43:13.643Z",
-    "matchesPlayed": 26,
+    "lastUpdated": "2026-06-19T13:33:37.934Z",
+    "matchesPlayed": 28,
     "stage": "group",
     "source": "Wikipedia"
   }
