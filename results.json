@@ -113,11 +113,11 @@
       "ga": 3
     },
     "Germany": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 0,
-      "gf": 7,
-      "ga": 1
+      "gf": 9,
+      "ga": 2
     },
     "Curacao": {
       "w": 0,
@@ -129,9 +129,9 @@
     "Ivory Coast": {
       "w": 1,
       "d": 0,
-      "l": 0,
-      "gf": 1,
-      "ga": 0
+      "l": 1,
+      "gf": 2,
+      "ga": 2
     },
     "Ecuador": {
       "w": 0,
@@ -537,6 +537,17 @@
       "played": true
     },
     {
+      "home": "Germany",
+      "away": "Ivory Coast",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "E",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Netherlands",
       "away": "Japan",
       "homeScore": 2,
@@ -703,8 +714,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-20T21:44:33.204Z",
-    "matchesPlayed": 33,
+    "lastUpdated": "2026-06-20T22:58:04.201Z",
+    "matchesPlayed": 34,
     "stage": "group",
     "source": "Wikipedia"
   }
