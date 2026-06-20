@@ -57,10 +57,10 @@
       "ga": 2
     },
     "Brazil": {
-      "w": 0,
+      "w": 1,
       "d": 1,
       "l": 0,
-      "gf": 1,
+      "gf": 4,
       "ga": 1
     },
     "Morocco": {
@@ -73,9 +73,9 @@
     "Haiti": {
       "w": 0,
       "d": 0,
-      "l": 1,
+      "l": 2,
       "gf": 0,
-      "ga": 1
+      "ga": 4
     },
     "Scotland": {
       "w": 1,
@@ -92,10 +92,10 @@
       "ga": 1
     },
     "Paraguay": {
-      "w": 0,
+      "w": 1,
       "d": 0,
       "l": 1,
-      "gf": 1,
+      "gf": 2,
       "ga": 4
     },
     "Australia": {
@@ -108,9 +108,9 @@
     "Turkey": {
       "w": 0,
       "d": 0,
-      "l": 1,
+      "l": 2,
       "gf": 0,
-      "ga": 2
+      "ga": 3
     },
     "Germany": {
       "w": 1,
@@ -460,6 +460,17 @@
       "played": true
     },
     {
+      "home": "Brazil",
+      "away": "Haiti",
+      "homeScore": 3,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "C",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "USA",
       "away": "Paraguay",
       "homeScore": 4,
@@ -486,6 +497,17 @@
       "away": "Australia",
       "homeScore": 2,
       "awayScore": 0,
+      "stage": "group",
+      "group": "D",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Turkey",
+      "away": "Paraguay",
+      "homeScore": 0,
+      "awayScore": 1,
       "stage": "group",
       "group": "D",
       "date": "",
@@ -670,8 +692,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-20T00:07:49.247Z",
-    "matchesPlayed": 30,
+    "lastUpdated": "2026-06-20T11:51:08.367Z",
+    "matchesPlayed": 32,
     "stage": "group",
     "source": "Wikipedia"
   }
