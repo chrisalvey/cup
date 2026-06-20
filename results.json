@@ -64,10 +64,10 @@
       "ga": 1
     },
     "Morocco": {
-      "w": 0,
+      "w": 1,
       "d": 1,
       "l": 0,
-      "gf": 1,
+      "gf": 2,
       "ga": 1
     },
     "Haiti": {
@@ -80,9 +80,9 @@
     "Scotland": {
       "w": 1,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 1,
-      "ga": 0
+      "ga": 1
     },
     "USA": {
       "w": 2,
@@ -449,6 +449,17 @@
       "played": true
     },
     {
+      "home": "Scotland",
+      "away": "Morocco",
+      "homeScore": 0,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "C",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "USA",
       "away": "Paraguay",
       "homeScore": 4,
@@ -659,8 +670,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-19T22:54:44.232Z",
-    "matchesPlayed": 29,
+    "lastUpdated": "2026-06-20T00:07:49.247Z",
+    "matchesPlayed": 30,
     "stage": "group",
     "source": "Wikipedia"
   }
