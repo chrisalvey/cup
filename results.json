@@ -197,10 +197,10 @@
       "ga": 2
     },
     "Spain": {
-      "w": 0,
+      "w": 1,
       "d": 1,
       "l": 0,
-      "gf": 0,
+      "gf": 4,
       "ga": 0
     },
     "Cape Verde": {
@@ -213,9 +213,9 @@
     "Saudi Arabia": {
       "w": 0,
       "d": 1,
-      "l": 0,
+      "l": 1,
       "gf": 1,
-      "ga": 1
+      "ga": 5
     },
     "Uruguay": {
       "w": 0,
@@ -647,6 +647,17 @@
       "played": true
     },
     {
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "homeScore": 4,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "H",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "France",
       "away": "Senegal",
       "homeScore": 3,
@@ -736,8 +747,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-21T18:02:23.647Z",
-    "matchesPlayed": 36,
+    "lastUpdated": "2026-06-21T20:09:59.764Z",
+    "matchesPlayed": 37,
     "stage": "group",
     "source": "Wikipedia"
   }
