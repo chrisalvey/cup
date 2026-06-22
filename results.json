@@ -253,10 +253,10 @@
       "ga": 1
     },
     "Argentina": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 0,
-      "gf": 3,
+      "gf": 5,
       "ga": 0
     },
     "Algeria": {
@@ -269,9 +269,9 @@
     "Austria": {
       "w": 1,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 3,
-      "ga": 1
+      "ga": 3
     },
     "Jordan": {
       "w": 0,
@@ -735,6 +735,17 @@
       "played": true
     },
     {
+      "home": "Argentina",
+      "away": "Austria",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "J",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Portugal",
       "away": "Congo DR",
       "homeScore": 1,
@@ -780,8 +791,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-22T18:55:13.338Z",
-    "matchesPlayed": 40,
+    "lastUpdated": "2026-06-22T21:27:49.149Z",
+    "matchesPlayed": 41,
     "stage": "group",
     "source": "Wikipedia"
   }
