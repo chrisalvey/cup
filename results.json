@@ -234,9 +234,9 @@
     "Senegal": {
       "w": 0,
       "d": 0,
-      "l": 1,
-      "gf": 1,
-      "ga": 3
+      "l": 2,
+      "gf": 3,
+      "ga": 6
     },
     "Iraq": {
       "w": 0,
@@ -246,11 +246,11 @@
       "ga": 7
     },
     "Norway": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 0,
-      "gf": 4,
-      "ga": 1
+      "gf": 7,
+      "ga": 3
     },
     "Argentina": {
       "w": 2,
@@ -260,11 +260,11 @@
       "ga": 0
     },
     "Algeria": {
-      "w": 0,
+      "w": 1,
       "d": 0,
       "l": 1,
-      "gf": 0,
-      "ga": 3
+      "gf": 2,
+      "ga": 4
     },
     "Austria": {
       "w": 1,
@@ -276,9 +276,9 @@
     "Jordan": {
       "w": 0,
       "d": 0,
-      "l": 1,
-      "gf": 1,
-      "ga": 3
+      "l": 2,
+      "gf": 2,
+      "ga": 5
     },
     "Portugal": {
       "w": 0,
@@ -724,6 +724,17 @@
       "played": true
     },
     {
+      "home": "Norway",
+      "away": "Senegal",
+      "homeScore": 3,
+      "awayScore": 2,
+      "stage": "group",
+      "group": "I",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Argentina",
       "away": "Algeria",
       "homeScore": 3,
@@ -750,6 +761,17 @@
       "away": "Austria",
       "homeScore": 2,
       "awayScore": 0,
+      "stage": "group",
+      "group": "J",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Jordan",
+      "away": "Algeria",
+      "homeScore": 1,
+      "awayScore": 2,
       "stage": "group",
       "group": "J",
       "date": "",
@@ -802,8 +824,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-23T01:28:23.705Z",
-    "matchesPlayed": 42,
+    "lastUpdated": "2026-06-23T12:28:30.417Z",
+    "matchesPlayed": 44,
     "stage": "group",
     "source": "Wikipedia"
   }
