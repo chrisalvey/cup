@@ -310,7 +310,7 @@
     },
     "England": {
       "w": 1,
-      "d": 0,
+      "d": 1,
       "l": 0,
       "gf": 4,
       "ga": 2
@@ -324,7 +324,7 @@
     },
     "Ghana": {
       "w": 1,
-      "d": 0,
+      "d": 1,
       "l": 0,
       "gf": 1,
       "ga": 0
@@ -832,11 +832,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "England",
+      "away": "Ghana",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "L",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-23T21:24:23.375Z",
-    "matchesPlayed": 45,
+    "lastUpdated": "2026-06-23T22:43:54.196Z",
+    "matchesPlayed": 46,
     "stage": "group",
     "source": "Wikipedia"
   }
