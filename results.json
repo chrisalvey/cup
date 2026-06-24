@@ -31,30 +31,30 @@
     "Canada": {
       "w": 1,
       "d": 1,
-      "l": 0,
-      "gf": 7,
-      "ga": 1
+      "l": 1,
+      "gf": 8,
+      "ga": 3
     },
     "Bosnia-Herzegovina": {
-      "w": 0,
+      "w": 1,
       "d": 1,
       "l": 1,
-      "gf": 2,
-      "ga": 5
+      "gf": 5,
+      "ga": 6
     },
     "Qatar": {
       "w": 0,
       "d": 1,
-      "l": 1,
-      "gf": 1,
-      "ga": 7
+      "l": 2,
+      "gf": 2,
+      "ga": 10
     },
     "Switzerland": {
-      "w": 1,
+      "w": 2,
       "d": 1,
       "l": 0,
-      "gf": 5,
-      "ga": 2
+      "gf": 7,
+      "ga": 3
     },
     "Brazil": {
       "w": 1,
@@ -420,6 +420,28 @@
       "away": "Qatar",
       "homeScore": 6,
       "awayScore": 0,
+      "stage": "group",
+      "group": "B",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Switzerland",
+      "away": "Canada",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "B",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Bosnia-Herzegovina",
+      "away": "Qatar",
+      "homeScore": 3,
+      "awayScore": 1,
       "stage": "group",
       "group": "B",
       "date": "",
@@ -868,8 +890,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-24T19:08:17.560Z",
-    "matchesPlayed": 48,
+    "lastUpdated": "2026-06-24T21:07:52.275Z",
+    "matchesPlayed": 50,
     "stage": "group",
     "source": "Wikipedia"
   }
