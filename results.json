@@ -290,9 +290,9 @@
     "Congo DR": {
       "w": 0,
       "d": 1,
-      "l": 0,
+      "l": 1,
       "gf": 1,
-      "ga": 1
+      "ga": 2
     },
     "Uzbekistan": {
       "w": 0,
@@ -302,10 +302,10 @@
       "ga": 8
     },
     "Colombia": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 0,
-      "gf": 3,
+      "gf": 4,
       "ga": 1
     },
     "England": {
@@ -316,10 +316,10 @@
       "ga": 2
     },
     "Croatia": {
-      "w": 0,
+      "w": 1,
       "d": 0,
       "l": 1,
-      "gf": 2,
+      "gf": 3,
       "ga": 4
     },
     "Ghana": {
@@ -332,9 +332,9 @@
     "Panama": {
       "w": 0,
       "d": 0,
-      "l": 1,
+      "l": 2,
       "gf": 0,
-      "ga": 1
+      "ga": 2
     }
   },
   "matches": [
@@ -812,6 +812,17 @@
       "played": true
     },
     {
+      "home": "Colombia",
+      "away": "Congo DR",
+      "homeScore": 1,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "K",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "England",
       "away": "Croatia",
       "homeScore": 4,
@@ -843,11 +854,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Panama",
+      "away": "Croatia",
+      "homeScore": 0,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "L",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-23T23:49:25.797Z",
-    "matchesPlayed": 46,
+    "lastUpdated": "2026-06-24T12:14:08.841Z",
+    "matchesPlayed": 48,
     "stage": "group",
     "source": "Wikipedia"
   }
