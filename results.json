@@ -232,18 +232,18 @@
       "ga": 2
     },
     "Senegal": {
-      "w": 0,
+      "w": 1,
       "d": 0,
       "l": 2,
-      "gf": 3,
+      "gf": 8,
       "ga": 6
     },
     "Iraq": {
       "w": 0,
       "d": 0,
-      "l": 2,
+      "l": 3,
       "gf": 1,
-      "ga": 7
+      "ga": 12
     },
     "Norway": {
       "w": 2,
@@ -878,6 +878,17 @@
       "played": true
     },
     {
+      "home": "Senegal",
+      "away": "Iraq",
+      "homeScore": 5,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "I",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Argentina",
       "away": "Algeria",
       "homeScore": 3,
@@ -1011,8 +1022,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-26T21:02:48.056Z",
-    "matchesPlayed": 61,
+    "lastUpdated": "2026-06-26T22:41:32.117Z",
+    "matchesPlayed": 62,
     "stage": "group",
     "source": "Wikipedia"
   }
