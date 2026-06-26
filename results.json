@@ -225,11 +225,11 @@
       "ga": 3
     },
     "France": {
-      "w": 2,
+      "w": 3,
       "d": 0,
       "l": 0,
-      "gf": 6,
-      "ga": 1
+      "gf": 10,
+      "ga": 2
     },
     "Senegal": {
       "w": 0,
@@ -248,9 +248,9 @@
     "Norway": {
       "w": 2,
       "d": 0,
-      "l": 0,
-      "gf": 7,
-      "ga": 3
+      "l": 1,
+      "gf": 8,
+      "ga": 7
     },
     "Argentina": {
       "w": 2,
@@ -867,6 +867,17 @@
       "played": true
     },
     {
+      "home": "Norway",
+      "away": "France",
+      "homeScore": 1,
+      "awayScore": 4,
+      "stage": "group",
+      "group": "I",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Argentina",
       "away": "Algeria",
       "homeScore": 3,
@@ -1000,8 +1011,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-26T19:14:27.609Z",
-    "matchesPlayed": 60,
+    "lastUpdated": "2026-06-26T21:02:48.056Z",
+    "matchesPlayed": 61,
     "stage": "group",
     "source": "Wikipedia"
   }
