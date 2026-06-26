@@ -87,30 +87,30 @@
     "USA": {
       "w": 2,
       "d": 0,
-      "l": 0,
-      "gf": 6,
-      "ga": 1
+      "l": 1,
+      "gf": 8,
+      "ga": 4
     },
     "Paraguay": {
       "w": 1,
-      "d": 0,
+      "d": 1,
       "l": 1,
       "gf": 2,
       "ga": 4
     },
     "Australia": {
       "w": 1,
-      "d": 0,
+      "d": 1,
       "l": 1,
       "gf": 2,
       "ga": 2
     },
     "Turkey": {
-      "w": 0,
+      "w": 1,
       "d": 0,
       "l": 2,
-      "gf": 0,
-      "ga": 3
+      "gf": 3,
+      "ga": 5
     },
     "Germany": {
       "w": 2,
@@ -141,32 +141,32 @@
       "ga": 2
     },
     "Netherlands": {
-      "w": 1,
+      "w": 2,
       "d": 1,
+      "l": 0,
+      "gf": 10,
+      "ga": 4
+    },
+    "Japan": {
+      "w": 1,
+      "d": 2,
       "l": 0,
       "gf": 7,
       "ga": 3
     },
-    "Japan": {
-      "w": 1,
-      "d": 1,
-      "l": 0,
-      "gf": 6,
-      "ga": 2
-    },
     "Sweden": {
       "w": 1,
-      "d": 0,
+      "d": 1,
       "l": 1,
-      "gf": 6,
-      "ga": 6
+      "gf": 7,
+      "ga": 7
     },
     "Tunisia": {
       "w": 0,
       "d": 0,
-      "l": 2,
-      "gf": 1,
-      "ga": 9
+      "l": 3,
+      "gf": 2,
+      "ga": 12
     },
     "Belgium": {
       "w": 0,
@@ -581,6 +581,28 @@
       "played": true
     },
     {
+      "home": "Turkey",
+      "away": "USA",
+      "homeScore": 3,
+      "awayScore": 2,
+      "stage": "group",
+      "group": "D",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Paraguay",
+      "away": "Australia",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "D",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Germany",
       "away": "Curacao",
       "homeScore": 7,
@@ -684,6 +706,28 @@
       "away": "Japan",
       "homeScore": 0,
       "awayScore": 4,
+      "stage": "group",
+      "group": "F",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Japan",
+      "away": "Sweden",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "F",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Tunisia",
+      "away": "Netherlands",
+      "homeScore": 1,
+      "awayScore": 3,
       "stage": "group",
       "group": "F",
       "date": "",
@@ -956,8 +1000,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-26T00:04:01.801Z",
-    "matchesPlayed": 56,
+    "lastUpdated": "2026-06-26T12:06:32.931Z",
+    "matchesPlayed": 60,
     "stage": "group",
     "source": "Wikipedia"
   }
