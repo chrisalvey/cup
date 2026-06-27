@@ -169,50 +169,50 @@
       "ga": 12
     },
     "Belgium": {
-      "w": 0,
+      "w": 1,
       "d": 2,
       "l": 0,
-      "gf": 1,
-      "ga": 1
+      "gf": 6,
+      "ga": 2
     },
     "Egypt": {
       "w": 1,
-      "d": 1,
+      "d": 2,
       "l": 0,
-      "gf": 4,
-      "ga": 2
+      "gf": 5,
+      "ga": 3
     },
     "Iran": {
       "w": 0,
-      "d": 2,
+      "d": 3,
       "l": 0,
-      "gf": 2,
-      "ga": 2
+      "gf": 3,
+      "ga": 3
     },
     "New Zealand": {
       "w": 0,
       "d": 1,
-      "l": 1,
-      "gf": 3,
-      "ga": 5
+      "l": 2,
+      "gf": 4,
+      "ga": 10
     },
     "Spain": {
-      "w": 1,
+      "w": 2,
       "d": 1,
       "l": 0,
-      "gf": 4,
+      "gf": 5,
       "ga": 0
     },
     "Cape Verde": {
       "w": 0,
-      "d": 2,
+      "d": 3,
       "l": 0,
       "gf": 2,
       "ga": 2
     },
     "Saudi Arabia": {
       "w": 0,
-      "d": 1,
+      "d": 2,
       "l": 1,
       "gf": 1,
       "ga": 5
@@ -220,9 +220,9 @@
     "Uruguay": {
       "w": 0,
       "d": 2,
-      "l": 0,
+      "l": 1,
       "gf": 3,
-      "ga": 3
+      "ga": 4
     },
     "France": {
       "w": 3,
@@ -779,6 +779,28 @@
       "played": true
     },
     {
+      "home": "Egypt",
+      "away": "Iran",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "G",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "New Zealand",
+      "away": "Belgium",
+      "homeScore": 1,
+      "awayScore": 5,
+      "stage": "group",
+      "group": "G",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "Spain",
       "away": "Cape Verde",
       "homeScore": 0,
@@ -816,6 +838,28 @@
       "away": "Cape Verde",
       "homeScore": 2,
       "awayScore": 2,
+      "stage": "group",
+      "group": "H",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Cape Verde",
+      "away": "Saudi Arabia",
+      "homeScore": 0,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "H",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Uruguay",
+      "away": "Spain",
+      "homeScore": 0,
+      "awayScore": 1,
       "stage": "group",
       "group": "H",
       "date": "",
@@ -1022,8 +1066,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-26T23:55:45.102Z",
-    "matchesPlayed": 62,
+    "lastUpdated": "2026-06-27T11:20:45.382Z",
+    "matchesPlayed": 66,
     "stage": "group",
     "source": "Wikipedia"
   }
