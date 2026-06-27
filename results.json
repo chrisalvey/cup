@@ -309,32 +309,32 @@
       "ga": 1
     },
     "England": {
-      "w": 1,
+      "w": 2,
       "d": 1,
       "l": 0,
-      "gf": 4,
+      "gf": 6,
       "ga": 2
     },
     "Croatia": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 1,
-      "gf": 3,
-      "ga": 4
+      "gf": 5,
+      "ga": 5
     },
     "Ghana": {
       "w": 1,
       "d": 1,
-      "l": 0,
-      "gf": 1,
-      "ga": 0
+      "l": 1,
+      "gf": 2,
+      "ga": 2
     },
     "Panama": {
       "w": 0,
       "d": 0,
-      "l": 2,
+      "l": 3,
       "gf": 0,
-      "ga": 2
+      "ga": 4
     }
   },
   "matches": [
@@ -1063,11 +1063,33 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Panama",
+      "away": "England",
+      "homeScore": 0,
+      "awayScore": 2,
+      "stage": "group",
+      "group": "L",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Croatia",
+      "away": "Ghana",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "L",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-27T22:55:13.334Z",
-    "matchesPlayed": 66,
+    "lastUpdated": "2026-06-27T23:55:06.160Z",
+    "matchesPlayed": 68,
     "stage": "group",
     "source": "Wikipedia"
   }
