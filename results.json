@@ -10,9 +10,10 @@
     "South Africa": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 3,
       "gf": 2,
-      "ga": 3
+      "ga": 5,
+      "round": "knockout"
     },
     "South Korea": {
       "w": 1,
@@ -29,11 +30,12 @@
       "ga": 6
     },
     "Canada": {
-      "w": 1,
+      "w": 3,
       "d": 1,
       "l": 1,
-      "gf": 8,
-      "ga": 3
+      "gf": 10,
+      "ga": 3,
+      "round": "knockout"
     },
     "Bosnia-Herzegovina": {
       "w": 1,
@@ -1129,12 +1131,34 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "South Africa",
+      "away": "Canada",
+      "homeScore": 0,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "A",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "South Africa",
+      "away": "Canada",
+      "homeScore": 0,
+      "awayScore": 1,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-28T20:39:43.994Z",
-    "matchesPlayed": 72,
-    "stage": "group",
+    "lastUpdated": "2026-06-28T21:54:39.173Z",
+    "matchesPlayed": 74,
+    "stage": "knockout",
     "source": "Wikipedia"
   }
 }
