@@ -59,11 +59,12 @@
       "ga": 3
     },
     "Brazil": {
-      "w": 2,
+      "w": 4,
       "d": 1,
       "l": 0,
-      "gf": 7,
-      "ga": 1
+      "gf": 11,
+      "ga": 3,
+      "round": "knockout"
     },
     "Morocco": {
       "w": 2,
@@ -152,9 +153,10 @@
     "Japan": {
       "w": 1,
       "d": 2,
-      "l": 0,
-      "gf": 7,
-      "ga": 3
+      "l": 2,
+      "gf": 9,
+      "ga": 7,
+      "round": "knockout"
     },
     "Sweden": {
       "w": 1,
@@ -1144,6 +1146,17 @@
       "played": true
     },
     {
+      "home": "Brazil",
+      "away": "Japan",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "C",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1153,11 +1166,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Brazil",
+      "away": "Japan",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-29T18:59:13.890Z",
-    "matchesPlayed": 74,
+    "lastUpdated": "2026-06-29T20:49:42.077Z",
+    "matchesPlayed": 76,
     "stage": "knockout",
     "source": "Wikipedia"
   }
