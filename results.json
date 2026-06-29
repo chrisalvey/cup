@@ -96,10 +96,11 @@
     },
     "Paraguay": {
       "w": 1,
-      "d": 1,
+      "d": 3,
       "l": 1,
-      "gf": 2,
-      "ga": 4
+      "gf": 4,
+      "ga": 6,
+      "round": "knockout"
     },
     "Australia": {
       "w": 1,
@@ -117,10 +118,11 @@
     },
     "Germany": {
       "w": 2,
-      "d": 0,
+      "d": 2,
       "l": 1,
-      "gf": 10,
-      "ga": 4
+      "gf": 12,
+      "ga": 6,
+      "round": "knockout"
     },
     "Curacao": {
       "w": 0,
@@ -1157,6 +1159,17 @@
       "played": true
     },
     {
+      "home": "Germany",
+      "away": "Paraguay",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "E",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1177,11 +1190,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Germany",
+      "away": "Paraguay",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-29T22:04:32.562Z",
-    "matchesPlayed": 76,
+    "lastUpdated": "2026-06-29T23:32:12.680Z",
+    "matchesPlayed": 78,
     "stage": "knockout",
     "source": "Wikipedia"
   }
