@@ -166,9 +166,10 @@
     "Sweden": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 3,
       "gf": 7,
-      "ga": 7
+      "ga": 13,
+      "round": "knockout"
     },
     "Tunisia": {
       "w": 0,
@@ -234,11 +235,12 @@
       "ga": 4
     },
     "France": {
-      "w": 3,
+      "w": 5,
       "d": 0,
       "l": 0,
-      "gf": 10,
-      "ga": 2
+      "gf": 16,
+      "ga": 2,
+      "round": "knockout"
     },
     "Senegal": {
       "w": 1,
@@ -1196,6 +1198,17 @@
       "played": true
     },
     {
+      "home": "France",
+      "away": "Sweden",
+      "homeScore": 3,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "I",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1249,11 +1262,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "France",
+      "away": "Sweden",
+      "homeScore": 3,
+      "awayScore": 0,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-30T22:47:48.565Z",
-    "matchesPlayed": 82,
+    "lastUpdated": "2026-06-30T23:58:43.407Z",
+    "matchesPlayed": 84,
     "stage": "knockout",
     "source": "Wikipedia"
   }
