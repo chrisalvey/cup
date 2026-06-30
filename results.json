@@ -135,9 +135,10 @@
     "Ivory Coast": {
       "w": 2,
       "d": 0,
-      "l": 1,
-      "gf": 4,
-      "ga": 2
+      "l": 3,
+      "gf": 6,
+      "ga": 6,
+      "round": "knockout"
     },
     "Ecuador": {
       "w": 1,
@@ -254,11 +255,12 @@
       "ga": 12
     },
     "Norway": {
-      "w": 2,
+      "w": 4,
       "d": 0,
       "l": 1,
-      "gf": 8,
-      "ga": 7
+      "gf": 12,
+      "ga": 9,
+      "round": "knockout"
     },
     "Argentina": {
       "w": 3,
@@ -1183,6 +1185,17 @@
       "played": true
     },
     {
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "homeScore": 1,
+      "awayScore": 2,
+      "stage": "group",
+      "group": "E",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1225,11 +1238,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Ivory Coast",
+      "away": "Norway",
+      "homeScore": 1,
+      "awayScore": 2,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-30T17:21:37.471Z",
-    "matchesPlayed": 80,
+    "lastUpdated": "2026-06-30T19:14:51.596Z",
+    "matchesPlayed": 82,
     "stage": "knockout",
     "source": "Wikipedia"
   }
