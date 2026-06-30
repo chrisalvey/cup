@@ -68,10 +68,11 @@
     },
     "Morocco": {
       "w": 2,
-      "d": 1,
+      "d": 3,
       "l": 0,
-      "gf": 6,
-      "ga": 3
+      "gf": 8,
+      "ga": 5,
+      "round": "knockout"
     },
     "Haiti": {
       "w": 0,
@@ -147,10 +148,11 @@
     },
     "Netherlands": {
       "w": 2,
-      "d": 1,
+      "d": 3,
       "l": 0,
-      "gf": 10,
-      "ga": 4
+      "gf": 12,
+      "ga": 6,
+      "round": "knockout"
     },
     "Japan": {
       "w": 1,
@@ -1170,6 +1172,17 @@
       "played": true
     },
     {
+      "home": "Netherlands",
+      "away": "Morocco",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "F",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1201,11 +1214,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Netherlands",
+      "away": "Morocco",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-29T23:32:12.680Z",
-    "matchesPlayed": 78,
+    "lastUpdated": "2026-06-30T12:04:22.291Z",
+    "matchesPlayed": 80,
     "stage": "knockout",
     "source": "Wikipedia"
   }
