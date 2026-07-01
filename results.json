@@ -1,11 +1,12 @@
 {
   "teams": {
     "Mexico": {
-      "w": 3,
+      "w": 5,
       "d": 0,
       "l": 0,
-      "gf": 6,
-      "ga": 0
+      "gf": 10,
+      "ga": 0,
+      "round": "knockout"
     },
     "South Africa": {
       "w": 1,
@@ -143,9 +144,10 @@
     "Ecuador": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 3,
       "gf": 2,
-      "ga": 2
+      "ga": 6,
+      "round": "knockout"
     },
     "Netherlands": {
       "w": 2,
@@ -1209,6 +1211,17 @@
       "played": true
     },
     {
+      "home": "Mexico",
+      "away": "Ecuador",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "A",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1273,11 +1286,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Mexico",
+      "away": "Ecuador",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-06-30T23:58:43.407Z",
-    "matchesPlayed": 84,
+    "lastUpdated": "2026-07-01T12:37:08.682Z",
+    "matchesPlayed": 86,
     "stage": "knockout",
     "source": "Wikipedia"
   }
