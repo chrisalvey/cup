@@ -304,9 +304,10 @@
     "Congo DR": {
       "w": 1,
       "d": 1,
-      "l": 1,
-      "gf": 4,
-      "ga": 3
+      "l": 3,
+      "gf": 6,
+      "ga": 7,
+      "round": "knockout"
     },
     "Uzbekistan": {
       "w": 0,
@@ -323,11 +324,12 @@
       "ga": 1
     },
     "England": {
-      "w": 2,
+      "w": 4,
       "d": 1,
       "l": 0,
-      "gf": 6,
-      "ga": 2
+      "gf": 10,
+      "ga": 4,
+      "round": "knockout"
     },
     "Croatia": {
       "w": 2,
@@ -1222,6 +1224,17 @@
       "played": true
     },
     {
+      "home": "England",
+      "away": "Congo DR",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "group",
+      "group": "L",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1297,11 +1310,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "England",
+      "away": "Congo DR",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-01T18:01:00.707Z",
-    "matchesPlayed": 86,
+    "lastUpdated": "2026-07-01T20:25:15.406Z",
+    "matchesPlayed": 88,
     "stage": "knockout",
     "source": "Wikipedia"
   }
