@@ -1,19 +1,19 @@
 {
   "teams": {
     "Mexico": {
-      "w": 5,
+      "w": 4,
       "d": 0,
       "l": 0,
-      "gf": 10,
+      "gf": 8,
       "ga": 0,
       "round": "round_of_32"
     },
     "South Africa": {
       "w": 1,
       "d": 1,
-      "l": 3,
+      "l": 2,
       "gf": 2,
-      "ga": 5,
+      "ga": 4,
       "round": "round_of_32"
     },
     "South Korea": {
@@ -31,19 +31,19 @@
       "ga": 6
     },
     "Canada": {
-      "w": 3,
+      "w": 2,
       "d": 1,
       "l": 1,
-      "gf": 10,
+      "gf": 9,
       "ga": 3,
       "round": "round_of_32"
     },
     "Bosnia-Herzegovina": {
       "w": 1,
       "d": 1,
-      "l": 3,
+      "l": 2,
       "gf": 5,
-      "ga": 10,
+      "ga": 8,
       "round": "round_of_32"
     },
     "Qatar": {
@@ -61,19 +61,19 @@
       "ga": 3
     },
     "Brazil": {
-      "w": 4,
+      "w": 3,
       "d": 1,
       "l": 0,
-      "gf": 11,
-      "ga": 3,
+      "gf": 9,
+      "ga": 2,
       "round": "round_of_32"
     },
     "Morocco": {
       "w": 2,
-      "d": 3,
+      "d": 2,
       "l": 0,
-      "gf": 8,
-      "ga": 5,
+      "gf": 7,
+      "ga": 4,
       "round": "round_of_32"
     },
     "Haiti": {
@@ -91,19 +91,19 @@
       "ga": 4
     },
     "USA": {
-      "w": 4,
+      "w": 3,
       "d": 0,
       "l": 1,
-      "gf": 12,
+      "gf": 10,
       "ga": 4,
       "round": "round_of_32"
     },
     "Paraguay": {
       "w": 1,
-      "d": 3,
+      "d": 2,
       "l": 1,
-      "gf": 4,
-      "ga": 6,
+      "gf": 3,
+      "ga": 5,
       "round": "round_of_32"
     },
     "Australia": {
@@ -122,10 +122,10 @@
     },
     "Germany": {
       "w": 2,
-      "d": 2,
+      "d": 1,
       "l": 1,
-      "gf": 12,
-      "ga": 6,
+      "gf": 11,
+      "ga": 5,
       "round": "round_of_32"
     },
     "Curacao": {
@@ -138,41 +138,41 @@
     "Ivory Coast": {
       "w": 2,
       "d": 0,
-      "l": 3,
-      "gf": 6,
-      "ga": 6,
+      "l": 2,
+      "gf": 5,
+      "ga": 4,
       "round": "round_of_32"
     },
     "Ecuador": {
       "w": 1,
       "d": 1,
-      "l": 3,
+      "l": 2,
       "gf": 2,
-      "ga": 6,
+      "ga": 4,
       "round": "round_of_32"
     },
     "Netherlands": {
       "w": 2,
-      "d": 3,
+      "d": 2,
       "l": 0,
-      "gf": 12,
-      "ga": 6,
+      "gf": 11,
+      "ga": 5,
       "round": "round_of_32"
     },
     "Japan": {
       "w": 1,
       "d": 2,
-      "l": 2,
-      "gf": 9,
-      "ga": 7,
+      "l": 1,
+      "gf": 8,
+      "ga": 5,
       "round": "round_of_32"
     },
     "Sweden": {
       "w": 1,
       "d": 1,
-      "l": 3,
+      "l": 2,
       "gf": 7,
-      "ga": 13,
+      "ga": 10,
       "round": "round_of_32"
     },
     "Tunisia": {
@@ -183,11 +183,11 @@
       "ga": 12
     },
     "Belgium": {
-      "w": 3,
+      "w": 2,
       "d": 2,
       "l": 0,
-      "gf": 12,
-      "ga": 6,
+      "gf": 9,
+      "ga": 4,
       "round": "round_of_32"
     },
     "Egypt": {
@@ -240,19 +240,19 @@
       "ga": 4
     },
     "France": {
-      "w": 5,
+      "w": 4,
       "d": 0,
       "l": 0,
-      "gf": 16,
+      "gf": 13,
       "ga": 2,
       "round": "round_of_32"
     },
     "Senegal": {
       "w": 1,
       "d": 0,
-      "l": 4,
-      "gf": 12,
-      "ga": 12,
+      "l": 3,
+      "gf": 10,
+      "ga": 9,
       "round": "round_of_32"
     },
     "Iraq": {
@@ -263,11 +263,11 @@
       "ga": 12
     },
     "Norway": {
-      "w": 4,
+      "w": 3,
       "d": 0,
       "l": 1,
-      "gf": 12,
-      "ga": 9,
+      "gf": 10,
+      "ga": 8,
       "round": "round_of_32"
     },
     "Argentina": {
@@ -308,9 +308,9 @@
     "Congo DR": {
       "w": 1,
       "d": 1,
-      "l": 3,
-      "gf": 6,
-      "ga": 7,
+      "l": 2,
+      "gf": 5,
+      "ga": 5,
       "round": "round_of_32"
     },
     "Uzbekistan": {
@@ -328,11 +328,11 @@
       "ga": 1
     },
     "England": {
-      "w": 4,
+      "w": 3,
       "d": 1,
       "l": 0,
-      "gf": 10,
-      "ga": 4,
+      "gf": 8,
+      "ga": 3,
       "round": "round_of_32"
     },
     "Croatia": {
@@ -1155,116 +1155,6 @@
       "away": "Canada",
       "homeScore": 0,
       "awayScore": 1,
-      "stage": "group",
-      "group": "A",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Brazil",
-      "away": "Japan",
-      "homeScore": 2,
-      "awayScore": 1,
-      "stage": "group",
-      "group": "C",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Germany",
-      "away": "Paraguay",
-      "homeScore": 1,
-      "awayScore": 1,
-      "stage": "group",
-      "group": "E",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Netherlands",
-      "away": "Morocco",
-      "homeScore": 1,
-      "awayScore": 1,
-      "stage": "group",
-      "group": "F",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Ivory Coast",
-      "away": "Norway",
-      "homeScore": 1,
-      "awayScore": 2,
-      "stage": "group",
-      "group": "E",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "France",
-      "away": "Sweden",
-      "homeScore": 3,
-      "awayScore": 0,
-      "stage": "group",
-      "group": "I",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Mexico",
-      "away": "Ecuador",
-      "homeScore": 2,
-      "awayScore": 0,
-      "stage": "group",
-      "group": "A",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "England",
-      "away": "Congo DR",
-      "homeScore": 2,
-      "awayScore": 1,
-      "stage": "group",
-      "group": "L",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Belgium",
-      "away": "Senegal",
-      "homeScore": 3,
-      "awayScore": 2,
-      "stage": "group",
-      "group": "G",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "USA",
-      "away": "Bosnia-Herzegovina",
-      "homeScore": 2,
-      "awayScore": 0,
-      "stage": "group",
-      "group": "D",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "South Africa",
-      "away": "Canada",
-      "homeScore": 0,
-      "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "date": "",
@@ -1373,7 +1263,7 @@
   ],
   "metadata": {
     "lastUpdated": "2026-07-02T16:52:58.976Z",
-    "matchesPlayed": 92,
+    "matchesPlayed": 82,
     "stage": "knockout",
     "source": "Wikipedia"
   }

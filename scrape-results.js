@@ -71,11 +71,27 @@ function parseGroupStage(html) {
         if (!teamStats[name]) teamStats[name] = { w: 0, d: 0, l: 0, gf: 0, ga: 0 };
     }
 
-    // Wikipedia group stage page has match result tables inside collapsible sections.
-    // Each match is typically in a table with class "footballbox" or similar structure.
-    // Look for tables that contain score information.
-    $('table.footballbox, table.vevent, table.fevent').each((_, table) => {
-        const $t = $(table);
+    // The main tournament page also includes a knockout-stage summary further
+    // down, using the same table markup as the group stage. Track section
+    // headings in document order so only matches actually under a "Group X"
+    // heading get counted here (mirrors the approach in parseKnockoutStage).
+    let inGroupStage = false;
+    const content = $('#mw-content-text .mw-parser-output').first();
+    const root = content.length ? content : $.root();
+
+    root.find('h2, h3, table.footballbox, table.vevent, table.fevent').each((_, el) => {
+        const $el = $(el);
+        const tag = el.tagName ? el.tagName.toLowerCase() : '';
+
+        if (tag === 'h2' || tag === 'h3') {
+            const headingText = ($el.find('.mw-headline').first().text() || $el.text()).trim();
+            inGroupStage = /^Group\s+\w/i.test(headingText);
+            return;
+        }
+
+        if (!inGroupStage) return;
+
+        const $t = $el;
         const homeEl = $t.find('.fhome, [itemprop="homeTeam"] span, .home').first();
         const awayEl = $t.find('.faway, [itemprop="awayTeam"] span, .away').first();
         const scoreEl = $t.find('.fscore, [itemprop="name"].score, .score').first();
@@ -88,6 +104,12 @@ function parseGroupStage(html) {
 
         const scoreParts = scoreText.match(/(\d+)\s*[–\-:]\s*(\d+)/);
         if (!scoreParts) return; // match not yet played
+
+        // Safety net: a genuine group match is always between two teams in
+        // the same group. Skip anything that slips through mislabeled.
+        const homeGroupCheck = groupForTeam(home);
+        const awayGroupCheck = groupForTeam(away);
+        if (homeGroupCheck && awayGroupCheck && homeGroupCheck !== awayGroupCheck) return;
 
         const homeScore = parseInt(scoreParts[1]);
         const awayScore = parseInt(scoreParts[2]);
