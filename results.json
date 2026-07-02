@@ -41,9 +41,10 @@
     "Bosnia-Herzegovina": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 3,
       "gf": 5,
-      "ga": 6
+      "ga": 10,
+      "round": "knockout"
     },
     "Qatar": {
       "w": 0,
@@ -90,11 +91,12 @@
       "ga": 4
     },
     "USA": {
-      "w": 2,
+      "w": 4,
       "d": 0,
       "l": 1,
-      "gf": 8,
-      "ga": 4
+      "gf": 12,
+      "ga": 4,
+      "round": "knockout"
     },
     "Paraguay": {
       "w": 1,
@@ -1248,6 +1250,17 @@
       "played": true
     },
     {
+      "home": "USA",
+      "away": "Bosnia-Herzegovina",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "group",
+      "group": "D",
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
       "home": "South Africa",
       "away": "Canada",
       "homeScore": 0,
@@ -1345,11 +1358,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "USA",
+      "away": "Bosnia-Herzegovina",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "knockout",
+      "stageLabel": "Knockout Stage",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-01T23:51:57.052Z",
-    "matchesPlayed": 90,
+    "lastUpdated": "2026-07-02T12:10:35.236Z",
+    "matchesPlayed": 92,
     "stage": "knockout",
     "source": "Wikipedia"
   }
