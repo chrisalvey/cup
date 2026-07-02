@@ -6,7 +6,7 @@
       "l": 0,
       "gf": 10,
       "ga": 0,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "South Africa": {
       "w": 1,
@@ -14,7 +14,7 @@
       "l": 3,
       "gf": 2,
       "ga": 5,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "South Korea": {
       "w": 1,
@@ -36,7 +36,7 @@
       "l": 1,
       "gf": 10,
       "ga": 3,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Bosnia-Herzegovina": {
       "w": 1,
@@ -44,7 +44,7 @@
       "l": 3,
       "gf": 5,
       "ga": 10,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Qatar": {
       "w": 0,
@@ -66,7 +66,7 @@
       "l": 0,
       "gf": 11,
       "ga": 3,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Morocco": {
       "w": 2,
@@ -74,7 +74,7 @@
       "l": 0,
       "gf": 8,
       "ga": 5,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Haiti": {
       "w": 0,
@@ -96,7 +96,7 @@
       "l": 1,
       "gf": 12,
       "ga": 4,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Paraguay": {
       "w": 1,
@@ -104,7 +104,7 @@
       "l": 1,
       "gf": 4,
       "ga": 6,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Australia": {
       "w": 1,
@@ -126,7 +126,7 @@
       "l": 1,
       "gf": 12,
       "ga": 6,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Curacao": {
       "w": 0,
@@ -141,7 +141,7 @@
       "l": 3,
       "gf": 6,
       "ga": 6,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Ecuador": {
       "w": 1,
@@ -149,7 +149,7 @@
       "l": 3,
       "gf": 2,
       "ga": 6,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Netherlands": {
       "w": 2,
@@ -157,7 +157,7 @@
       "l": 0,
       "gf": 12,
       "ga": 6,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Japan": {
       "w": 1,
@@ -165,7 +165,7 @@
       "l": 2,
       "gf": 9,
       "ga": 7,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Sweden": {
       "w": 1,
@@ -173,7 +173,7 @@
       "l": 3,
       "gf": 7,
       "ga": 13,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Tunisia": {
       "w": 0,
@@ -188,7 +188,7 @@
       "l": 0,
       "gf": 12,
       "ga": 6,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Egypt": {
       "w": 1,
@@ -245,7 +245,7 @@
       "l": 0,
       "gf": 16,
       "ga": 2,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Senegal": {
       "w": 1,
@@ -253,7 +253,7 @@
       "l": 4,
       "gf": 12,
       "ga": 12,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Iraq": {
       "w": 0,
@@ -268,7 +268,7 @@
       "l": 1,
       "gf": 12,
       "ga": 9,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Argentina": {
       "w": 3,
@@ -311,7 +311,7 @@
       "l": 3,
       "gf": 6,
       "ga": 7,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Uzbekistan": {
       "w": 0,
@@ -333,7 +333,7 @@
       "l": 0,
       "gf": 10,
       "ga": 4,
-      "round": "knockout"
+      "round": "round_of_32"
     },
     "Croatia": {
       "w": 2,
@@ -1265,8 +1265,8 @@
       "away": "Canada",
       "homeScore": 0,
       "awayScore": 1,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1276,8 +1276,8 @@
       "away": "Japan",
       "homeScore": 2,
       "awayScore": 1,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1287,8 +1287,8 @@
       "away": "Paraguay",
       "homeScore": 1,
       "awayScore": 1,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1298,8 +1298,8 @@
       "away": "Morocco",
       "homeScore": 1,
       "awayScore": 1,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1309,8 +1309,8 @@
       "away": "Norway",
       "homeScore": 1,
       "awayScore": 2,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1320,8 +1320,8 @@
       "away": "Sweden",
       "homeScore": 3,
       "awayScore": 0,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1331,8 +1331,8 @@
       "away": "Ecuador",
       "homeScore": 2,
       "awayScore": 0,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1342,8 +1342,8 @@
       "away": "Congo DR",
       "homeScore": 2,
       "awayScore": 1,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1353,8 +1353,8 @@
       "away": "Senegal",
       "homeScore": 3,
       "awayScore": 2,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true
@@ -1364,8 +1364,8 @@
       "away": "Bosnia-Herzegovina",
       "homeScore": 2,
       "awayScore": 0,
-      "stage": "knockout",
-      "stageLabel": "Knockout Stage",
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
       "date": "",
       "venue": "",
       "played": true

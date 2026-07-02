@@ -142,8 +142,30 @@ function parseKnockoutStage(html, teamStats) {
     // Track which teams have reached each round
     const roundReached = {};
 
-    $('table.footballbox, table.vevent, table.fevent').each((_, table) => {
-        const $t = $(table);
+    // Walk the article in document order, tracking the most recent section
+    // heading, so each match table is attributed to the round it actually
+    // falls under (headings may be wrapped in a div, e.g. div.mw-heading,
+    // so they won't necessarily be a direct previous sibling of the table).
+    let stage = 'knockout';
+    let stageLabel = 'Knockout Stage';
+    const content = $('#mw-content-text .mw-parser-output').first();
+    const root = content.length ? content : $.root();
+
+    root.find('h2, h3, table.footballbox, table.vevent, table.fevent').each((_, el) => {
+        const $el = $(el);
+        const tag = el.tagName ? el.tagName.toLowerCase() : '';
+
+        if (tag === 'h2' || tag === 'h3') {
+            const headingText = ($el.find('.mw-headline').first().text() || $el.text()).trim();
+            stage = 'knockout';
+            stageLabel = headingText || 'Knockout Stage';
+            for (const [key, val] of Object.entries(stageMap)) {
+                if (headingText.includes(key)) { stage = val; stageLabel = headingText; break; }
+            }
+            return;
+        }
+
+        const $t = $el;
         const homeEl = $t.find('.fhome, [itemprop="homeTeam"] span, .home').first();
         const awayEl = $t.find('.faway, [itemprop="awayTeam"] span, .away').first();
         const scoreEl = $t.find('.fscore, .score').first();
@@ -152,14 +174,6 @@ function parseKnockoutStage(html, teamStats) {
         let away = normalizeTeam(awayEl.text().trim());
         const scoreText = scoreEl.text().trim();
         if (!home || !away) return;
-
-        // Determine stage from nearest heading
-        let stage = 'knockout';
-        let stageLabel = 'Knockout Stage';
-        const heading = $t.closest('div, section').prevAll('h3, h2').first().text().trim();
-        for (const [key, val] of Object.entries(stageMap)) {
-            if (heading.includes(key)) { stage = val; stageLabel = heading; break; }
-        }
 
         const scoreParts = scoreText.match(/(\d+)\s*[–\-:]\s*(\d+)/);
         const played = !!scoreParts;
