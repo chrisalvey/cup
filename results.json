@@ -1163,6 +1163,7 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1174,6 +1175,7 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1185,7 +1187,10 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
-      "penalties": { "home": 3, "away": 4 },
+      "penalties": {
+        "home": 3,
+        "away": 4
+      },
       "date": "",
       "venue": "",
       "played": true
@@ -1197,7 +1202,10 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
-      "penalties": { "home": 2, "away": 3 },
+      "penalties": {
+        "home": 2,
+        "away": 3
+      },
       "date": "",
       "venue": "",
       "played": true
@@ -1209,6 +1217,7 @@
       "awayScore": 2,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1220,6 +1229,7 @@
       "awayScore": 0,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1231,6 +1241,7 @@
       "awayScore": 0,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1242,6 +1253,7 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1253,6 +1265,7 @@
       "awayScore": 2,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1264,6 +1277,7 @@
       "awayScore": 0,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1275,6 +1289,7 @@
       "awayScore": 0,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1286,6 +1301,7 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
@@ -1297,13 +1313,14 @@
       "awayScore": 0,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": null,
       "date": "",
       "venue": "",
       "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-03T12:11:15.019Z",
+    "lastUpdated": "2026-07-03T14:03:18.410Z",
     "matchesPlayed": 85,
     "stage": "knockout",
     "source": "Wikipedia"
