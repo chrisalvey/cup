@@ -6,6 +6,7 @@
       "l": 0,
       "gf": 8,
       "ga": 0,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "South Africa": {
@@ -14,22 +15,24 @@
       "l": 2,
       "gf": 2,
       "ga": 4,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "South Korea": {
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 2,
-      "ga": 3
+      "ga": 3,
+      "eliminated": false
     },
     "Czechia": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 2,
-      "ga": 6
+      "ga": 6,
+      "eliminated": false
     },
     "Canada": {
       "w": 2,
@@ -37,6 +40,7 @@
       "l": 1,
       "gf": 9,
       "ga": 3,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Bosnia-Herzegovina": {
@@ -45,15 +49,16 @@
       "l": 2,
       "gf": 5,
       "ga": 8,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Qatar": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 2,
-      "ga": 10
+      "ga": 10,
+      "eliminated": false
     },
     "Switzerland": {
       "w": 3,
@@ -61,6 +66,7 @@
       "l": 0,
       "gf": 9,
       "ga": 3,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Brazil": {
@@ -69,6 +75,7 @@
       "l": 0,
       "gf": 9,
       "ga": 2,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Morocco": {
@@ -77,6 +84,7 @@
       "l": 0,
       "gf": 7,
       "ga": 4,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Haiti": {
@@ -84,14 +92,16 @@
       "d": 0,
       "l": 3,
       "gf": 2,
-      "ga": 8
+      "ga": 8,
+      "eliminated": false
     },
     "Scotland": {
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 1,
-      "ga": 4
+      "ga": 4,
+      "eliminated": false
     },
     "USA": {
       "w": 3,
@@ -99,6 +109,7 @@
       "l": 1,
       "gf": 10,
       "ga": 4,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Paraguay": {
@@ -107,6 +118,7 @@
       "l": 1,
       "gf": 3,
       "ga": 5,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Australia": {
@@ -114,14 +126,16 @@
       "d": 1,
       "l": 1,
       "gf": 2,
-      "ga": 2
+      "ga": 2,
+      "eliminated": false
     },
     "Turkey": {
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 3,
-      "ga": 5
+      "ga": 5,
+      "eliminated": false
     },
     "Germany": {
       "w": 2,
@@ -129,15 +143,16 @@
       "l": 2,
       "gf": 11,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Curacao": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 1,
-      "ga": 9
+      "ga": 9,
+      "eliminated": false
     },
     "Ivory Coast": {
       "w": 2,
@@ -145,8 +160,8 @@
       "l": 2,
       "gf": 5,
       "ga": 4,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Ecuador": {
       "w": 1,
@@ -154,8 +169,8 @@
       "l": 2,
       "gf": 2,
       "ga": 4,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Netherlands": {
       "w": 2,
@@ -163,8 +178,8 @@
       "l": 1,
       "gf": 11,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Japan": {
       "w": 1,
@@ -172,8 +187,8 @@
       "l": 1,
       "gf": 8,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Sweden": {
       "w": 1,
@@ -181,15 +196,16 @@
       "l": 2,
       "gf": 7,
       "ga": 10,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Tunisia": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 2,
-      "ga": 12
+      "ga": 12,
+      "eliminated": false
     },
     "Belgium": {
       "w": 2,
@@ -197,6 +213,7 @@
       "l": 0,
       "gf": 9,
       "ga": 4,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Egypt": {
@@ -204,21 +221,24 @@
       "d": 2,
       "l": 0,
       "gf": 5,
-      "ga": 3
+      "ga": 3,
+      "eliminated": false
     },
     "Iran": {
       "w": 0,
       "d": 3,
       "l": 0,
       "gf": 3,
-      "ga": 3
+      "ga": 3,
+      "eliminated": false
     },
     "New Zealand": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 4,
-      "ga": 10
+      "ga": 10,
+      "eliminated": false
     },
     "Spain": {
       "w": 3,
@@ -226,6 +246,7 @@
       "l": 0,
       "gf": 8,
       "ga": 0,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Cape Verde": {
@@ -233,21 +254,24 @@
       "d": 3,
       "l": 0,
       "gf": 2,
-      "ga": 2
+      "ga": 2,
+      "eliminated": false
     },
     "Saudi Arabia": {
       "w": 0,
       "d": 2,
       "l": 1,
       "gf": 1,
-      "ga": 5
+      "ga": 5,
+      "eliminated": false
     },
     "Uruguay": {
       "w": 0,
       "d": 2,
       "l": 1,
       "gf": 3,
-      "ga": 4
+      "ga": 4,
+      "eliminated": false
     },
     "France": {
       "w": 4,
@@ -255,6 +279,7 @@
       "l": 0,
       "gf": 13,
       "ga": 2,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Senegal": {
@@ -263,15 +288,16 @@
       "l": 3,
       "gf": 10,
       "ga": 9,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Iraq": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 1,
-      "ga": 12
+      "ga": 12,
+      "eliminated": false
     },
     "Norway": {
       "w": 3,
@@ -279,6 +305,7 @@
       "l": 1,
       "gf": 10,
       "ga": 8,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Argentina": {
@@ -286,7 +313,8 @@
       "d": 0,
       "l": 0,
       "gf": 8,
-      "ga": 1
+      "ga": 1,
+      "eliminated": false
     },
     "Algeria": {
       "w": 1,
@@ -294,8 +322,8 @@
       "l": 2,
       "gf": 5,
       "ga": 9,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Austria": {
       "w": 1,
@@ -303,15 +331,16 @@
       "l": 2,
       "gf": 6,
       "ga": 9,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Jordan": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 3,
-      "ga": 8
+      "ga": 8,
+      "eliminated": false
     },
     "Portugal": {
       "w": 2,
@@ -319,6 +348,7 @@
       "l": 0,
       "gf": 8,
       "ga": 2,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Congo DR": {
@@ -327,22 +357,24 @@
       "l": 2,
       "gf": 5,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Uzbekistan": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 2,
-      "ga": 11
+      "ga": 11,
+      "eliminated": false
     },
     "Colombia": {
       "w": 2,
       "d": 1,
       "l": 0,
       "gf": 4,
-      "ga": 1
+      "ga": 1,
+      "eliminated": false
     },
     "England": {
       "w": 3,
@@ -350,6 +382,7 @@
       "l": 0,
       "gf": 8,
       "ga": 3,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Croatia": {
@@ -358,22 +391,24 @@
       "l": 2,
       "gf": 6,
       "ga": 7,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Ghana": {
       "w": 1,
       "d": 1,
       "l": 1,
       "gf": 2,
-      "ga": 2
+      "ga": 2,
+      "eliminated": false
     },
     "Panama": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 0,
-      "ga": 4
+      "ga": 4,
+      "eliminated": false
     }
   },
   "matches": [
@@ -1333,7 +1368,7 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-03T14:03:18.410Z",
+    "lastUpdated": "2026-07-03T14:51:48.448Z",
     "matchesPlayed": 85,
     "stage": "knockout",
     "source": "Wikipedia"
