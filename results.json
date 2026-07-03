@@ -70,8 +70,8 @@
       "round": "round_of_32"
     },
     "Morocco": {
-      "w": 2,
-      "d": 2,
+      "w": 3,
+      "d": 1,
       "l": 0,
       "gf": 7,
       "ga": 4,
@@ -100,8 +100,8 @@
       "round": "round_of_32"
     },
     "Paraguay": {
-      "w": 1,
-      "d": 2,
+      "w": 2,
+      "d": 1,
       "l": 1,
       "gf": 3,
       "ga": 5,
@@ -123,8 +123,8 @@
     },
     "Germany": {
       "w": 2,
-      "d": 1,
-      "l": 1,
+      "d": 0,
+      "l": 2,
       "gf": 11,
       "ga": 5,
       "round": "round_of_32"
@@ -154,8 +154,8 @@
     },
     "Netherlands": {
       "w": 2,
-      "d": 2,
-      "l": 0,
+      "d": 1,
+      "l": 1,
       "gf": 11,
       "ga": 5,
       "round": "round_of_32"
@@ -1185,6 +1185,7 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": { "home": 3, "away": 4 },
       "date": "",
       "venue": "",
       "played": true
@@ -1196,6 +1197,7 @@
       "awayScore": 1,
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
+      "penalties": { "home": 2, "away": 3 },
       "date": "",
       "venue": "",
       "played": true

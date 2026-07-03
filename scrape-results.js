@@ -204,19 +204,40 @@ function parseKnockoutStage(html, teamStats) {
             const homeScore = parseInt(scoreParts[1]);
             const awayScore = parseInt(scoreParts[2]);
 
+            // Knockout matches level after extra time go to a penalty shootout.
+            // Wikipedia renders this as a "Penalties" marker row followed by a
+            // second .fgoals row whose middle <th> (no class) holds the
+            // shootout score, e.g. "3–4" — separate from the .fscore cell
+            // above, which only ever shows the 90/120-minute score.
+            let penalties = null;
+            const hasPenaltiesMarker = $t.find('th').filter((_, th) => $(th).text().trim() === 'Penalties').length > 0;
+            if (hasPenaltiesMarker) {
+                const penTh = $t.find('tr.fgoals th').filter((_, th) => /^\d+\s*[–\-]\s*\d+$/.test($(th).text().trim()));
+                if (penTh.length) {
+                    const penMatch = penTh.first().text().trim().match(/(\d+)\s*[–\-]\s*(\d+)/);
+                    if (penMatch) penalties = { home: parseInt(penMatch[1]), away: parseInt(penMatch[2]) };
+                }
+            }
+
+            // Result for w/d/l purposes: the shootout decides the winner when
+            // present, otherwise the regulation/extra-time score.
+            const decidingHome = penalties ? penalties.home : homeScore;
+            const decidingAway = penalties ? penalties.away : awayScore;
+
             // Both teams reached this round
             [home, away].forEach(t => {
                 if (!teamStats[t]) teamStats[t] = { w: 0, d: 0, l: 0, gf: 0, ga: 0 };
                 roundReached[t] = stage;
             });
 
-            if (homeScore > awayScore) {
+            if (decidingHome > decidingAway) {
                 teamStats[home].w++; teamStats[away].l++;
-            } else if (homeScore < awayScore) {
+            } else if (decidingHome < decidingAway) {
                 teamStats[away].w++; teamStats[home].l++;
             } else {
                 teamStats[home].d++; teamStats[away].d++;
             }
+            // Goal difference reflects actual goals scored in play, not penalties.
             teamStats[home].gf += homeScore; teamStats[home].ga += awayScore;
             teamStats[away].gf += awayScore; teamStats[away].ga += homeScore;
 
@@ -224,6 +245,7 @@ function parseKnockoutStage(html, teamStats) {
             const venueEl = $t.find('.fground, [itemprop="location"]').first();
             matches.push({
                 home, away, homeScore, awayScore, stage, stageLabel,
+                penalties,
                 date: dateEl.attr('datetime') || dateEl.text().trim().slice(0, 10),
                 venue: venueEl.text().trim(),
                 played: true
@@ -241,8 +263,10 @@ function parseKnockoutStage(html, teamStats) {
     // Special case: final winner = champion
     const finalMatch = matches.find(m => m.stage === 'final');
     if (finalMatch) {
-        const winner = finalMatch.homeScore > finalMatch.awayScore ? finalMatch.home : finalMatch.away;
-        const loser  = finalMatch.homeScore > finalMatch.awayScore ? finalMatch.away : finalMatch.home;
+        const finalHome = finalMatch.penalties ? finalMatch.penalties.home : finalMatch.homeScore;
+        const finalAway = finalMatch.penalties ? finalMatch.penalties.away : finalMatch.awayScore;
+        const winner = finalHome > finalAway ? finalMatch.home : finalMatch.away;
+        const loser  = finalHome > finalAway ? finalMatch.away : finalMatch.home;
         if (teamStats[winner]) teamStats[winner].round = 'champion';
         if (teamStats[loser])  teamStats[loser].round  = 'runner_up';
     }
