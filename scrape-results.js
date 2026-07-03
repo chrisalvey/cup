@@ -68,7 +68,7 @@ function parseGroupStage(html) {
     const teamStats = {};
 
     function ensureTeam(name) {
-        if (!teamStats[name]) teamStats[name] = { w: 0, d: 0, l: 0, gf: 0, ga: 0 };
+        if (!teamStats[name]) teamStats[name] = { w: 0, d: 0, l: 0, gf: 0, ga: 0, eliminated: false };
     }
 
     // The main tournament page also includes a knockout-stage summary further
@@ -229,20 +229,33 @@ function parseKnockoutStage(html, teamStats) {
 
             // Both teams reached this round
             [home, away].forEach(t => {
-                if (!teamStats[t]) teamStats[t] = { w: 0, d: 0, l: 0, gf: 0, ga: 0 };
+                if (!teamStats[t]) teamStats[t] = { w: 0, d: 0, l: 0, gf: 0, ga: 0, eliminated: false };
                 roundReached[t] = stage;
             });
 
+            let loser = null;
             if (decidingHome > decidingAway) {
                 teamStats[home].w++; teamStats[away].l++;
+                loser = away;
             } else if (decidingHome < decidingAway) {
                 teamStats[away].w++; teamStats[home].l++;
+                loser = home;
             } else {
                 teamStats[home].d++; teamStats[away].d++;
             }
             // Goal difference reflects actual goals scored in play, not penalties.
             teamStats[home].gf += homeScore; teamStats[home].ga += awayScore;
             teamStats[away].gf += awayScore; teamStats[away].ga += homeScore;
+
+            // Single elimination, except a semifinal loser isn't out yet —
+            // they still have the third-place match to play. Both teams in
+            // that match are done afterward regardless of who wins it.
+            if (stage === 'third_place') {
+                teamStats[home].eliminated = true;
+                teamStats[away].eliminated = true;
+            } else if (stage !== 'semifinal' && loser) {
+                teamStats[loser].eliminated = true;
+            }
 
             const dateEl = $t.find('.fdate, [itemprop="startDate"]').first();
             const venueEl = $t.find('.fground, [itemprop="location"]').first();
@@ -258,7 +271,7 @@ function parseKnockoutStage(html, teamStats) {
 
     // Assign highest round reached to each team
     Object.entries(roundReached).forEach(([team, round]) => {
-        if (!teamStats[team]) teamStats[team] = { w: 0, d: 0, l: 0, gf: 0, ga: 0 };
+        if (!teamStats[team]) teamStats[team] = { w: 0, d: 0, l: 0, gf: 0, ga: 0, eliminated: false };
         // Determine if they won the final (champion) vs runner-up
         teamStats[team].round = round;
     });
@@ -321,6 +334,19 @@ async function scrapeResults() {
     if (matchesPlayed === 0) {
         console.log('\n⚠  No match results found yet. Tournament may not have started.');
         return;
+    }
+
+    // Teams that never earn a `round` (never appear in a knockout match) are
+    // either mid-group-stage or didn't qualify — we can't tell those apart
+    // until the round of 32 bracket (32 qualifiers / 16 matches) is fully
+    // played, at which point anyone still missing a `round` is confirmed to
+    // not have qualified.
+    const ROUND_OF_32_MATCH_COUNT = 16;
+    const round32Played = allMatches.filter(m => m.stage === 'round_of_32' && m.played).length;
+    if (round32Played >= ROUND_OF_32_MATCH_COUNT) {
+        Object.values(teamStats).forEach(t => {
+            if (!t.round) t.eliminated = true;
+        });
     }
 
     // Print top 10 teams

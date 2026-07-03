@@ -121,6 +121,10 @@ h1 {
 .breakdown-table tr.no-points td { color: var(--text-muted); }
 .points-cell.has-pts { color: var(--neon-green); font-weight: 600; }
 .round-badge { font-size: 0.7rem; padding: 1px 5px; background: rgba(0,230,118,0.15); border: 1px solid var(--neon-green); border-radius: 4px; color: var(--neon-green); margin-left: 4px; }
+.status-badge { font-size: 0.7rem; padding: 1px 5px; border-radius: 4px; margin-left: 4px; border: 1px solid; }
+.status-badge.alive { background: rgba(0,230,118,0.15); border-color: var(--neon-green); color: var(--neon-green); }
+.status-badge.eliminated { background: rgba(255,23,68,0.12); border-color: var(--neon-red); color: var(--neon-red); }
+.status-badge.champion { background: rgba(255,214,0,0.15); border-color: var(--neon-yellow); color: var(--neon-yellow); }
 
 /* ── Standings table ── */
 .standings-wrapper { overflow-x: auto; }

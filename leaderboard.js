@@ -96,9 +96,10 @@ function renderParticipants() {
             const d = team?.d || 0;
             const l = team?.l || 0;
             const round = team?.round ? `<span class="round-badge">${formatRound(team.round)}</span>` : '';
+            const status = formatStatus(team);
             return `
                 <tr class="${pts > 0 ? 'has-points' : 'no-points'}">
-                    <td class="team-name-cell">${name} ${round}</td>
+                    <td class="team-name-cell">${name} ${round} ${status}</td>
                     <td class="record-cell">${w}W ${d}D ${l}L</td>
                     <td class="points-cell ${pts > 0 ? 'has-pts' : ''}">${pts}</td>
                 </tr>
@@ -191,7 +192,7 @@ function renderStandings() {
         html += `
             <tr class="standings-row ${rankClass}">
                 <td class="rank-cell ${rankClass}">${i + 1}</td>
-                <td class="team-cell">${t.name} ${t.round ? `<span class="round-badge">${formatRound(t.round)}</span>` : ''}</td>
+                <td class="team-cell">${t.name} ${t.round ? `<span class="round-badge">${formatRound(t.round)}</span>` : ''} ${formatStatus(t)}</td>
                 <td>${t.w || 0}</td>
                 <td>${t.d || 0}</td>
                 <td>${t.l || 0}</td>
@@ -217,6 +218,14 @@ function formatRound(round) {
         champion: 'Champion'
     };
     return labels[round] || round;
+}
+
+function formatStatus(team) {
+    if (!team) return '';
+    if (team.round === 'champion') return '<span class="status-badge champion">🏆 Champion</span>';
+    if (team.eliminated) return '<span class="status-badge eliminated">Eliminated</span>';
+    if (team.round) return '<span class="status-badge alive">Alive</span>';
+    return '';
 }
 
 function updateLastUpdated() {
