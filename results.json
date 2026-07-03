@@ -124,10 +124,11 @@
     "Australia": {
       "w": 1,
       "d": 1,
-      "l": 1,
-      "gf": 2,
-      "ga": 2,
-      "eliminated": false
+      "l": 2,
+      "gf": 3,
+      "ga": 3,
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Turkey": {
       "w": 1,
@@ -217,12 +218,13 @@
       "round": "round_of_32"
     },
     "Egypt": {
-      "w": 1,
+      "w": 2,
       "d": 2,
       "l": 0,
-      "gf": 5,
-      "ga": 3,
-      "eliminated": false
+      "gf": 6,
+      "ga": 4,
+      "eliminated": false,
+      "round": "round_of_32"
     },
     "Iran": {
       "w": 0,
@@ -1365,11 +1367,26 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Australia",
+      "away": "Egypt",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "penalties": {
+        "home": 2,
+        "away": 4
+      },
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-03T19:57:54.070Z",
-    "matchesPlayed": 85,
+    "lastUpdated": "2026-07-03T21:17:14.821Z",
+    "matchesPlayed": 86,
     "stage": "knockout",
     "source": "Wikipedia"
   }
