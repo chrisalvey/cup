@@ -148,17 +148,19 @@ function parseKnockoutStage(html, teamStats) {
     const $ = cheerio.load(html);
     const matches = [];
 
-    // Map knockout table headings to round keys
+    // Map knockout table headings to round keys. Matched case-insensitively
+    // against the heading with hyphens stripped, since Wikipedia's actual
+    // headings are one word ("Quarterfinals", "Semifinals") rather than the
+    // hyphenated form, and "Match for third place" uses lowercase "third".
+    // Order matters: more specific keys must come before 'final', since
+    // "semifinal"/"quarterfinal" both contain "final" as a substring.
     const stageMap = {
-        'Round of 32':    'round_of_32',
-        'Round of 16':    'round_of_16',
-        'Quarter-final':  'quarterfinal',
-        'Quarter-finals': 'quarterfinal',
-        'Semi-final':     'semifinal',
-        'Semi-finals':    'semifinal',
-        'Third place':    'third_place',
-        'Third-place':    'third_place',
-        'Final':          'final',
+        'round of 32':  'round_of_32',
+        'round of 16':  'round_of_16',
+        'quarterfinal': 'quarterfinal',
+        'semifinal':    'semifinal',
+        'third place':  'third_place',
+        'final':        'final',
     };
 
     // Track which teams have reached each round
@@ -179,10 +181,11 @@ function parseKnockoutStage(html, teamStats) {
 
         if (tag === 'h2' || tag === 'h3') {
             const headingText = ($el.find('.mw-headline').first().text() || $el.text()).trim();
+            const normalizedHeading = headingText.toLowerCase().replace(/-/g, '');
             stage = 'knockout';
             stageLabel = headingText || 'Knockout Stage';
             for (const [key, val] of Object.entries(stageMap)) {
-                if (headingText.includes(key)) { stage = val; stageLabel = headingText; break; }
+                if (normalizedHeading.includes(key)) { stage = val; stageLabel = headingText; break; }
             }
             return;
         }
