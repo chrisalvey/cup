@@ -301,11 +301,12 @@
       "ga": 8
     },
     "Portugal": {
-      "w": 1,
+      "w": 2,
       "d": 2,
       "l": 0,
-      "gf": 6,
-      "ga": 1
+      "gf": 8,
+      "ga": 2,
+      "round": "round_of_32"
     },
     "Congo DR": {
       "w": 1,
@@ -340,9 +341,10 @@
     "Croatia": {
       "w": 2,
       "d": 0,
-      "l": 1,
-      "gf": 5,
-      "ga": 5
+      "l": 2,
+      "gf": 6,
+      "ga": 7,
+      "round": "round_of_32"
     },
     "Ghana": {
       "w": 1,
@@ -1272,11 +1274,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Portugal",
+      "away": "Croatia",
+      "homeScore": 2,
+      "awayScore": 1,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-02T23:11:45.691Z",
-    "matchesPlayed": 83,
+    "lastUpdated": "2026-07-03T01:11:01.875Z",
+    "matchesPlayed": 84,
     "stage": "knockout",
     "source": "Wikipedia"
   }
