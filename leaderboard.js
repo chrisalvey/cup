@@ -123,7 +123,8 @@ function renderParticipants() {
                     const key = normalizeTeamName(name);
                     const team = normalizedLookup[key];
                     const pts = team ? calculateTeamPoints(team) : 0;
-                    return `${name} (${pts})`;
+                    const eliminatedClass = team?.eliminated ? 'team-summary-eliminated' : '';
+                    return `<span class="${eliminatedClass}">${name} (${pts})</span>`;
                 }).join(' • ')}</div>
                 ${!isDraftOpen ? `
                 <button class="expand-btn" data-idx="${index}">

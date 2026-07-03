@@ -109,6 +109,7 @@ h1 {
 .participant-name { font-size: 0.8rem; color: var(--text-muted); }
 .card-score { font-size: 1.6rem; font-weight: 700; color: var(--neon-green); min-width: 50px; text-align: right; }
 .teams-summary { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; }
+.team-summary-eliminated { color: var(--neon-red); }
 
 .expand-btn { width: 100%; margin-top: 10px; padding: 6px; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s; }
 .expand-btn:hover, .expand-btn.expanded { border-color: var(--neon-green); color: var(--neon-green); }
