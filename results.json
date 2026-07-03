@@ -54,11 +54,12 @@
       "ga": 10
     },
     "Switzerland": {
-      "w": 2,
+      "w": 3,
       "d": 1,
       "l": 0,
-      "gf": 7,
-      "ga": 3
+      "gf": 9,
+      "ga": 3,
+      "round": "round_of_32"
     },
     "Brazil": {
       "w": 3,
@@ -281,9 +282,10 @@
     "Algeria": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 2,
       "gf": 5,
-      "ga": 7
+      "ga": 9,
+      "round": "round_of_32"
     },
     "Austria": {
       "w": 1,
@@ -1285,11 +1287,22 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Switzerland",
+      "away": "Algeria",
+      "homeScore": 2,
+      "awayScore": 0,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-03T01:11:01.875Z",
-    "matchesPlayed": 84,
+    "lastUpdated": "2026-07-03T12:11:15.019Z",
+    "matchesPlayed": 85,
     "stage": "knockout",
     "source": "Wikipedia"
   }
