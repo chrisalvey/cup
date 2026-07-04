@@ -37,11 +37,11 @@
     "Canada": {
       "w": 2,
       "d": 1,
-      "l": 1,
+      "l": 2,
       "gf": 9,
-      "ga": 3,
-      "eliminated": false,
-      "round": "round_of_32"
+      "ga": 6,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Bosnia-Herzegovina": {
       "w": 1,
@@ -79,13 +79,13 @@
       "round": "round_of_32"
     },
     "Morocco": {
-      "w": 3,
+      "w": 4,
       "d": 1,
       "l": 0,
-      "gf": 7,
+      "gf": 10,
       "ga": 4,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Haiti": {
       "w": 0,
@@ -1414,14 +1414,14 @@
     {
       "home": "Canada",
       "away": "Morocco",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 3,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-04",
       "venue": "NRG Stadium, Houston",
-      "played": false
+      "played": true
     },
     {
       "home": "Paraguay",
@@ -1509,8 +1509,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-04T16:17:11.905Z",
-    "matchesPlayed": 88,
+    "lastUpdated": "2026-07-04T19:10:42.582Z",
+    "matchesPlayed": 89,
     "stage": "knockout",
     "source": "Wikipedia"
   }
