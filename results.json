@@ -24,7 +24,7 @@
       "l": 2,
       "gf": 2,
       "ga": 3,
-      "eliminated": false
+      "eliminated": true
     },
     "Czechia": {
       "w": 0,
@@ -32,7 +32,7 @@
       "l": 2,
       "gf": 2,
       "ga": 6,
-      "eliminated": false
+      "eliminated": true
     },
     "Canada": {
       "w": 2,
@@ -58,7 +58,7 @@
       "l": 2,
       "gf": 2,
       "ga": 10,
-      "eliminated": false
+      "eliminated": true
     },
     "Switzerland": {
       "w": 3,
@@ -93,7 +93,7 @@
       "l": 3,
       "gf": 2,
       "ga": 8,
-      "eliminated": false
+      "eliminated": true
     },
     "Scotland": {
       "w": 1,
@@ -101,7 +101,7 @@
       "l": 2,
       "gf": 1,
       "ga": 4,
-      "eliminated": false
+      "eliminated": true
     },
     "USA": {
       "w": 3,
@@ -136,7 +136,7 @@
       "l": 2,
       "gf": 3,
       "ga": 5,
-      "eliminated": false
+      "eliminated": true
     },
     "Germany": {
       "w": 2,
@@ -153,7 +153,7 @@
       "l": 2,
       "gf": 1,
       "ga": 9,
-      "eliminated": false
+      "eliminated": true
     },
     "Ivory Coast": {
       "w": 2,
@@ -206,7 +206,7 @@
       "l": 3,
       "gf": 2,
       "ga": 12,
-      "eliminated": false
+      "eliminated": true
     },
     "Belgium": {
       "w": 2,
@@ -232,7 +232,7 @@
       "l": 0,
       "gf": 3,
       "ga": 3,
-      "eliminated": false
+      "eliminated": true
     },
     "New Zealand": {
       "w": 0,
@@ -240,7 +240,7 @@
       "l": 2,
       "gf": 4,
       "ga": 10,
-      "eliminated": false
+      "eliminated": true
     },
     "Spain": {
       "w": 3,
@@ -254,10 +254,11 @@
     "Cape Verde": {
       "w": 0,
       "d": 3,
-      "l": 0,
-      "gf": 2,
-      "ga": 2,
-      "eliminated": false
+      "l": 1,
+      "gf": 4,
+      "ga": 5,
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Saudi Arabia": {
       "w": 0,
@@ -265,7 +266,7 @@
       "l": 1,
       "gf": 1,
       "ga": 5,
-      "eliminated": false
+      "eliminated": true
     },
     "Uruguay": {
       "w": 0,
@@ -273,7 +274,7 @@
       "l": 1,
       "gf": 3,
       "ga": 4,
-      "eliminated": false
+      "eliminated": true
     },
     "France": {
       "w": 4,
@@ -299,7 +300,7 @@
       "l": 3,
       "gf": 1,
       "ga": 12,
-      "eliminated": false
+      "eliminated": true
     },
     "Norway": {
       "w": 3,
@@ -311,12 +312,13 @@
       "round": "round_of_32"
     },
     "Argentina": {
-      "w": 3,
+      "w": 4,
       "d": 0,
       "l": 0,
-      "gf": 8,
-      "ga": 1,
-      "eliminated": false
+      "gf": 11,
+      "ga": 3,
+      "eliminated": false,
+      "round": "round_of_32"
     },
     "Algeria": {
       "w": 1,
@@ -342,7 +344,7 @@
       "l": 3,
       "gf": 3,
       "ga": 8,
-      "eliminated": false
+      "eliminated": true
     },
     "Portugal": {
       "w": 2,
@@ -368,15 +370,16 @@
       "l": 3,
       "gf": 2,
       "ga": 11,
-      "eliminated": false
+      "eliminated": true
     },
     "Colombia": {
-      "w": 2,
+      "w": 3,
       "d": 1,
       "l": 0,
-      "gf": 4,
+      "gf": 5,
       "ga": 1,
-      "eliminated": false
+      "eliminated": false,
+      "round": "round_of_32"
     },
     "England": {
       "w": 3,
@@ -399,10 +402,11 @@
     "Ghana": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 2,
       "gf": 2,
-      "ga": 2,
-      "eliminated": false
+      "ga": 3,
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Panama": {
       "w": 0,
@@ -410,7 +414,7 @@
       "l": 3,
       "gf": 0,
       "ga": 4,
-      "eliminated": false
+      "eliminated": true
     }
   },
   "matches": [
@@ -1382,11 +1386,35 @@
       "date": "",
       "venue": "",
       "played": true
+    },
+    {
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "homeScore": 3,
+      "awayScore": 2,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "penalties": null,
+      "date": "",
+      "venue": "",
+      "played": true
+    },
+    {
+      "home": "Colombia",
+      "away": "Ghana",
+      "homeScore": 1,
+      "awayScore": 0,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "penalties": null,
+      "date": "",
+      "venue": "",
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-04T00:08:50.160Z",
-    "matchesPlayed": 86,
+    "lastUpdated": "2026-07-04T11:36:04.815Z",
+    "matchesPlayed": 88,
     "stage": "knockout",
     "source": "Wikipedia"
   }
