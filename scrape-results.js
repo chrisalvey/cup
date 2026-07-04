@@ -43,6 +43,19 @@ function groupForTeam(name) {
     return TEAM_GROUP[name] || null;
 }
 
+// Wikipedia's football-box markup renders the date/venue as siblings of the
+// score table (both children of the wrapping .footballbox div), not as
+// descendants of the table itself — so they have to be looked up via the
+// table's parent rather than $t.find(). The visible .fdate text is a
+// human date like "June 28, 2026"; the machine-readable ISO date lives in
+// a hidden nested span (class "bday"/"dtstart").
+function extractDateVenue($, $table) {
+    const box = $table.parent();
+    const date = box.find('.fdate .bday, .fdate .dtstart').first().text().trim();
+    const venue = box.find('.fright [itemprop="location"], .fground').first().text().trim();
+    return { date, venue };
+}
+
 function fetchHTML(url) {
     return new Promise((resolve, reject) => {
         const options = {
@@ -100,10 +113,7 @@ function parseGroupStage(html) {
         let away = normalizeTeam(awayEl.text().trim());
         const scoreText = scoreEl.text().trim();
 
-        if (!home || !away || !scoreText) return;
-
-        const scoreParts = scoreText.match(/(\d+)\s*[–\-:]\s*(\d+)/);
-        if (!scoreParts) return; // match not yet played
+        if (!home || !away) return;
 
         // Safety net: a genuine group match is always between two teams in
         // the same group. Skip anything that slips through mislabeled.
@@ -111,19 +121,38 @@ function parseGroupStage(html) {
         const awayGroupCheck = groupForTeam(away);
         if (homeGroupCheck && awayGroupCheck && homeGroupCheck !== awayGroupCheck) return;
 
+        const scoreParts = scoreText.match(/(\d+)\s*[–\-:]\s*(\d+)/);
+        const played = !!scoreParts;
+
+        const { date, venue } = extractDateVenue($, $t);
+
+        // A match with no score yet and no date is a TBD fixture we can't do
+        // anything useful with — skip it rather than record a dateless entry.
+        if (!played && !date) return;
+
+        const group = homeGroupCheck || awayGroupCheck || null;
+
+        if (!played) {
+            matches.push({
+                home, away, homeScore: null, awayScore: null,
+                stage: 'group',
+                group,
+                date,
+                venue,
+                played: false
+            });
+            return;
+        }
+
         const homeScore = parseInt(scoreParts[1]);
         const awayScore = parseInt(scoreParts[2]);
-        const dateEl = $t.find('.fdate, [itemprop="startDate"]').first();
-        const venueEl = $t.find('.fground, [itemprop="location"]').first();
-
-        const group = groupForTeam(home) || groupForTeam(away) || null;
 
         matches.push({
             home, away, homeScore, awayScore,
             stage: 'group',
             group,
-            date: dateEl.attr('datetime') || dateEl.text().trim().slice(0, 10),
-            venue: venueEl.text().trim(),
+            date,
+            venue,
             played: true
         });
 
@@ -182,10 +211,18 @@ function parseKnockoutStage(html, teamStats) {
         if (tag === 'h2' || tag === 'h3') {
             const headingText = ($el.find('.mw-headline').first().text() || $el.text()).trim();
             const normalizedHeading = headingText.toLowerCase().replace(/-/g, '');
-            stage = 'knockout';
-            stageLabel = headingText || 'Knockout Stage';
-            for (const [key, val] of Object.entries(stageMap)) {
-                if (normalizedHeading.includes(key)) { stage = val; stageLabel = headingText; break; }
+            const matched = Object.entries(stageMap).find(([key]) => normalizedHeading.includes(key));
+            if (matched) {
+                stage = matched[1];
+                stageLabel = headingText;
+            } else if (tag === 'h2') {
+                // A genuine new h2 section that isn't a recognized round name
+                // (e.g. "Bracket"). Reset to generic — but an h3 sub-heading
+                // that doesn't match a round (e.g. a per-match "Team A vs
+                // Team B" label within a round's section) shouldn't clobber
+                // the round we're already tracking.
+                stage = 'knockout';
+                stageLabel = headingText || 'Knockout Stage';
             }
             return;
         }
@@ -257,15 +294,29 @@ function parseKnockoutStage(html, teamStats) {
                 teamStats[loser].eliminated = true;
             }
 
-            const dateEl = $t.find('.fdate, [itemprop="startDate"]').first();
-            const venueEl = $t.find('.fground, [itemprop="location"]').first();
+            const { date, venue } = extractDateVenue($, $t);
             matches.push({
                 home, away, homeScore, awayScore, stage, stageLabel,
                 penalties,
-                date: dateEl.attr('datetime') || dateEl.text().trim().slice(0, 10),
-                venue: venueEl.text().trim(),
+                date,
+                venue,
                 played: true
             });
+        } else {
+            // Not played yet. Only record it if the matchup is actually
+            // determined (both sides are real entrants, not a "Winner of
+            // Match N" placeholder) and Wikipedia has a scheduled date —
+            // otherwise there's nothing useful to show.
+            const { date, venue } = extractDateVenue($, $t);
+            if (date && groupForTeam(home) && groupForTeam(away)) {
+                matches.push({
+                    home, away, homeScore: null, awayScore: null, stage, stageLabel,
+                    penalties: null,
+                    date,
+                    venue,
+                    played: false
+                });
+            }
         }
     });
 

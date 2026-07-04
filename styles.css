@@ -6,6 +6,7 @@
     --neon-green: #00e676;
     --neon-yellow: #ffd600;
     --neon-red: #ff1744;
+    --neon-cyan: #00e5ff;
     --text-primary: #e8f5e9;
     --text-secondary: #a5d6a7;
     --text-muted: #558b6e;
@@ -110,6 +111,8 @@ h1 {
 .card-score { font-size: 1.6rem; font-weight: 700; color: var(--neon-green); min-width: 50px; text-align: right; }
 .teams-summary { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; }
 .team-summary-eliminated { color: var(--neon-red); }
+.team-summary-playing-today { color: var(--neon-cyan); font-weight: 700; }
+.team-summary-eliminated.team-summary-playing-today { color: var(--neon-cyan); font-weight: 700; }
 
 .expand-btn { width: 100%; margin-top: 10px; padding: 6px; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--text-muted); cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s; }
 .expand-btn:hover, .expand-btn.expanded { border-color: var(--neon-green); color: var(--neon-green); }
@@ -126,6 +129,7 @@ h1 {
 .status-badge.alive { background: rgba(0,230,118,0.15); border-color: var(--neon-green); color: var(--neon-green); }
 .status-badge.eliminated { background: rgba(255,23,68,0.12); border-color: var(--neon-red); color: var(--neon-red); }
 .status-badge.champion { background: rgba(255,214,0,0.15); border-color: var(--neon-yellow); color: var(--neon-yellow); }
+.status-badge.playing-today { background: rgba(0,229,255,0.15); border-color: var(--neon-cyan); color: var(--neon-cyan); font-weight: 700; }
 
 /* ── Standings table ── */
 .standings-wrapper { overflow-x: auto; }

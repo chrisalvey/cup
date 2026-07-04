@@ -9,6 +9,7 @@ const db = getFirestore(app);
 let participants = [];
 let resultsData = null;
 let normalizedLookup = null;
+let playingTodayKeys = new Set();
 
 function init() {
     // Hide draft link once deadline has passed
@@ -41,6 +42,7 @@ async function loadData() {
         resultsData = await res.json();
 
         normalizedLookup = createNormalizedLookup(resultsData.teams || {});
+        playingTodayKeys = getPlayingTodayKeys(resultsData.matches || []);
 
         renderParticipants();
         renderStandings();
@@ -96,7 +98,7 @@ function renderParticipants() {
             const d = team?.d || 0;
             const l = team?.l || 0;
             const round = team?.round ? `<span class="round-badge">${formatRound(team.round)}</span>` : '';
-            const status = formatStatus(team);
+            const status = formatStatus(team, playingTodayKeys.has(key));
             return `
                 <tr class="${pts > 0 ? 'has-points' : 'no-points'}">
                     <td class="team-name-cell">${name} ${round} ${status}</td>
@@ -124,7 +126,9 @@ function renderParticipants() {
                     const team = normalizedLookup[key];
                     const pts = team ? calculateTeamPoints(team) : 0;
                     const eliminatedClass = team?.eliminated ? 'team-summary-eliminated' : '';
-                    return `<span class="${eliminatedClass}">${name} (${pts})</span>`;
+                    const playingTodayClass = playingTodayKeys.has(key) ? 'team-summary-playing-today' : '';
+                    const classes = [eliminatedClass, playingTodayClass].filter(Boolean).join(' ');
+                    return `<span class="${classes}">${name} (${pts})</span>`;
                 }).join(' • ')}</div>
                 ${!isDraftOpen ? `
                 <button class="expand-btn" data-idx="${index}">
@@ -193,7 +197,7 @@ function renderStandings() {
         html += `
             <tr class="standings-row ${rankClass}">
                 <td class="rank-cell ${rankClass}">${i + 1}</td>
-                <td class="team-cell">${t.name} ${t.round ? `<span class="round-badge">${formatRound(t.round)}</span>` : ''} ${formatStatus(t)}</td>
+                <td class="team-cell">${t.name} ${t.round ? `<span class="round-badge">${formatRound(t.round)}</span>` : ''} ${formatStatus(t, playingTodayKeys.has(normalizeTeamName(t.name)))}</td>
                 <td>${t.w || 0}</td>
                 <td>${t.d || 0}</td>
                 <td>${t.l || 0}</td>
@@ -206,6 +210,25 @@ function renderStandings() {
 
     html += '</tbody></table></div>';
     content.innerHTML = html;
+}
+
+function getTodayDateStr() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const d = String(now.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
+function getPlayingTodayKeys(matches) {
+    const today = getTodayDateStr();
+    const keys = new Set();
+    matches.forEach(m => {
+        if (!m.date || m.date.slice(0, 10) !== today) return;
+        if (m.home) keys.add(normalizeTeamName(m.home));
+        if (m.away) keys.add(normalizeTeamName(m.away));
+    });
+    return keys;
 }
 
 function formatRound(round) {
@@ -221,12 +244,13 @@ function formatRound(round) {
     return labels[round] || round;
 }
 
-function formatStatus(team) {
+function formatStatus(team, isPlayingToday) {
     if (!team) return '';
-    if (team.round === 'champion') return '<span class="status-badge champion">🏆 Champion</span>';
-    if (team.eliminated) return '<span class="status-badge eliminated">Eliminated</span>';
-    if (team.round) return '<span class="status-badge alive">Alive</span>';
-    return '';
+    const todayBadge = isPlayingToday ? '<span class="status-badge playing-today">Today</span>' : '';
+    if (team.round === 'champion') return `<span class="status-badge champion">🏆 Champion</span>${todayBadge}`;
+    if (team.eliminated) return `<span class="status-badge eliminated">Eliminated</span>${todayBadge}`;
+    if (team.round) return `<span class="status-badge alive">Alive</span>${todayBadge}`;
+    return todayBadge;
 }
 
 function updateLastUpdated() {

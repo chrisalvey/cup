@@ -6,6 +6,7 @@
       "l": 0,
       "gf": 8,
       "ga": 0,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "South Africa": {
@@ -14,22 +15,24 @@
       "l": 2,
       "gf": 2,
       "ga": 4,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "South Korea": {
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 2,
-      "ga": 3
+      "ga": 3,
+      "eliminated": true
     },
     "Czechia": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 2,
-      "ga": 6
+      "ga": 6,
+      "eliminated": true
     },
     "Canada": {
       "w": 2,
@@ -37,6 +40,7 @@
       "l": 1,
       "gf": 9,
       "ga": 3,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Bosnia-Herzegovina": {
@@ -45,15 +49,16 @@
       "l": 2,
       "gf": 5,
       "ga": 8,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Qatar": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 2,
-      "ga": 10
+      "ga": 10,
+      "eliminated": true
     },
     "Switzerland": {
       "w": 3,
@@ -61,6 +66,7 @@
       "l": 0,
       "gf": 9,
       "ga": 3,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Brazil": {
@@ -69,6 +75,7 @@
       "l": 0,
       "gf": 9,
       "ga": 2,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Morocco": {
@@ -77,6 +84,7 @@
       "l": 0,
       "gf": 7,
       "ga": 4,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Haiti": {
@@ -84,14 +92,16 @@
       "d": 0,
       "l": 3,
       "gf": 2,
-      "ga": 8
+      "ga": 8,
+      "eliminated": true
     },
     "Scotland": {
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 1,
-      "ga": 4
+      "ga": 4,
+      "eliminated": true
     },
     "USA": {
       "w": 3,
@@ -99,6 +109,7 @@
       "l": 1,
       "gf": 10,
       "ga": 4,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Paraguay": {
@@ -107,21 +118,25 @@
       "l": 1,
       "gf": 3,
       "ga": 5,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Australia": {
       "w": 1,
       "d": 1,
-      "l": 1,
-      "gf": 2,
-      "ga": 2
+      "l": 2,
+      "gf": 3,
+      "ga": 3,
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Turkey": {
       "w": 1,
       "d": 0,
       "l": 2,
       "gf": 3,
-      "ga": 5
+      "ga": 5,
+      "eliminated": true
     },
     "Germany": {
       "w": 2,
@@ -129,15 +144,16 @@
       "l": 2,
       "gf": 11,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Curacao": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 1,
-      "ga": 9
+      "ga": 9,
+      "eliminated": true
     },
     "Ivory Coast": {
       "w": 2,
@@ -145,8 +161,8 @@
       "l": 2,
       "gf": 5,
       "ga": 4,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Ecuador": {
       "w": 1,
@@ -154,8 +170,8 @@
       "l": 2,
       "gf": 2,
       "ga": 4,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Netherlands": {
       "w": 2,
@@ -163,8 +179,8 @@
       "l": 1,
       "gf": 11,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Japan": {
       "w": 1,
@@ -172,8 +188,8 @@
       "l": 1,
       "gf": 8,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Sweden": {
       "w": 1,
@@ -181,15 +197,16 @@
       "l": 2,
       "gf": 7,
       "ga": 10,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Tunisia": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 2,
-      "ga": 12
+      "ga": 12,
+      "eliminated": true
     },
     "Belgium": {
       "w": 2,
@@ -197,28 +214,33 @@
       "l": 0,
       "gf": 9,
       "ga": 4,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Egypt": {
-      "w": 1,
+      "w": 2,
       "d": 2,
       "l": 0,
-      "gf": 5,
-      "ga": 3
+      "gf": 6,
+      "ga": 4,
+      "eliminated": false,
+      "round": "round_of_32"
     },
     "Iran": {
       "w": 0,
       "d": 3,
       "l": 0,
       "gf": 3,
-      "ga": 3
+      "ga": 3,
+      "eliminated": true
     },
     "New Zealand": {
       "w": 0,
       "d": 1,
       "l": 2,
       "gf": 4,
-      "ga": 10
+      "ga": 10,
+      "eliminated": true
     },
     "Spain": {
       "w": 3,
@@ -226,28 +248,33 @@
       "l": 0,
       "gf": 8,
       "ga": 0,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Cape Verde": {
       "w": 0,
       "d": 3,
-      "l": 0,
-      "gf": 2,
-      "ga": 2
+      "l": 1,
+      "gf": 4,
+      "ga": 5,
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Saudi Arabia": {
       "w": 0,
       "d": 2,
       "l": 1,
       "gf": 1,
-      "ga": 5
+      "ga": 5,
+      "eliminated": true
     },
     "Uruguay": {
       "w": 0,
       "d": 2,
       "l": 1,
       "gf": 3,
-      "ga": 4
+      "ga": 4,
+      "eliminated": true
     },
     "France": {
       "w": 4,
@@ -255,6 +282,7 @@
       "l": 0,
       "gf": 13,
       "ga": 2,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Senegal": {
@@ -263,15 +291,16 @@
       "l": 3,
       "gf": 10,
       "ga": 9,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Iraq": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 1,
-      "ga": 12
+      "ga": 12,
+      "eliminated": true
     },
     "Norway": {
       "w": 3,
@@ -279,14 +308,17 @@
       "l": 1,
       "gf": 10,
       "ga": 8,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Argentina": {
-      "w": 3,
+      "w": 4,
       "d": 0,
       "l": 0,
-      "gf": 8,
-      "ga": 1
+      "gf": 11,
+      "ga": 3,
+      "eliminated": false,
+      "round": "round_of_32"
     },
     "Algeria": {
       "w": 1,
@@ -294,8 +326,8 @@
       "l": 2,
       "gf": 5,
       "ga": 9,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Austria": {
       "w": 1,
@@ -303,15 +335,16 @@
       "l": 2,
       "gf": 6,
       "ga": 9,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Jordan": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 3,
-      "ga": 8
+      "ga": 8,
+      "eliminated": true
     },
     "Portugal": {
       "w": 2,
@@ -319,6 +352,7 @@
       "l": 0,
       "gf": 8,
       "ga": 2,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Congo DR": {
@@ -327,22 +361,25 @@
       "l": 2,
       "gf": 5,
       "ga": 5,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Uzbekistan": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 2,
-      "ga": 11
+      "ga": 11,
+      "eliminated": true
     },
     "Colombia": {
-      "w": 2,
+      "w": 3,
       "d": 1,
       "l": 0,
-      "gf": 4,
-      "ga": 1
+      "gf": 5,
+      "ga": 1,
+      "eliminated": false,
+      "round": "round_of_32"
     },
     "England": {
       "w": 3,
@@ -350,6 +387,7 @@
       "l": 0,
       "gf": 8,
       "ga": 3,
+      "eliminated": false,
       "round": "round_of_32"
     },
     "Croatia": {
@@ -358,22 +396,25 @@
       "l": 2,
       "gf": 6,
       "ga": 7,
-      "round": "round_of_32",
-      "eliminated": true
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Ghana": {
       "w": 1,
       "d": 1,
-      "l": 1,
+      "l": 2,
       "gf": 2,
-      "ga": 2
+      "ga": 3,
+      "eliminated": true,
+      "round": "round_of_32"
     },
     "Panama": {
       "w": 0,
       "d": 0,
       "l": 3,
       "gf": 0,
-      "ga": 4
+      "ga": 4,
+      "eliminated": true
     }
   },
   "matches": [
@@ -384,8 +425,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "A",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-11",
+      "venue": "Estadio Azteca, Mexico City",
       "played": true
     },
     {
@@ -395,8 +436,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "A",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-11",
+      "venue": "Estadio Akron, Zapopan",
       "played": true
     },
     {
@@ -406,8 +447,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "A",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-18",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
       "played": true
     },
     {
@@ -417,8 +458,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "A",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-18",
+      "venue": "Estadio Akron, Zapopan",
       "played": true
     },
     {
@@ -428,8 +469,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "A",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-24",
+      "venue": "Estadio Azteca, Mexico City",
       "played": true
     },
     {
@@ -439,8 +480,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "A",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-24",
+      "venue": "Estadio BBVA, Guadalupe",
       "played": true
     },
     {
@@ -450,8 +491,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "B",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-12",
+      "venue": "BMO Field, Toronto",
       "played": true
     },
     {
@@ -461,8 +502,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "B",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-13",
+      "venue": "Levi's Stadium, Santa Clara",
       "played": true
     },
     {
@@ -472,8 +513,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "B",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-18",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -483,8 +524,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "B",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-18",
+      "venue": "BC Place, Vancouver",
       "played": true
     },
     {
@@ -494,8 +535,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "B",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-24",
+      "venue": "BC Place, Vancouver",
       "played": true
     },
     {
@@ -505,8 +546,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "B",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-24",
+      "venue": "Lumen Field, Seattle",
       "played": true
     },
     {
@@ -516,8 +557,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "C",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-13",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": true
     },
     {
@@ -527,8 +568,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "C",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-13",
+      "venue": "Gillette Stadium, Foxborough",
       "played": true
     },
     {
@@ -538,8 +579,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "C",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-19",
+      "venue": "Gillette Stadium, Foxborough",
       "played": true
     },
     {
@@ -549,8 +590,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "C",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-19",
+      "venue": "Lincoln Financial Field, Philadelphia",
       "played": true
     },
     {
@@ -560,8 +601,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "C",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-24",
+      "venue": "Hard Rock Stadium, Miami Gardens",
       "played": true
     },
     {
@@ -571,8 +612,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "C",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-24",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
       "played": true
     },
     {
@@ -582,8 +623,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "D",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-12",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -593,8 +634,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "D",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-13",
+      "venue": "BC Place, Vancouver",
       "played": true
     },
     {
@@ -604,8 +645,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "D",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-19",
+      "venue": "Lumen Field, Seattle",
       "played": true
     },
     {
@@ -615,8 +656,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "D",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-19",
+      "venue": "Levi's Stadium, Santa Clara",
       "played": true
     },
     {
@@ -626,8 +667,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "D",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-25",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -637,8 +678,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "D",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-25",
+      "venue": "Levi's Stadium, Santa Clara",
       "played": true
     },
     {
@@ -648,8 +689,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "E",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-14",
+      "venue": "NRG Stadium, Houston",
       "played": true
     },
     {
@@ -659,8 +700,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "E",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-14",
+      "venue": "Lincoln Financial Field, Philadelphia",
       "played": true
     },
     {
@@ -670,8 +711,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "E",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-20",
+      "venue": "BMO Field, Toronto",
       "played": true
     },
     {
@@ -681,8 +722,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "E",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-20",
+      "venue": "Arrowhead Stadium, Kansas City",
       "played": true
     },
     {
@@ -692,8 +733,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "E",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-25",
+      "venue": "Lincoln Financial Field, Philadelphia",
       "played": true
     },
     {
@@ -703,8 +744,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "E",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-25",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": true
     },
     {
@@ -714,8 +755,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "F",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-14",
+      "venue": "AT&T Stadium, Arlington",
       "played": true
     },
     {
@@ -725,8 +766,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "F",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-14",
+      "venue": "Estadio BBVA, Guadalupe",
       "played": true
     },
     {
@@ -736,8 +777,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "F",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-20",
+      "venue": "NRG Stadium, Houston",
       "played": true
     },
     {
@@ -747,8 +788,8 @@
       "awayScore": 4,
       "stage": "group",
       "group": "F",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-20",
+      "venue": "Estadio BBVA, Guadalupe",
       "played": true
     },
     {
@@ -758,8 +799,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "F",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-25",
+      "venue": "AT&T Stadium, Arlington",
       "played": true
     },
     {
@@ -769,8 +810,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "F",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-25",
+      "venue": "Arrowhead Stadium, Kansas City",
       "played": true
     },
     {
@@ -780,8 +821,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "G",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-15",
+      "venue": "Lumen Field, Seattle",
       "played": true
     },
     {
@@ -791,8 +832,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "G",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-15",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -802,8 +843,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "G",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-21",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -813,8 +854,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "G",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-21",
+      "venue": "BC Place, Vancouver",
       "played": true
     },
     {
@@ -824,8 +865,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "G",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-26",
+      "venue": "Lumen Field, Seattle",
       "played": true
     },
     {
@@ -835,8 +876,8 @@
       "awayScore": 5,
       "stage": "group",
       "group": "G",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-26",
+      "venue": "BC Place, Vancouver",
       "played": true
     },
     {
@@ -846,8 +887,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "H",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-15",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
       "played": true
     },
     {
@@ -857,8 +898,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "H",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-15",
+      "venue": "Hard Rock Stadium, Miami Gardens",
       "played": true
     },
     {
@@ -868,8 +909,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "H",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-21",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
       "played": true
     },
     {
@@ -879,8 +920,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "H",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-21",
+      "venue": "Hard Rock Stadium, Miami Gardens",
       "played": true
     },
     {
@@ -890,8 +931,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "H",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-26",
+      "venue": "NRG Stadium, Houston",
       "played": true
     },
     {
@@ -901,8 +942,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "H",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-26",
+      "venue": "Estadio Akron, Zapopan",
       "played": true
     },
     {
@@ -912,8 +953,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "I",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-16",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": true
     },
     {
@@ -923,8 +964,8 @@
       "awayScore": 4,
       "stage": "group",
       "group": "I",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-16",
+      "venue": "Gillette Stadium, Foxborough",
       "played": true
     },
     {
@@ -934,8 +975,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "I",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-22",
+      "venue": "Lincoln Financial Field, Philadelphia",
       "played": true
     },
     {
@@ -945,8 +986,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "I",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-22",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": true
     },
     {
@@ -956,8 +997,8 @@
       "awayScore": 4,
       "stage": "group",
       "group": "I",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-26",
+      "venue": "Gillette Stadium, Foxborough",
       "played": true
     },
     {
@@ -967,8 +1008,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "I",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-26",
+      "venue": "BMO Field, Toronto",
       "played": true
     },
     {
@@ -978,8 +1019,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "J",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-16",
+      "venue": "Arrowhead Stadium, Kansas City",
       "played": true
     },
     {
@@ -989,8 +1030,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "J",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-16",
+      "venue": "Levi's Stadium, Santa Clara",
       "played": true
     },
     {
@@ -1000,8 +1041,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "J",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-22",
+      "venue": "AT&T Stadium, Arlington",
       "played": true
     },
     {
@@ -1011,8 +1052,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "J",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-22",
+      "venue": "Levi's Stadium, Santa Clara",
       "played": true
     },
     {
@@ -1022,8 +1063,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "J",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-27",
+      "venue": "Arrowhead Stadium, Kansas City",
       "played": true
     },
     {
@@ -1033,8 +1074,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "J",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-27",
+      "venue": "AT&T Stadium, Arlington",
       "played": true
     },
     {
@@ -1044,8 +1085,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "K",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-17",
+      "venue": "NRG Stadium, Houston",
       "played": true
     },
     {
@@ -1055,8 +1096,8 @@
       "awayScore": 3,
       "stage": "group",
       "group": "K",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-17",
+      "venue": "Estadio Azteca, Mexico City",
       "played": true
     },
     {
@@ -1066,8 +1107,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "K",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-23",
+      "venue": "NRG Stadium, Houston",
       "played": true
     },
     {
@@ -1077,8 +1118,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "K",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-23",
+      "venue": "Estadio Akron, Zapopan",
       "played": true
     },
     {
@@ -1088,8 +1129,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "K",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-27",
+      "venue": "Hard Rock Stadium, Miami Gardens",
       "played": true
     },
     {
@@ -1099,8 +1140,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "K",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-27",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
       "played": true
     },
     {
@@ -1110,8 +1151,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "L",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-17",
+      "venue": "AT&T Stadium, Arlington",
       "played": true
     },
     {
@@ -1121,8 +1162,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "L",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-17",
+      "venue": "BMO Field, Toronto",
       "played": true
     },
     {
@@ -1132,8 +1173,8 @@
       "awayScore": 0,
       "stage": "group",
       "group": "L",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-23",
+      "venue": "Gillette Stadium, Foxborough",
       "played": true
     },
     {
@@ -1143,8 +1184,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "L",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-23",
+      "venue": "BMO Field, Toronto",
       "played": true
     },
     {
@@ -1154,8 +1195,8 @@
       "awayScore": 2,
       "stage": "group",
       "group": "L",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-27",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": true
     },
     {
@@ -1165,8 +1206,8 @@
       "awayScore": 1,
       "stage": "group",
       "group": "L",
-      "date": "",
-      "venue": "",
+      "date": "2026-06-27",
+      "venue": "Lincoln Financial Field, Philadelphia",
       "played": true
     },
     {
@@ -1177,8 +1218,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-06-28",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -1189,8 +1230,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-06-29",
+      "venue": "NRG Stadium, Houston",
       "played": true
     },
     {
@@ -1204,8 +1245,8 @@
         "home": 3,
         "away": 4
       },
-      "date": "",
-      "venue": "",
+      "date": "2026-06-29",
+      "venue": "Gillette Stadium, Foxborough",
       "played": true
     },
     {
@@ -1219,8 +1260,8 @@
         "home": 2,
         "away": 3
       },
-      "date": "",
-      "venue": "",
+      "date": "2026-06-29",
+      "venue": "Estadio BBVA, Guadalupe",
       "played": true
     },
     {
@@ -1231,8 +1272,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-06-30",
+      "venue": "AT&T Stadium, Arlington",
       "played": true
     },
     {
@@ -1243,8 +1284,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-06-30",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": true
     },
     {
@@ -1255,8 +1296,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-06-30",
+      "venue": "Estadio Azteca, Mexico City",
       "played": true
     },
     {
@@ -1267,8 +1308,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-07-01",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
       "played": true
     },
     {
@@ -1279,8 +1320,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-07-01",
+      "venue": "Lumen Field, Seattle",
       "played": true
     },
     {
@@ -1291,8 +1332,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-07-01",
+      "venue": "Levi's Stadium, Santa Clara",
       "played": true
     },
     {
@@ -1303,8 +1344,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-07-02",
+      "venue": "SoFi Stadium, Inglewood",
       "played": true
     },
     {
@@ -1315,8 +1356,8 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-07-02",
+      "venue": "BMO Field, Toronto",
       "played": true
     },
     {
@@ -1327,14 +1368,149 @@
       "stage": "round_of_32",
       "stageLabel": "Round of 32",
       "penalties": null,
-      "date": "",
-      "venue": "",
+      "date": "2026-07-02",
+      "venue": "BC Place, Vancouver",
       "played": true
+    },
+    {
+      "home": "Australia",
+      "away": "Egypt",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "penalties": {
+        "home": 2,
+        "away": 4
+      },
+      "date": "2026-07-03",
+      "venue": "AT&T Stadium, Arlington",
+      "played": true
+    },
+    {
+      "home": "Argentina",
+      "away": "Cape Verde",
+      "homeScore": 3,
+      "awayScore": 2,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "penalties": null,
+      "date": "2026-07-03",
+      "venue": "Hard Rock Stadium, Miami Gardens",
+      "played": true
+    },
+    {
+      "home": "Colombia",
+      "away": "Ghana",
+      "homeScore": 1,
+      "awayScore": 0,
+      "stage": "round_of_32",
+      "stageLabel": "Round of 32",
+      "penalties": null,
+      "date": "2026-07-03",
+      "venue": "Arrowhead Stadium, Kansas City",
+      "played": true
+    },
+    {
+      "home": "Canada",
+      "away": "Morocco",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-04",
+      "venue": "NRG Stadium, Houston",
+      "played": false
+    },
+    {
+      "home": "Paraguay",
+      "away": "France",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-04",
+      "venue": "Lincoln Financial Field, Philadelphia",
+      "played": false
+    },
+    {
+      "home": "Brazil",
+      "away": "Norway",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-05",
+      "venue": "MetLife Stadium, East Rutherford",
+      "played": false
+    },
+    {
+      "home": "Mexico",
+      "away": "England",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-05",
+      "venue": "Estadio Azteca, Mexico City",
+      "played": false
+    },
+    {
+      "home": "Portugal",
+      "away": "Spain",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-06",
+      "venue": "AT&T Stadium, Arlington",
+      "played": false
+    },
+    {
+      "home": "USA",
+      "away": "Belgium",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-06",
+      "venue": "Lumen Field, Seattle",
+      "played": false
+    },
+    {
+      "home": "Argentina",
+      "away": "Egypt",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-07",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
+      "played": false
+    },
+    {
+      "home": "Switzerland",
+      "away": "Colombia",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "round_of_16",
+      "stageLabel": "Round of 16",
+      "penalties": null,
+      "date": "2026-07-07",
+      "venue": "BC Place, Vancouver",
+      "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-03T14:03:18.410Z",
-    "matchesPlayed": 85,
+    "lastUpdated": "2026-07-04T16:06:47.149Z",
+    "matchesPlayed": 88,
     "stage": "knockout",
     "source": "Wikipedia"
   }
