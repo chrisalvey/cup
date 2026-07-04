@@ -139,11 +139,11 @@
       "eliminated": true
     },
     "Germany": {
-      "w": 2,
+      "w": 1,
       "d": 0,
       "l": 2,
-      "gf": 11,
-      "ga": 5,
+      "gf": 9,
+      "ga": 4,
       "eliminated": true,
       "round": "round_of_32"
     },
@@ -158,9 +158,9 @@
     "Ivory Coast": {
       "w": 2,
       "d": 0,
-      "l": 2,
-      "gf": 5,
-      "ga": 4,
+      "l": 1,
+      "gf": 4,
+      "ga": 2,
       "eliminated": true,
       "round": "round_of_32"
     },
@@ -698,17 +698,6 @@
       "away": "Ecuador",
       "homeScore": 1,
       "awayScore": 0,
-      "stage": "group",
-      "group": "E",
-      "date": "",
-      "venue": "",
-      "played": true
-    },
-    {
-      "home": "Germany",
-      "away": "Ivory Coast",
-      "homeScore": 2,
-      "awayScore": 1,
       "stage": "group",
       "group": "E",
       "date": "",
@@ -1413,8 +1402,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-04T13:41:38.756Z",
-    "matchesPlayed": 88,
+    "lastUpdated": "2026-07-04T15:08:47.493Z",
+    "matchesPlayed": 87,
     "stage": "knockout",
     "source": "Wikipedia"
   }
