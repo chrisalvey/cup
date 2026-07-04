@@ -115,11 +115,11 @@
     "Paraguay": {
       "w": 2,
       "d": 1,
-      "l": 1,
+      "l": 2,
       "gf": 3,
-      "ga": 5,
-      "eliminated": false,
-      "round": "round_of_32"
+      "ga": 6,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Australia": {
       "w": 1,
@@ -277,13 +277,13 @@
       "eliminated": true
     },
     "France": {
-      "w": 4,
+      "w": 5,
       "d": 0,
       "l": 0,
-      "gf": 13,
+      "gf": 14,
       "ga": 2,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Senegal": {
       "w": 1,
@@ -1426,14 +1426,14 @@
     {
       "home": "Paraguay",
       "away": "France",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 1,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-04",
       "venue": "Lincoln Financial Field, Philadelphia",
-      "played": false
+      "played": true
     },
     {
       "home": "Brazil",
@@ -1506,11 +1506,23 @@
       "date": "2026-07-07",
       "venue": "BC Place, Vancouver",
       "played": false
+    },
+    {
+      "home": "France",
+      "away": "Morocco",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "quarterfinal",
+      "stageLabel": "Quarterfinals",
+      "penalties": null,
+      "date": "2026-07-09",
+      "venue": "Gillette Stadium, Foxborough",
+      "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-04T22:29:13.067Z",
-    "matchesPlayed": 89,
+    "lastUpdated": "2026-07-04T23:35:45.586Z",
+    "matchesPlayed": 90,
     "stage": "knockout",
     "source": "Wikipedia"
   }
