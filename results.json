@@ -72,11 +72,11 @@
     "Brazil": {
       "w": 3,
       "d": 1,
-      "l": 0,
-      "gf": 9,
-      "ga": 2,
-      "eliminated": false,
-      "round": "round_of_32"
+      "l": 1,
+      "gf": 10,
+      "ga": 4,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Morocco": {
       "w": 4,
@@ -303,13 +303,13 @@
       "eliminated": true
     },
     "Norway": {
-      "w": 3,
+      "w": 4,
       "d": 0,
       "l": 1,
-      "gf": 10,
-      "ga": 8,
+      "gf": 12,
+      "ga": 9,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Argentina": {
       "w": 4,
@@ -1438,14 +1438,14 @@
     {
       "home": "Brazil",
       "away": "Norway",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 2,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-05",
       "venue": "MetLife Stadium, East Rutherford",
-      "played": false
+      "played": true
     },
     {
       "home": "Mexico",
@@ -1521,8 +1521,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-05T21:06:07.966Z",
-    "matchesPlayed": 90,
+    "lastUpdated": "2026-07-05T22:31:37.016Z",
+    "matchesPlayed": 91,
     "stage": "knockout",
     "source": "Wikipedia"
   }
