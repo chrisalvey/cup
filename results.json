@@ -3,11 +3,11 @@
     "Mexico": {
       "w": 4,
       "d": 0,
-      "l": 0,
-      "gf": 8,
-      "ga": 0,
-      "eliminated": false,
-      "round": "round_of_32"
+      "l": 1,
+      "gf": 10,
+      "ga": 3,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "South Africa": {
       "w": 1,
@@ -382,13 +382,13 @@
       "round": "round_of_32"
     },
     "England": {
-      "w": 3,
+      "w": 4,
       "d": 1,
       "l": 0,
-      "gf": 8,
-      "ga": 3,
+      "gf": 11,
+      "ga": 5,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Croatia": {
       "w": 2,
@@ -1450,14 +1450,14 @@
     {
       "home": "Mexico",
       "away": "England",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 2,
+      "awayScore": 3,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-05",
       "venue": "Estadio Azteca, Mexico City",
-      "played": false
+      "played": true
     },
     {
       "home": "Portugal",
@@ -1518,11 +1518,23 @@
       "date": "2026-07-09",
       "venue": "Gillette Stadium, Foxborough",
       "played": false
+    },
+    {
+      "home": "Norway",
+      "away": "England",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "quarterfinal",
+      "stageLabel": "Quarterfinals",
+      "penalties": null,
+      "date": "2026-07-11",
+      "venue": "Hard Rock Stadium, Miami Gardens",
+      "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-06T00:10:45.921Z",
-    "matchesPlayed": 91,
+    "lastUpdated": "2026-07-06T13:50:15.145Z",
+    "matchesPlayed": 92,
     "stage": "knockout",
     "source": "Wikipedia"
   }
