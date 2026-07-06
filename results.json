@@ -243,13 +243,13 @@
       "eliminated": true
     },
     "Spain": {
-      "w": 3,
+      "w": 4,
       "d": 1,
       "l": 0,
-      "gf": 8,
+      "gf": 9,
       "ga": 0,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Cape Verde": {
       "w": 0,
@@ -349,11 +349,11 @@
     "Portugal": {
       "w": 2,
       "d": 2,
-      "l": 0,
+      "l": 1,
       "gf": 8,
-      "ga": 2,
-      "eliminated": false,
-      "round": "round_of_32"
+      "ga": 3,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Congo DR": {
       "w": 1,
@@ -1462,14 +1462,14 @@
     {
       "home": "Portugal",
       "away": "Spain",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 1,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-06",
       "venue": "AT&T Stadium, Arlington",
-      "played": false
+      "played": true
     },
     {
       "home": "USA",
@@ -1533,8 +1533,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-06T20:56:39.126Z",
-    "matchesPlayed": 92,
+    "lastUpdated": "2026-07-06T22:20:05.915Z",
+    "matchesPlayed": 93,
     "stage": "knockout",
     "source": "Wikipedia"
   }
