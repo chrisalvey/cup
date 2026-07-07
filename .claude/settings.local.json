@@ -1,7 +1,34 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init *)"
+      "Bash(git init *)",
+      "Bash(git merge *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" scrape-results.js)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git stash *)",
+      "PowerShell($data = Get-Content C:\\\\dev\\\\cup\\\\results.json -Raw | ConvertFrom-Json; $data.matches | Where-Object { -not $_.played } | Select-Object home, away, stage, date | Format-Table -AutoSize)",
+      "PowerShell($data = Get-Content C:\\\\dev\\\\cup\\\\results.json -Raw | ConvertFrom-Json; $data.teams.PSObject.Properties | Where-Object { $_.Value.eliminated -eq $true } | Select-Object -First 3 Name, @{n='round';e={$_.Value.round}}, @{n='eliminated';e={$_.Value.eliminated}})",
+      "Bash(cp results.json /tmp/results_before.json)",
+      "Bash(copy results.json \"%TEMP%\\\\results_before.json\")",
+      "Bash(git fetch *)",
+      "Bash(gh api *)",
+      "Bash(gh run *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('teams:',len\\(d['teams']\\)\\); print\\(d['metadata']\\); print\\('matches:',len\\(d['matches']\\)\\)\")",
+      "Bash(mkdir -p /c/Users/Chris/AppData/Local/Temp/claude/C--dev-cup/d5557392-3ad1-4555-ae72-662b97e3c307/scratchpad)",
+      "Bash(git show *)",
+      "Read(//c/Users/Chris/AppData/Local/Temp/claude/C--dev-cup/d5557392-3ad1-4555-ae72-662b97e3c307/scratchpad/**)",
+      "Bash(node -e ' *)",
+      "Bash(cp teams.json __TRACKED_VAR__/teams.json)",
+      "Bash(rm scrape-results-test.js)",
+      "Bash(cp results.json \"C:/Users/Chris/AppData/Local/Temp/claude/C--dev-cup/d5557392-3ad1-4555-ae72-662b97e3c307/scratchpad/results.json.backup\")",
+      "Bash(node scrape-results.js)",
+      "Bash(git commit -m ' *)",
+      "Skill(fewer-permission-prompts)",
+      "Skill(fewer-permission-prompts:*)",
+      "Bash(ls -la /c/Users/Chris/.claude/projects/ 2>&1 | head -30)"
     ]
   }
 }

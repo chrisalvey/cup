@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_screenshot",
+      "mcp__Claude_Preview__preview_list",
+      "Bash(git fetch *)",
+      "mcp__Claude_Preview__preview_console_logs"
+    ]
+  }
+}
