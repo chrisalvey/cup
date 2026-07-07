@@ -220,11 +220,11 @@
     "Egypt": {
       "w": 2,
       "d": 2,
-      "l": 0,
-      "gf": 6,
-      "ga": 4,
-      "eliminated": false,
-      "round": "round_of_32"
+      "l": 1,
+      "gf": 8,
+      "ga": 7,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Iran": {
       "w": 0,
@@ -312,13 +312,13 @@
       "round": "round_of_16"
     },
     "Argentina": {
-      "w": 4,
+      "w": 5,
       "d": 0,
       "l": 0,
-      "gf": 11,
-      "ga": 3,
+      "gf": 14,
+      "ga": 5,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Algeria": {
       "w": 1,
@@ -1486,14 +1486,14 @@
     {
       "home": "Argentina",
       "away": "Egypt",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 3,
+      "awayScore": 2,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-07",
       "venue": "Mercedes-Benz Stadium, Atlanta",
-      "played": false
+      "played": true
     },
     {
       "home": "Switzerland",
@@ -1545,8 +1545,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-07T15:31:09.442Z",
-    "matchesPlayed": 94,
+    "lastUpdated": "2026-07-07T18:03:33.510Z",
+    "matchesPlayed": 95,
     "stage": "knockout",
     "source": "Wikipedia"
   }
