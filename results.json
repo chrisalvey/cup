@@ -217,13 +217,13 @@
       "round": "round_of_32"
     },
     "Switzerland": {
-      "w": 1,
+      "w": 2,
       "d": 0,
       "l": 0,
       "gf": 2,
       "ga": 0,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Algeria": {
       "w": 0,
@@ -273,11 +273,11 @@
     "Colombia": {
       "w": 1,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 1,
       "ga": 0,
-      "eliminated": false,
-      "round": "round_of_32"
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Ghana": {
       "w": 0,
@@ -578,14 +578,17 @@
     {
       "home": "Switzerland",
       "away": "Colombia",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 0,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
-      "penalties": null,
+      "penalties": {
+        "home": 4,
+        "away": 3
+      },
       "date": "2026-07-07",
       "venue": "BC Place, Vancouver",
-      "played": false
+      "played": true
     },
     {
       "home": "France",
@@ -622,11 +625,23 @@
       "date": "2026-07-11",
       "venue": "Hard Rock Stadium, Miami Gardens",
       "played": false
+    },
+    {
+      "home": "Argentina",
+      "away": "Switzerland",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "quarterfinal",
+      "stageLabel": "Quarterfinals",
+      "penalties": null,
+      "date": "2026-07-11",
+      "venue": "Arrowhead Stadium, Kansas City",
+      "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-07T21:54:57.916Z",
-    "matchesPlayed": 23,
+    "lastUpdated": "2026-07-07T23:05:28.528Z",
+    "matchesPlayed": 24,
     "stage": "knockout",
     "source": "Wikipedia"
   }
