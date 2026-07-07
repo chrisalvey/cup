@@ -106,11 +106,11 @@
     "USA": {
       "w": 3,
       "d": 0,
-      "l": 1,
-      "gf": 10,
-      "ga": 4,
-      "eliminated": false,
-      "round": "round_of_32"
+      "l": 2,
+      "gf": 11,
+      "ga": 8,
+      "eliminated": true,
+      "round": "round_of_16"
     },
     "Paraguay": {
       "w": 2,
@@ -209,13 +209,13 @@
       "eliminated": true
     },
     "Belgium": {
-      "w": 2,
+      "w": 3,
       "d": 2,
       "l": 0,
-      "gf": 9,
-      "ga": 4,
+      "gf": 13,
+      "ga": 5,
       "eliminated": false,
-      "round": "round_of_32"
+      "round": "round_of_16"
     },
     "Egypt": {
       "w": 2,
@@ -1474,14 +1474,14 @@
     {
       "home": "USA",
       "away": "Belgium",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 4,
       "stage": "round_of_16",
       "stageLabel": "Round of 16",
       "penalties": null,
       "date": "2026-07-06",
       "venue": "Lumen Field, Seattle",
-      "played": false
+      "played": true
     },
     {
       "home": "Argentina",
@@ -1520,6 +1520,18 @@
       "played": false
     },
     {
+      "home": "Spain",
+      "away": "Belgium",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "quarterfinal",
+      "stageLabel": "Quarterfinals",
+      "penalties": null,
+      "date": "2026-07-10",
+      "venue": "SoFi Stadium, Inglewood",
+      "played": false
+    },
+    {
       "home": "Norway",
       "away": "England",
       "homeScore": null,
@@ -1533,8 +1545,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-06T23:39:03.711Z",
-    "matchesPlayed": 93,
+    "lastUpdated": "2026-07-07T12:29:07.390Z",
+    "matchesPlayed": 94,
     "stage": "knockout",
     "source": "Wikipedia"
   }
