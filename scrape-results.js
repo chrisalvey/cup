@@ -488,6 +488,38 @@ async function scrapeResults() {
         }
     };
 
+    // Sanity check: over the course of a tournament these numbers can only
+    // hold steady or grow. A drop means Wikipedia changed its page markup
+    // (this has happened at every stage transition — group stage tables
+    // getting condensed, knockout rounds restructuring, etc.) and the
+    // scraper silently parsed fewer matches than actually exist. Refuse to
+    // clobber good data with a bad partial scrape.
+    const prevMatchesPlayed = existingData.metadata?.matchesPlayed || 0;
+    const prevTeamCount = Object.keys(existingData.teams || {}).length;
+    const sumPoints = teams => Object.values(teams).reduce((s, t) => s + (t.w || 0) * 3 + (t.d || 0), 0);
+    const prevPoints = sumPoints(existingData.teams || {});
+    const newPoints = sumPoints(teamStats);
+    const newTeamCount = Object.keys(teamStats).length;
+
+    const problems = [];
+    if (matchesPlayed < prevMatchesPlayed) {
+        problems.push(`matches played dropped: ${prevMatchesPlayed} -> ${matchesPlayed}`);
+    }
+    if (newTeamCount < prevTeamCount) {
+        problems.push(`team count dropped: ${prevTeamCount} -> ${newTeamCount}`);
+    }
+    if (newPoints < prevPoints) {
+        problems.push(`total team points dropped: ${prevPoints} -> ${newPoints}`);
+    }
+
+    if (problems.length > 0) {
+        console.error('\n❌ Sanity check failed — refusing to overwrite results.json:');
+        problems.forEach(p => console.error(`   - ${p}`));
+        console.error('   Wikipedia likely changed its page markup and the scraper is under-counting.');
+        console.error('   Leaving the existing results.json in place.');
+        process.exit(1);
+    }
+
     fs.writeFileSync('results.json', JSON.stringify(output, null, 2));
     console.log(`\n✅ results.json updated — ${matchesPlayed} matches played`);
 }

@@ -30,7 +30,9 @@ jobs:
         run: npm install cheerio
 
       - name: Run results scraper
-        run: node scrape-results.js | tee scraper-output.log
+        run: |
+          set -o pipefail
+          node scrape-results.js | tee scraper-output.log
 
       - name: Check for changes
         id: check_changes
