@@ -92,7 +92,7 @@ function parseGroupStage(html) {
     const content = $('#mw-content-text .mw-parser-output').first();
     const root = content.length ? content : $.root();
 
-    root.find('h2, h3, table.footballbox, table.vevent, table.fevent').each((_, el) => {
+    root.find('h2, h3, table.footballbox, table.vevent, table.fevent, table.col1right').each((_, el) => {
         const $el = $(el);
         const tag = el.tagName ? el.tagName.toLowerCase() : '';
 
@@ -105,6 +105,72 @@ function parseGroupStage(html) {
         if (!inGroupStage) return;
 
         const $t = $el;
+
+        // Once a group's individual match report boxes have aged out, Wikipedia
+        // condenses them into a single compact results-grid table per group: a
+        // lone-<td> row holds the date heading for the fixtures that follow, and
+        // each match is a 4-<td> row (home, "score" link, away, venue). This has
+        // to be handled as a whole table rather than "one table = one match".
+        if ($t.is('table.col1right')) {
+            let currentDate = null;
+            $t.find('tr').each((_, tr) => {
+                const tds = $(tr).find('td');
+                if (tds.length === 1) {
+                    // Force UTC parsing so the resulting ISO date doesn't shift
+                    // depending on the machine's local timezone (Wikipedia gives
+                    // only a plain "June 11, 2026" string here, no machine-readable
+                    // date, unlike the old .bday-based format).
+                    const parsed = new Date(`${$(tds[0]).text().trim()} UTC`);
+                    currentDate = isNaN(parsed.getTime()) ? null : parsed.toISOString();
+                    return;
+                }
+                if (tds.length < 4) return;
+
+                const home = normalizeTeam($(tds[0]).text().trim());
+                const away = normalizeTeam($(tds[2]).text().trim());
+                const scoreText = $(tds[1]).text().trim();
+                const venue = $(tds[3]).text().trim();
+                if (!home || !away) return;
+
+                const homeGroupCheck = groupForTeam(home);
+                const awayGroupCheck = groupForTeam(away);
+                if (homeGroupCheck && awayGroupCheck && homeGroupCheck !== awayGroupCheck) return;
+
+                const group = homeGroupCheck || awayGroupCheck || null;
+                const scoreParts = scoreText.match(/(\d+)\s*[–\-:]\s*(\d+)/);
+
+                if (!scoreParts) {
+                    if (!currentDate) return;
+                    matches.push({
+                        home, away, homeScore: null, awayScore: null,
+                        stage: 'group', group, date: currentDate, venue, played: false
+                    });
+                    return;
+                }
+
+                const homeScore = parseInt(scoreParts[1]);
+                const awayScore = parseInt(scoreParts[2]);
+
+                matches.push({
+                    home, away, homeScore, awayScore,
+                    stage: 'group', group, date: currentDate, venue, played: true
+                });
+
+                ensureTeam(home);
+                ensureTeam(away);
+                if (homeScore > awayScore) {
+                    teamStats[home].w++; teamStats[away].l++;
+                } else if (homeScore < awayScore) {
+                    teamStats[away].w++; teamStats[home].l++;
+                } else {
+                    teamStats[home].d++; teamStats[away].d++;
+                }
+                teamStats[home].gf += homeScore; teamStats[home].ga += awayScore;
+                teamStats[away].gf += awayScore; teamStats[away].ga += homeScore;
+            });
+            return;
+        }
+
         const homeEl = $t.find('.fhome, [itemprop="homeTeam"] span, .home').first();
         const awayEl = $t.find('.faway, [itemprop="awayTeam"] span, .away').first();
         const scoreEl = $t.find('.fscore, [itemprop="name"].score, .score').first();
