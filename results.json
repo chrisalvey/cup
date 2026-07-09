@@ -81,11 +81,11 @@
     "Morocco": {
       "w": 4,
       "d": 1,
-      "l": 0,
+      "l": 1,
       "gf": 10,
-      "ga": 4,
-      "eliminated": false,
-      "round": "round_of_16"
+      "ga": 6,
+      "eliminated": true,
+      "round": "quarterfinal"
     },
     "Haiti": {
       "w": 0,
@@ -277,13 +277,13 @@
       "eliminated": true
     },
     "France": {
-      "w": 5,
+      "w": 6,
       "d": 0,
       "l": 0,
-      "gf": 14,
+      "gf": 16,
       "ga": 2,
       "eliminated": false,
-      "round": "round_of_16"
+      "round": "quarterfinal"
     },
     "Senegal": {
       "w": 1,
@@ -1513,14 +1513,14 @@
     {
       "home": "France",
       "away": "Morocco",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 2,
+      "awayScore": 0,
       "stage": "quarterfinal",
       "stageLabel": "Quarterfinals",
       "penalties": null,
       "date": "2026-07-09",
       "venue": "Gillette Stadium, Foxborough",
-      "played": false
+      "played": true
     },
     {
       "home": "Spain",
@@ -1560,8 +1560,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-09T22:00:00.411Z",
-    "matchesPlayed": 96,
+    "lastUpdated": "2026-07-09T23:22:24.723Z",
+    "matchesPlayed": 97,
     "stage": "knockout",
     "source": "Wikipedia"
   }
