@@ -211,11 +211,11 @@
     "Belgium": {
       "w": 3,
       "d": 2,
-      "l": 0,
-      "gf": 13,
-      "ga": 5,
-      "eliminated": false,
-      "round": "round_of_16"
+      "l": 1,
+      "gf": 14,
+      "ga": 7,
+      "eliminated": true,
+      "round": "quarterfinal"
     },
     "Egypt": {
       "w": 2,
@@ -243,13 +243,13 @@
       "eliminated": true
     },
     "Spain": {
-      "w": 4,
+      "w": 5,
       "d": 1,
       "l": 0,
-      "gf": 9,
-      "ga": 0,
+      "gf": 11,
+      "ga": 1,
       "eliminated": false,
-      "round": "round_of_16"
+      "round": "quarterfinal"
     },
     "Cape Verde": {
       "w": 0,
@@ -1525,14 +1525,14 @@
     {
       "home": "Spain",
       "away": "Belgium",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 2,
+      "awayScore": 1,
       "stage": "quarterfinal",
       "stageLabel": "Quarterfinals",
       "penalties": null,
       "date": "2026-07-10",
       "venue": "SoFi Stadium, Inglewood",
-      "played": false
+      "played": true
     },
     {
       "home": "Norway",
@@ -1557,11 +1557,23 @@
       "date": "2026-07-11",
       "venue": "Arrowhead Stadium, Kansas City",
       "played": false
+    },
+    {
+      "home": "France",
+      "away": "Spain",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "semifinal",
+      "stageLabel": "Semifinals",
+      "penalties": null,
+      "date": "2026-07-14",
+      "venue": "AT&T Stadium, Arlington",
+      "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-10T20:50:30.770Z",
-    "matchesPlayed": 97,
+    "lastUpdated": "2026-07-10T22:08:11.522Z",
+    "matchesPlayed": 98,
     "stage": "knockout",
     "source": "Wikipedia"
   }
