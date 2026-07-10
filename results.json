@@ -226,12 +226,12 @@
       "eliminated": true,
       "round": "round_of_16"
     },
-    "Iran��": {
+    "Iran": {
       "w": 0,
-      "d": 1,
+      "d": 3,
       "l": 0,
-      "gf": 2,
-      "ga": 2,
+      "gf": 3,
+      "ga": 3,
       "eliminated": true
     },
     "New Zealand": {
@@ -240,14 +240,6 @@
       "l": 2,
       "gf": 4,
       "ga": 10,
-      "eliminated": true
-    },
-    "Iran": {
-      "w": 0,
-      "d": 2,
-      "l": 0,
-      "gf": 1,
-      "ga": 1,
       "eliminated": true
     },
     "Spain": {
@@ -834,7 +826,7 @@
       "played": true
     },
     {
-      "home": "Iran��",
+      "home": "Iran",
       "away": "New Zealand",
       "homeScore": 2,
       "awayScore": 2,
@@ -1568,7 +1560,7 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-10T01:10:44.881Z",
+    "lastUpdated": "2026-07-10T16:55:42.697Z",
     "matchesPlayed": 97,
     "stage": "knockout",
     "source": "Wikipedia"

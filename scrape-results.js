@@ -68,9 +68,12 @@ function fetchHTML(url) {
             if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
                 return fetchHTML(res.headers.location).then(resolve).catch(reject);
             }
-            let data = '';
-            res.on('data', chunk => data += chunk);
-            res.on('end', () => resolve(data));
+            // Buffer raw bytes and decode once at the end — concatenating
+            // chunk.toString() per chunk (implicit utf8 decode) corrupts any
+            // multi-byte character that happens to straddle a chunk boundary.
+            const chunks = [];
+            res.on('data', chunk => chunks.push(chunk));
+            res.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
         }).on('error', reject);
     });
 }
