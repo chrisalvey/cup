@@ -105,6 +105,85 @@ export function findRosterCollisions(selectedTeams, matches) {
     });
 }
 
+// The round bonus is banked for *reaching* a round, win or lose (see
+// scrape-results.js) — so a team that has won its way to round R is
+// guaranteed to bank at least the bonus for playing round R+1, even if it
+// loses that match outright. A semifinal loss doesn't end a run (there's
+// still a third-place match), so the guaranteed floor after a quarterfinal
+// win skips straight to third-place rather than stopping at semifinal.
+const WORST_CASE_BONUS_IF_WON = {
+    round_of_32: ROUND_BONUS.round_of_16,
+    round_of_16: ROUND_BONUS.quarterfinal,
+    quarterfinal: ROUND_BONUS.third_place,
+    semifinal: ROUND_BONUS.runner_up,
+};
+
+// Guaranteed minimum remaining points for a team: assumes it loses at the
+// very first opportunity (after already-guaranteed round bonuses land).
+export function calculateMinPossiblePoints(teamData, teamName, matches) {
+    if (!teamData) return 0;
+    if (teamData.eliminated) return calculateTeamPoints(teamData);
+
+    const basePts = (teamData.w || 0) * MATCH_POINTS.win + (teamData.d || 0) * MATCH_POINTS.draw;
+    const round = teamData.round;
+
+    if (round === 'semifinal' && !wonSemifinal(teamName, matches)) {
+        return basePts + ROUND_BONUS.third_place;
+    }
+
+    return basePts + (WORST_CASE_BONUS_IF_WON[round] ?? ROUND_BONUS.round_of_32);
+}
+
+// Same idea as calculateMinPossiblePoints, but for a team that is about to
+// play (not already past) the match at `stage` and is assumed to win it —
+// used when resolving roster collisions below, where teamData.round is
+// still one stage stale until that specific match is actually played.
+function minIfWinsMatch(teamData, stage) {
+    const basePts = (teamData.w || 0) * MATCH_POINTS.win + (teamData.d || 0) * MATCH_POINTS.draw + MATCH_POINTS.win;
+    return basePts + (WORST_CASE_BONUS_IF_WON[stage] ?? ROUND_BONUS.round_of_32);
+}
+
+// Guaranteed value for a team that loses the not-yet-played match at
+// `stage` — deterministic except for a semifinal, where a loss doesn't
+// eliminate the team (third-place match still ahead), so its own floor
+// applies there instead of a single fixed number.
+function floorIfEliminatedAt(teamData, stage) {
+    const basePts = (teamData.w || 0) * MATCH_POINTS.win + (teamData.d || 0) * MATCH_POINTS.draw;
+    if (stage === 'final') return basePts + ROUND_BONUS.runner_up;
+    if (stage === 'semifinal') return basePts + ROUND_BONUS.third_place;
+    return basePts + (ROUND_BONUS[stage] || 0);
+}
+
+export function calculateParticipantMinScore(selectedTeams, normalizedLookup, matches) {
+    const collisions = findRosterCollisions(selectedTeams, matches);
+    const resolvedKeys = new Set();
+    let total = 0;
+
+    collisions.forEach(m => {
+        const homeKey = normalizeTeamName(m.home);
+        const awayKey = normalizeTeamName(m.away);
+        const homeTeam = normalizedLookup[homeKey];
+        const awayTeam = normalizedLookup[awayKey];
+        // Exactly one of the two wins — we don't get to pick which, so the
+        // guaranteed combined floor is the smaller of the two possible
+        // worlds, not the larger (that's the max-score calculation's job).
+        const homeWins = minIfWinsMatch(homeTeam, m.stage) + floorIfEliminatedAt(awayTeam, m.stage);
+        const awayWins = minIfWinsMatch(awayTeam, m.stage) + floorIfEliminatedAt(homeTeam, m.stage);
+        total += Math.min(homeWins, awayWins);
+        resolvedKeys.add(homeKey);
+        resolvedKeys.add(awayKey);
+    });
+
+    selectedTeams.forEach(name => {
+        const key = normalizeTeamName(name);
+        if (resolvedKeys.has(key)) return;
+        const team = normalizedLookup[key];
+        total += calculateMinPossiblePoints(team, name, matches);
+    });
+
+    return total;
+}
+
 export function calculateParticipantMaxScore(selectedTeams, normalizedLookup, matches) {
     const collisions = findRosterCollisions(selectedTeams, matches);
     const resolvedKeys = new Set();
@@ -133,15 +212,18 @@ export function calculateParticipantMaxScore(selectedTeams, normalizedLookup, ma
 }
 
 // Best (lowest-numbered) rank a participant could still finish at: assumes
-// they hit their ceiling while everyone else gets no more points (their
-// current score is a guaranteed floor, since scores never decrease). Ties
-// broken the same way as the leaderboard sort — earlier submission wins.
+// they hit their ceiling while everyone else hits their own guaranteed
+// floor (minScore, not just their current score — a team with a scheduled
+// next match is guaranteed to bank at least that round's bonus even if it
+// loses, so current score alone understates what others are locked into).
+// Ties broken the same way as the leaderboard sort — earlier submission wins.
 export function calculateBestPossibleRank(target, allParticipants) {
     let ahead = 0;
     allParticipants.forEach(other => {
         if (other === target) return;
-        if (other.score > target.maxScore) { ahead++; return; }
-        if (other.score === target.maxScore) {
+        const otherFloor = other.minScore ?? other.score;
+        if (otherFloor > target.maxScore) { ahead++; return; }
+        if (otherFloor === target.maxScore) {
             const otherTime = other.timestamp?.seconds || 0;
             const targetTime = target.timestamp?.seconds || 0;
             if (otherTime < targetTime) ahead++;

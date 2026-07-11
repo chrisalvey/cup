@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 import { firebaseConfig, FIREBASE_COLLECTION, DRAFT_DEADLINE, TOTAL_MATCHES, MATCH_POINTS, ROUND_BONUS } from './config.js';
-import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateMaxPossiblePoints, calculateBestPossibleRank, findRosterCollisions } from './utils.js';
+import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateParticipantMinScore, calculateMaxPossiblePoints, calculateMinPossiblePoints, calculateBestPossibleRank, findRosterCollisions } from './utils.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -70,7 +70,8 @@ function renderParticipants() {
     const withScores = participants.map(p => {
         const { total, breakdown } = calculateParticipantScore(p.teams || [], normalizedLookup);
         const maxScore = calculateParticipantMaxScore(p.teams || [], normalizedLookup, matches);
-        return { ...p, score: total, breakdown, maxScore };
+        const minScore = calculateParticipantMinScore(p.teams || [], normalizedLookup, matches);
+        return { ...p, score: total, breakdown, maxScore, minScore };
     });
 
     withScores.sort((a, b) => {
@@ -115,6 +116,7 @@ function renderParticipants() {
             const key = normalizeTeamName(name);
             const team = normalizedLookup[key];
             const pts = team ? calculateTeamPoints(team) : 0;
+            const minPts = calculateMinPossiblePoints(team, name, matches);
             const maxPts = calculateMaxPossiblePoints(team, name, matches);
             const w = team?.w || 0;
             const d = team?.d || 0;
@@ -129,6 +131,7 @@ function renderParticipants() {
                     <td class="team-name-cell">${name} ${round} ${status} ${collisionBadge}</td>
                     <td class="record-cell">${w}W ${d}D ${l}L</td>
                     <td class="points-cell ${pts > 0 ? 'has-pts' : ''}">${pts}</td>
+                    <td class="points-cell min-points-cell">${minPts}</td>
                     <td class="points-cell max-points-cell">${maxPts}</td>
                 </tr>
             `;
@@ -147,9 +150,9 @@ function renderParticipants() {
                     </div>
                     <div class="card-score">
                         <div class="score-current">${p.score}</div>
-                        <div class="score-max">
-                            <span>max ${p.maxScore}</span>
-                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Best case if every remaining team wins out. Bonuses aren't cumulative — only the furthest round reached counts, so it becomes Champion (+15) instead of stacking with earlier round bonuses. If two of your own picks are scheduled to play each other, only the better outcome counts (⚔️ in View Details) — but only matchups already on the schedule are caught. A collision that hasn't been drawn yet (e.g. two picks that could still meet in a later round) won't be reflected until the bracket sets it.</span></span>
+                        <div class="score-range">
+                            <span>${p.minScore}–${p.maxScore}</span>
+                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Range of remaining outcomes. Low end assumes every team loses its very next match; high end assumes every team wins out. Either way, bonuses aren't cumulative — only the furthest round reached counts. If two of your own picks are scheduled to play each other, only one can win it, so the range accounts for that instead of double-counting both (⚔️ in View Details) — but only matchups already on the schedule are caught; a collision that hasn't been drawn yet won't be reflected until the bracket sets it.</span></span>
                         </div>
                         ${hasStarted ? `<div class="score-best-rank ${bestRankClass}">best: #${p.bestRank}</div>` : ''}
                     </div>
@@ -171,7 +174,7 @@ function renderParticipants() {
                 <div class="team-breakdown" data-idx="${index}" style="display:none;">
                     <div class="breakdown-header">Team Performance</div>
                     <table class="breakdown-table">
-                        <thead><tr><th>Team</th><th>Record</th><th>Pts</th><th>Max</th></tr></thead>
+                        <thead><tr><th>Team</th><th>Record</th><th>Pts</th><th>Min</th><th>Max</th></tr></thead>
                         <tbody>${teamRows}</tbody>
                     </table>
                 </div>` : ''}

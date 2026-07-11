@@ -110,12 +110,12 @@ h1 {
 .participant-name { font-size: 0.8rem; color: var(--text-muted); }
 .card-score { display: flex; flex-direction: column; align-items: flex-end; min-width: 50px; }
 .score-current { font-size: 1.6rem; font-weight: 700; color: var(--neon-green); line-height: 1; }
-.score-max { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; display: flex; align-items: center; gap: 3px; }
+.score-range { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; display: flex; align-items: center; gap: 3px; }
 .score-best-rank { font-size: 0.7rem; font-weight: 600; margin-top: 2px; }
 .score-best-rank.rank-ceiling-champion { color: var(--neon-yellow); }
 .score-best-rank.rank-ceiling-climbing { color: var(--neon-green); }
 .score-best-rank.rank-ceiling-capped { color: var(--neon-red); }
-.max-points-cell { color: var(--text-muted); }
+.min-points-cell, .max-points-cell { color: var(--text-muted); }
 .collision-badge { font-size: 0.65rem; padding: 1px 5px; border-radius: 4px; margin-left: 4px; border: 1px solid var(--neon-yellow); background: rgba(255,214,0,0.12); color: var(--neon-yellow); white-space: nowrap; }
 
 .info-icon { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--text-muted); color: var(--text-muted); font-size: 0.62rem; line-height: 1; cursor: help; }
