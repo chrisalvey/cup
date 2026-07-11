@@ -124,7 +124,7 @@ h1 {
     position: absolute;
     bottom: calc(100% + 6px);
     right: -8px;
-    width: 200px;
+    width: 230px;
     background: var(--bg-dark);
     border: 1px solid var(--border-bright);
     border-radius: 8px;

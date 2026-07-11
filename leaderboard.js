@@ -149,7 +149,7 @@ function renderParticipants() {
                         <div class="score-current">${p.score}</div>
                         <div class="score-max">
                             <span>max ${p.maxScore}</span>
-                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Best case if every remaining team wins out. Bonuses aren't cumulative — only the furthest round reached counts, so it becomes Champion (+15) instead of stacking with earlier round bonuses. If two of your own picks are scheduled to play each other, only the better outcome counts — see ⚔️ in View Details.</span></span>
+                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Best case if every remaining team wins out. Bonuses aren't cumulative — only the furthest round reached counts, so it becomes Champion (+15) instead of stacking with earlier round bonuses. If two of your own picks are scheduled to play each other, only the better outcome counts (⚔️ in View Details) — but only matchups already on the schedule are caught. A collision that hasn't been drawn yet (e.g. two picks that could still meet in a later round) won't be reflected until the bracket sets it.</span></span>
                         </div>
                         ${hasStarted ? `<div class="score-best-rank ${bestRankClass}">best: #${p.bestRank}</div>` : ''}
                     </div>
