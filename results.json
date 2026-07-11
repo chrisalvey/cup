@@ -1559,8 +1559,8 @@
       "played": false
     },
     {
-      "home": "Spain",
-      "away": "France",
+      "home": "France",
+      "away": "Spain",
       "homeScore": null,
       "awayScore": null,
       "stage": "semifinal",
@@ -1572,7 +1572,7 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-11T14:05:42.162Z",
+    "lastUpdated": "2026-07-11T15:31:52.197Z",
     "matchesPlayed": 98,
     "stage": "knockout",
     "source": "Wikipedia"
