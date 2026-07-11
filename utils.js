@@ -87,3 +87,21 @@ export function calculateParticipantMaxScore(selectedTeams, normalizedLookup, ma
         return total + calculateMaxPossiblePoints(team, name, matches);
     }, 0);
 }
+
+// Best (lowest-numbered) rank a participant could still finish at: assumes
+// they hit their ceiling while everyone else gets no more points (their
+// current score is a guaranteed floor, since scores never decrease). Ties
+// broken the same way as the leaderboard sort — earlier submission wins.
+export function calculateBestPossibleRank(target, allParticipants) {
+    let ahead = 0;
+    allParticipants.forEach(other => {
+        if (other === target) return;
+        if (other.score > target.maxScore) { ahead++; return; }
+        if (other.score === target.maxScore) {
+            const otherTime = other.timestamp?.seconds || 0;
+            const targetTime = target.timestamp?.seconds || 0;
+            if (otherTime < targetTime) ahead++;
+        }
+    });
+    return ahead + 1;
+}

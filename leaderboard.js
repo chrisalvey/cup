@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 import { firebaseConfig, FIREBASE_COLLECTION, DRAFT_DEADLINE, TOTAL_MATCHES, MATCH_POINTS, ROUND_BONUS } from './config.js';
-import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore } from './utils.js';
+import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateMaxPossiblePoints, calculateBestPossibleRank } from './utils.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -80,12 +80,12 @@ function renderParticipants() {
         return timeA - timeB;
     });
 
+    // Best rank uses the same tie-break as the sort above, so compute it
+    // against the full field before we start slicing per-card values.
+    withScores.forEach(p => { p.bestRank = calculateBestPossibleRank(p, withScores); });
+
     const matchesPlayed = resultsData?.metadata?.matchesPlayed || 0;
     const hasStarted = matchesPlayed > 0;
-    // A participant's current score can only go up, so the highest current
-    // score across everyone is a guaranteed floor — anyone whose ceiling
-    // can't clear it is mathematically out of contention for 1st.
-    const topScore = withScores.reduce((max, p) => Math.max(max, p.score), 0);
 
     let html = '';
     withScores.forEach((p, index) => {
@@ -94,13 +94,17 @@ function renderParticipants() {
         const medalEmoji = hasStarted ? (rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '') : '';
         const nameLen = p.teamName?.length || 0;
         const nameLenClass = nameLen > 30 ? 'very-long-name' : nameLen > 20 ? 'long-name' : '';
-        const outOfContention = hasStarted && p.maxScore < topScore;
+        // bestRank can never be better than the current rank (maxScore >=
+        // score for everyone), so equality means they've hit their ceiling.
+        const bestRankClass = !hasStarted ? '' : p.bestRank === 1 ? 'rank-ceiling-champion'
+            : p.bestRank < rank ? 'rank-ceiling-climbing' : 'rank-ceiling-capped';
 
         // Build per-team score rows for expanded view
         const teamRows = (p.teams || []).map(name => {
             const key = normalizeTeamName(name);
             const team = normalizedLookup[key];
             const pts = team ? calculateTeamPoints(team) : 0;
+            const maxPts = calculateMaxPossiblePoints(team, name, matches);
             const w = team?.w || 0;
             const d = team?.d || 0;
             const l = team?.l || 0;
@@ -111,6 +115,7 @@ function renderParticipants() {
                     <td class="team-name-cell">${name} ${round} ${status}</td>
                     <td class="record-cell">${w}W ${d}D ${l}L</td>
                     <td class="points-cell ${pts > 0 ? 'has-pts' : ''}">${pts}</td>
+                    <td class="points-cell max-points-cell">${maxPts}</td>
                 </tr>
             `;
         }).join('');
@@ -128,7 +133,11 @@ function renderParticipants() {
                     </div>
                     <div class="card-score">
                         <div class="score-current">${p.score}</div>
-                        <div class="score-max ${outOfContention ? 'out-of-contention' : ''}">max ${p.maxScore}</div>
+                        <div class="score-max">
+                            <span>max ${p.maxScore}</span>
+                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Best case if every remaining team wins out. Bonuses aren't cumulative — only the furthest round reached counts, so it becomes Champion (+15) instead of stacking with earlier round bonuses.</span></span>
+                        </div>
+                        ${hasStarted ? `<div class="score-best-rank ${bestRankClass}">best: #${p.bestRank}</div>` : ''}
                     </div>
                 </div>
                 <div class="teams-summary">${(p.teams || []).map(name => {
@@ -148,7 +157,7 @@ function renderParticipants() {
                 <div class="team-breakdown" data-idx="${index}" style="display:none;">
                     <div class="breakdown-header">Team Performance</div>
                     <table class="breakdown-table">
-                        <thead><tr><th>Team</th><th>Record</th><th>Pts</th></tr></thead>
+                        <thead><tr><th>Team</th><th>Record</th><th>Pts</th><th>Max</th></tr></thead>
                         <tbody>${teamRows}</tbody>
                     </table>
                 </div>` : ''}

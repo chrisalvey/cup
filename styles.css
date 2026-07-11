@@ -110,8 +110,35 @@ h1 {
 .participant-name { font-size: 0.8rem; color: var(--text-muted); }
 .card-score { display: flex; flex-direction: column; align-items: flex-end; min-width: 50px; }
 .score-current { font-size: 1.6rem; font-weight: 700; color: var(--neon-green); line-height: 1; }
-.score-max { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
-.score-max.out-of-contention { color: var(--neon-red); }
+.score-max { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; display: flex; align-items: center; gap: 3px; }
+.score-best-rank { font-size: 0.7rem; font-weight: 600; margin-top: 2px; }
+.score-best-rank.rank-ceiling-champion { color: var(--neon-yellow); }
+.score-best-rank.rank-ceiling-climbing { color: var(--neon-green); }
+.score-best-rank.rank-ceiling-capped { color: var(--neon-red); }
+.max-points-cell { color: var(--text-muted); }
+
+.info-icon { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--text-muted); color: var(--text-muted); font-size: 0.62rem; line-height: 1; cursor: help; }
+.info-icon .tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    right: -8px;
+    width: 200px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border-bright);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: var(--text-secondary);
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 20;
+}
+.info-icon:hover .tooltip,
+.info-icon:focus .tooltip,
+.info-icon:focus-visible .tooltip { display: block; }
 .teams-summary { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; }
 .team-summary-eliminated { color: var(--neon-red); }
 .team-summary-playing-today { color: var(--neon-cyan); font-weight: 700; }
