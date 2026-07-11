@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 import { firebaseConfig, FIREBASE_COLLECTION, DRAFT_DEADLINE, TOTAL_MATCHES, MATCH_POINTS, ROUND_BONUS } from './config.js';
-import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore } from './utils.js';
+import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore } from './utils.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -66,9 +66,11 @@ function renderParticipants() {
 
     const isDraftOpen = new Date() < DRAFT_DEADLINE;
 
+    const matches = resultsData?.matches || [];
     const withScores = participants.map(p => {
         const { total, breakdown } = calculateParticipantScore(p.teams || [], normalizedLookup);
-        return { ...p, score: total, breakdown };
+        const maxScore = calculateParticipantMaxScore(p.teams || [], normalizedLookup, matches);
+        return { ...p, score: total, breakdown, maxScore };
     });
 
     withScores.sort((a, b) => {
@@ -80,6 +82,10 @@ function renderParticipants() {
 
     const matchesPlayed = resultsData?.metadata?.matchesPlayed || 0;
     const hasStarted = matchesPlayed > 0;
+    // A participant's current score can only go up, so the highest current
+    // score across everyone is a guaranteed floor — anyone whose ceiling
+    // can't clear it is mathematically out of contention for 1st.
+    const topScore = withScores.reduce((max, p) => Math.max(max, p.score), 0);
 
     let html = '';
     withScores.forEach((p, index) => {
@@ -88,6 +94,7 @@ function renderParticipants() {
         const medalEmoji = hasStarted ? (rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '') : '';
         const nameLen = p.teamName?.length || 0;
         const nameLenClass = nameLen > 30 ? 'very-long-name' : nameLen > 20 ? 'long-name' : '';
+        const outOfContention = hasStarted && p.maxScore < topScore;
 
         // Build per-team score rows for expanded view
         const teamRows = (p.teams || []).map(name => {
@@ -119,7 +126,10 @@ function renderParticipants() {
                         </div>
                         <div class="participant-name">${p.name || ''}</div>
                     </div>
-                    <div class="card-score">${p.score}</div>
+                    <div class="card-score">
+                        <div class="score-current">${p.score}</div>
+                        <div class="score-max ${outOfContention ? 'out-of-contention' : ''}">max ${p.maxScore}</div>
+                    </div>
                 </div>
                 <div class="teams-summary">${(p.teams || []).map(name => {
                     const key = normalizeTeamName(name);

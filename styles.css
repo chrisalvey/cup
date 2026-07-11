@@ -108,7 +108,10 @@ h1 {
 .team-name-display.very-long-name { font-size: 0.8rem; white-space: normal; }
 .medal-emoji { margin-right: 4px; }
 .participant-name { font-size: 0.8rem; color: var(--text-muted); }
-.card-score { font-size: 1.6rem; font-weight: 700; color: var(--neon-green); min-width: 50px; text-align: right; }
+.card-score { display: flex; flex-direction: column; align-items: flex-end; min-width: 50px; }
+.score-current { font-size: 1.6rem; font-weight: 700; color: var(--neon-green); line-height: 1; }
+.score-max { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+.score-max.out-of-contention { color: var(--neon-red); }
 .teams-summary { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; }
 .team-summary-eliminated { color: var(--neon-red); }
 .team-summary-playing-today { color: var(--neon-cyan); font-weight: 700; }
