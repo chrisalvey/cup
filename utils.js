@@ -80,12 +80,56 @@ export function calculateMaxPossiblePoints(teamData, teamName, matches) {
     return basePts + remainingWins * MATCH_POINTS.win + ROUND_BONUS.champion;
 }
 
+// Best case for a team eliminated in a specific (not-yet-played) match: no
+// more wins, but it still banks the bonus for the round that match is in
+// (both sides get credit for reaching a round regardless of who wins it —
+// see scrape-results.js), except the final, where the loser is runner-up
+// rather than champion, and the semifinal, where the loser still has a
+// third-place match left to potentially win.
+function ceilingIfEliminatedAt(teamData, stage) {
+    const basePts = (teamData.w || 0) * MATCH_POINTS.win + (teamData.d || 0) * MATCH_POINTS.draw;
+    if (stage === 'final') return basePts + ROUND_BONUS.runner_up;
+    if (stage === 'semifinal') return basePts + MATCH_POINTS.win + ROUND_BONUS.third_place;
+    return basePts + (ROUND_BONUS[stage] || 0);
+}
+
+// Scheduled-but-unplayed matches where both sides are on the same roster —
+// only one of the two can actually advance, so their independent ceilings
+// can't both be banked. A knockout bracket means a team is in at most one
+// unplayed match at a time, so these pairs are always disjoint.
+export function findRosterCollisions(selectedTeams, matches) {
+    const keySet = new Set(selectedTeams.map(normalizeTeamName));
+    return (matches || []).filter(m => {
+        if (m.played) return false;
+        return keySet.has(normalizeTeamName(m.home || '')) && keySet.has(normalizeTeamName(m.away || ''));
+    });
+}
+
 export function calculateParticipantMaxScore(selectedTeams, normalizedLookup, matches) {
-    return selectedTeams.reduce((total, name) => {
+    const collisions = findRosterCollisions(selectedTeams, matches);
+    const resolvedKeys = new Set();
+    let total = 0;
+
+    collisions.forEach(m => {
+        const homeKey = normalizeTeamName(m.home);
+        const awayKey = normalizeTeamName(m.away);
+        const homeTeam = normalizedLookup[homeKey];
+        const awayTeam = normalizedLookup[awayKey];
+        const homeWins = calculateMaxPossiblePoints(homeTeam, m.home, matches) + ceilingIfEliminatedAt(awayTeam, m.stage);
+        const awayWins = calculateMaxPossiblePoints(awayTeam, m.away, matches) + ceilingIfEliminatedAt(homeTeam, m.stage);
+        total += Math.max(homeWins, awayWins);
+        resolvedKeys.add(homeKey);
+        resolvedKeys.add(awayKey);
+    });
+
+    selectedTeams.forEach(name => {
         const key = normalizeTeamName(name);
+        if (resolvedKeys.has(key)) return;
         const team = normalizedLookup[key];
-        return total + calculateMaxPossiblePoints(team, name, matches);
-    }, 0);
+        total += calculateMaxPossiblePoints(team, name, matches);
+    });
+
+    return total;
 }
 
 // Best (lowest-numbered) rank a participant could still finish at: assumes

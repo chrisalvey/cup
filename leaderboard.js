@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 import { firebaseConfig, FIREBASE_COLLECTION, DRAFT_DEADLINE, TOTAL_MATCHES, MATCH_POINTS, ROUND_BONUS } from './config.js';
-import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateMaxPossiblePoints, calculateBestPossibleRank } from './utils.js';
+import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateMaxPossiblePoints, calculateBestPossibleRank, findRosterCollisions } from './utils.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -99,6 +99,17 @@ function renderParticipants() {
         const bestRankClass = !hasStarted ? '' : p.bestRank === 1 ? 'rank-ceiling-champion'
             : p.bestRank < rank ? 'rank-ceiling-climbing' : 'rank-ceiling-capped';
 
+        // Teams on this roster that are scheduled to play each other — only
+        // one can advance, so their max columns below double-count unless
+        // flagged (calculateParticipantMaxScore already accounts for this
+        // in the card's headline max).
+        const collisions = findRosterCollisions(p.teams || [], matches);
+        const collisionKeys = new Set();
+        collisions.forEach(m => {
+            collisionKeys.add(normalizeTeamName(m.home));
+            collisionKeys.add(normalizeTeamName(m.away));
+        });
+
         // Build per-team score rows for expanded view
         const teamRows = (p.teams || []).map(name => {
             const key = normalizeTeamName(name);
@@ -110,9 +121,12 @@ function renderParticipants() {
             const l = team?.l || 0;
             const round = team?.round ? `<span class="round-badge">${formatRound(team.round)}</span>` : '';
             const status = formatStatus(team, playingTodayKeys.has(key));
+            const collisionBadge = collisionKeys.has(key)
+                ? `<span class="collision-badge" title="Also on this roster — only one can advance">⚔️ own matchup</span>`
+                : '';
             return `
                 <tr class="${pts > 0 ? 'has-points' : 'no-points'}">
-                    <td class="team-name-cell">${name} ${round} ${status}</td>
+                    <td class="team-name-cell">${name} ${round} ${status} ${collisionBadge}</td>
                     <td class="record-cell">${w}W ${d}D ${l}L</td>
                     <td class="points-cell ${pts > 0 ? 'has-pts' : ''}">${pts}</td>
                     <td class="points-cell max-points-cell">${maxPts}</td>
@@ -135,7 +149,7 @@ function renderParticipants() {
                         <div class="score-current">${p.score}</div>
                         <div class="score-max">
                             <span>max ${p.maxScore}</span>
-                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Best case if every remaining team wins out. Bonuses aren't cumulative — only the furthest round reached counts, so it becomes Champion (+15) instead of stacking with earlier round bonuses.</span></span>
+                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Best case if every remaining team wins out. Bonuses aren't cumulative — only the furthest round reached counts, so it becomes Champion (+15) instead of stacking with earlier round bonuses. If two of your own picks are scheduled to play each other, only the better outcome counts — see ⚔️ in View Details.</span></span>
                         </div>
                         ${hasStarted ? `<div class="score-best-rank ${bestRankClass}">best: #${p.bestRank}</div>` : ''}
                     </div>

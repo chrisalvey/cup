@@ -116,6 +116,7 @@ h1 {
 .score-best-rank.rank-ceiling-climbing { color: var(--neon-green); }
 .score-best-rank.rank-ceiling-capped { color: var(--neon-red); }
 .max-points-cell { color: var(--text-muted); }
+.collision-badge { font-size: 0.65rem; padding: 1px 5px; border-radius: 4px; margin-left: 4px; border: 1px solid var(--neon-yellow); background: rgba(255,214,0,0.12); color: var(--neon-yellow); white-space: nowrap; }
 
 .info-icon { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--text-muted); color: var(--text-muted); font-size: 0.62rem; line-height: 1; cursor: help; }
 .info-icon .tooltip {
