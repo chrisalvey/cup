@@ -1,4 +1,5 @@
 import { MATCH_POINTS, ROUND_BONUS } from './config.js';
+import { earliestMeetingStage } from './bracket.js';
 
 export function normalizeTeamName(name) {
     return name.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -93,6 +94,26 @@ function ceilingIfEliminatedAt(teamData, stage) {
     return basePts + (ROUND_BONUS[stage] || 0);
 }
 
+const FULL_STAGE_ORDER = [...KNOCKOUT_STAGE_ORDER, 'final'];
+
+// Number of rounds a team must ALSO win between its current round and a
+// later `stage` before it even gets there — e.g. a team on 'round_of_16'
+// heading toward a predicted 'semifinal' collision still has to win the
+// quarterfinal first. Zero for a stage that's literally the team's next
+// match (the already-scheduled-collision case).
+function intermediateWinsBefore(fromRound, toStage) {
+    const fromIdx = FULL_STAGE_ORDER.indexOf(fromRound);
+    const toIdx = FULL_STAGE_ORDER.indexOf(toStage);
+    return Math.max(0, toIdx - fromIdx - 1);
+}
+
+// Ceiling for a team that is assumed to win every match up to `stage`, then
+// lose right there — generalizes ceilingIfEliminatedAt to collisions that
+// are more than one round away.
+function capMaxAtStage(teamData, stage) {
+    return ceilingIfEliminatedAt(teamData, stage) + intermediateWinsBefore(teamData.round, stage) * MATCH_POINTS.win;
+}
+
 // Scheduled-but-unplayed matches where both sides are on the same roster —
 // only one of the two can actually advance, so their independent ceilings
 // can't both be banked. A knockout bracket means a team is in at most one
@@ -103,6 +124,54 @@ export function findRosterCollisions(selectedTeams, matches) {
         if (m.played) return false;
         return keySet.has(normalizeTeamName(m.home || '')) && keySet.has(normalizeTeamName(m.away || ''));
     });
+}
+
+// Pairs of alive roster teams that haven't been drawn against each other
+// yet but are guaranteed to meet at a specific round if both keep winning —
+// derived from the fixed Round-of-32 bracket draw (see bracket.js), not
+// from results. Only the max-score calculation needs these: assuming both
+// win independently up to that point is a real contradiction (they can't
+// both advance past a match against each other), whereas the min-score
+// calculation's "each loses its own next match" scenario has no such
+// conflict until they're actually paired up, so it doesn't need this.
+//
+// This greedily pairs off teams in roster order, so it doesn't optimally
+// resolve a roster with 3+ teams all converging in the same bracket branch
+// — a rare case with no examples in current rosters.
+export function findFutureRosterCollisions(selectedTeams, normalizedLookup, matches) {
+    const alreadyScheduled = new Set();
+    findRosterCollisions(selectedTeams, matches).forEach(m => {
+        alreadyScheduled.add(normalizeTeamName(m.home));
+        alreadyScheduled.add(normalizeTeamName(m.away));
+    });
+
+    const candidates = selectedTeams
+        .map(name => ({ name, key: normalizeTeamName(name), data: normalizedLookup[normalizeTeamName(name)] }))
+        .filter(t => t.data && !t.data.eliminated && !alreadyScheduled.has(t.key));
+
+    const predicted = [];
+    const claimed = new Set();
+    for (let i = 0; i < candidates.length; i++) {
+        if (claimed.has(candidates[i].key)) continue;
+        for (let j = i + 1; j < candidates.length; j++) {
+            if (claimed.has(candidates[j].key)) continue;
+            const stage = earliestMeetingStage(candidates[i].name, candidates[j].name);
+            if (!stage) continue;
+            predicted.push({ home: candidates[i].name, away: candidates[j].name, stage });
+            claimed.add(candidates[i].key);
+            claimed.add(candidates[j].key);
+            break;
+        }
+    }
+    return predicted;
+}
+
+function resolveMaxCollisionPair(homeName, awayName, stage, normalizedLookup, matches) {
+    const homeTeam = normalizedLookup[normalizeTeamName(homeName)];
+    const awayTeam = normalizedLookup[normalizeTeamName(awayName)];
+    const homeWins = calculateMaxPossiblePoints(homeTeam, homeName, matches) + capMaxAtStage(awayTeam, stage);
+    const awayWins = calculateMaxPossiblePoints(awayTeam, awayName, matches) + capMaxAtStage(homeTeam, stage);
+    return Math.max(homeWins, awayWins);
 }
 
 // The round bonus is banked for *reaching* a round, win or lose (see
@@ -185,20 +254,21 @@ export function calculateParticipantMinScore(selectedTeams, normalizedLookup, ma
 }
 
 export function calculateParticipantMaxScore(selectedTeams, normalizedLookup, matches) {
-    const collisions = findRosterCollisions(selectedTeams, matches);
+    const scheduled = findRosterCollisions(selectedTeams, matches);
+    const predicted = findFutureRosterCollisions(selectedTeams, normalizedLookup, matches);
     const resolvedKeys = new Set();
     let total = 0;
 
-    collisions.forEach(m => {
-        const homeKey = normalizeTeamName(m.home);
-        const awayKey = normalizeTeamName(m.away);
-        const homeTeam = normalizedLookup[homeKey];
-        const awayTeam = normalizedLookup[awayKey];
-        const homeWins = calculateMaxPossiblePoints(homeTeam, m.home, matches) + ceilingIfEliminatedAt(awayTeam, m.stage);
-        const awayWins = calculateMaxPossiblePoints(awayTeam, m.away, matches) + ceilingIfEliminatedAt(homeTeam, m.stage);
-        total += Math.max(homeWins, awayWins);
-        resolvedKeys.add(homeKey);
-        resolvedKeys.add(awayKey);
+    scheduled.forEach(m => {
+        total += resolveMaxCollisionPair(m.home, m.away, m.stage, normalizedLookup, matches);
+        resolvedKeys.add(normalizeTeamName(m.home));
+        resolvedKeys.add(normalizeTeamName(m.away));
+    });
+
+    predicted.forEach(m => {
+        total += resolveMaxCollisionPair(m.home, m.away, m.stage, normalizedLookup, matches);
+        resolvedKeys.add(normalizeTeamName(m.home));
+        resolvedKeys.add(normalizeTeamName(m.away));
     });
 
     selectedTeams.forEach(name => {

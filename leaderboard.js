@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 import { firebaseConfig, FIREBASE_COLLECTION, DRAFT_DEADLINE, TOTAL_MATCHES, MATCH_POINTS, ROUND_BONUS } from './config.js';
-import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateParticipantMinScore, calculateMaxPossiblePoints, calculateMinPossiblePoints, calculateBestPossibleRank, findRosterCollisions } from './utils.js';
+import { normalizeTeamName, createNormalizedLookup, calculateTeamPoints, calculateParticipantScore, calculateParticipantMaxScore, calculateParticipantMinScore, calculateMaxPossiblePoints, calculateMinPossiblePoints, calculateBestPossibleRank, findRosterCollisions, findFutureRosterCollisions } from './utils.js';
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -103,12 +103,20 @@ function renderParticipants() {
         // Teams on this roster that are scheduled to play each other — only
         // one can advance, so their max columns below double-count unless
         // flagged (calculateParticipantMaxScore already accounts for this
-        // in the card's headline max).
+        // in the card's headline max). Plus teams that haven't been drawn
+        // against each other yet but are guaranteed to meet at a specific
+        // round per the fixed bracket if both keep winning.
         const collisions = findRosterCollisions(p.teams || [], matches);
+        const predictedCollisions = findFutureRosterCollisions(p.teams || [], normalizedLookup, matches);
         const collisionKeys = new Set();
         collisions.forEach(m => {
             collisionKeys.add(normalizeTeamName(m.home));
             collisionKeys.add(normalizeTeamName(m.away));
+        });
+        const predictedCollisionStage = {};
+        predictedCollisions.forEach(m => {
+            predictedCollisionStage[normalizeTeamName(m.home)] = m.stage;
+            predictedCollisionStage[normalizeTeamName(m.away)] = m.stage;
         });
 
         // Build per-team score rows for expanded view
@@ -125,6 +133,8 @@ function renderParticipants() {
             const status = formatStatus(team, playingTodayKeys.has(key));
             const collisionBadge = collisionKeys.has(key)
                 ? `<span class="collision-badge" title="Also on this roster — only one can advance">⚔️ own matchup</span>`
+                : predictedCollisionStage[key]
+                ? `<span class="collision-badge predicted" title="Also on this roster — guaranteed to meet in the ${formatRound(predictedCollisionStage[key])} if both keep winning">⚔️ possible ${formatRound(predictedCollisionStage[key])}</span>`
                 : '';
             return `
                 <tr class="${pts > 0 ? 'has-points' : 'no-points'}">
@@ -152,7 +162,7 @@ function renderParticipants() {
                         <div class="score-current">${p.score}</div>
                         <div class="score-range">
                             <span>${p.minScore}–${p.maxScore}</span>
-                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Range of remaining outcomes. Low end assumes every team loses its very next match; high end assumes every team wins out. Either way, bonuses aren't cumulative — only the furthest round reached counts. If two of your own picks are scheduled to play each other, only one can win it, so the range accounts for that instead of double-counting both (⚔️ in View Details) — but only matchups already on the schedule are caught; a collision that hasn't been drawn yet won't be reflected until the bracket sets it.</span></span>
+                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Range of remaining outcomes. Low end assumes every team loses its very next match; high end assumes every team wins out. Either way, bonuses aren't cumulative — only the furthest round reached counts. If two of your own picks are on a collision course, only one can advance past that match, so the range accounts for that instead of double-counting both (⚔️ in View Details) — including a matchup that hasn't been drawn yet but is guaranteed by the bracket if both teams keep winning.</span></span>
                         </div>
                         ${hasStarted ? `<div class="score-best-rank ${bestRankClass}">best: #${p.bestRank}</div>` : ''}
                     </div>
@@ -274,6 +284,7 @@ function formatRound(round) {
         quarterfinal: 'QF',
         semifinal: 'SF',
         third_place: '3rd',
+        final: 'Final',
         runner_up: 'Final',
         champion: 'Champion'
     };
