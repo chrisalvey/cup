@@ -129,15 +129,12 @@ export function findRosterCollisions(selectedTeams, matches) {
 // Pairs of alive roster teams that haven't been drawn against each other
 // yet but are guaranteed to meet at a specific round if both keep winning —
 // derived from the fixed Round-of-32 bracket draw (see bracket.js), not
-// from results. Only the max-score calculation needs these: assuming both
-// win independently up to that point is a real contradiction (they can't
-// both advance past a match against each other), whereas the min-score
-// calculation's "each loses its own next match" scenario has no such
-// conflict until they're actually paired up, so it doesn't need this.
-//
-// This greedily pairs off teams in roster order, so it doesn't optimally
-// resolve a roster with 3+ teams all converging in the same bracket branch
-// — a rare case with no examples in current rosters.
+// from results. For display only (the "possible <round>" badge) — the max
+// score itself is computed by the full bracket-tree resolution below, which
+// correctly handles a roster with 3+ teams all converging on the same
+// bracket branch. This greedy nearest-neighbor pairing is just a readable
+// per-team hint, so a team already claimed by its nearest collision won't
+// also show a second, more distant one.
 export function findFutureRosterCollisions(selectedTeams, normalizedLookup, matches) {
     const alreadyScheduled = new Set();
     findRosterCollisions(selectedTeams, matches).forEach(m => {
@@ -166,12 +163,108 @@ export function findFutureRosterCollisions(selectedTeams, normalizedLookup, matc
     return predicted;
 }
 
-function resolveMaxCollisionPair(homeName, awayName, stage, normalizedLookup, matches) {
-    const homeTeam = normalizedLookup[normalizeTeamName(homeName)];
-    const awayTeam = normalizedLookup[normalizeTeamName(awayName)];
-    const homeWins = calculateMaxPossiblePoints(homeTeam, homeName, matches) + capMaxAtStage(awayTeam, stage);
-    const awayWins = calculateMaxPossiblePoints(awayTeam, awayName, matches) + capMaxAtStage(homeTeam, stage);
-    return Math.max(homeWins, awayWins);
+// All of a roster's alive teams sit somewhere in the same 32-team single-
+// elimination bracket, so any two of them are guaranteed to collide by at
+// least the Final — a roster can easily own 3+ mutually-entangled alive
+// teams (see below), and resolving those pairwise (as if only one match
+// mattered at a time) silently lets more than one of them reach "champion"
+// in the same hypothetical world. The fix is to actually build the shared
+// subtree connecting them and enumerate who survives each internal match.
+//
+// stageForPair prefers a real scheduled/played match's stage when one
+// exists, falling back to the fixed-draw prediction otherwise — the two
+// always agree where both are known (verified against results.json), this
+// is just belt-and-suspenders.
+function stageForPair(nameA, nameB, matches) {
+    const keyA = normalizeTeamName(nameA);
+    const keyB = normalizeTeamName(nameB);
+    const real = (matches || []).find(m => {
+        const h = normalizeTeamName(m.home || '');
+        const a = normalizeTeamName(m.away || '');
+        return (h === keyA && a === keyB) || (h === keyB && a === keyA);
+    });
+    return real ? real.stage : earliestMeetingStage(nameA, nameB);
+}
+
+// Single-linkage clustering by bracket distance (stageForPair) exactly
+// reconstructs the real bracket subtree spanning a set of leaves, since
+// "earliest meeting stage" IS the tree distance between them.
+function buildMergeTree(teamNames, matches) {
+    let nodes = teamNames.map(name => ({ isLeaf: true, name }));
+    const representative = node => (node.isLeaf ? node.name : node.representative);
+
+    while (nodes.length > 1) {
+        let bestPair = null;
+        let bestStageIdx = Infinity;
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const stage = stageForPair(representative(nodes[i]), representative(nodes[j]), matches);
+                const idx = FULL_STAGE_ORDER.indexOf(stage);
+                if (idx !== -1 && idx < bestStageIdx) {
+                    bestStageIdx = idx;
+                    bestPair = [i, j];
+                }
+            }
+        }
+        if (!bestPair) break; // shouldn't happen — every pair is in the same 32-team bracket
+        const [i, j] = bestPair;
+        const merged = {
+            isLeaf: false,
+            stage: FULL_STAGE_ORDER[bestStageIdx],
+            left: nodes[i],
+            right: nodes[j],
+            representative: representative(nodes[i]),
+        };
+        nodes = nodes.filter((_, k) => k !== i && k !== j);
+        nodes.push(merged);
+    }
+    return nodes[0];
+}
+
+// Every viable outcome of a subtree: who could still be alive when it's
+// done, and the ceiling already locked in for whoever got knocked out along
+// the way in that particular branch. A leaf has exactly one trivial outcome
+// (itself, nothing locked in yet); an internal node combines every outcome
+// of each side with every outcome of the other, forking on who wins.
+function enumerateMaxOutcomes(node, normalizedLookup, matches) {
+    if (node.isLeaf) {
+        return [{ survivor: node.name, locked: 0 }];
+    }
+    const leftOutcomes = enumerateMaxOutcomes(node.left, normalizedLookup, matches);
+    const rightOutcomes = enumerateMaxOutcomes(node.right, normalizedLookup, matches);
+    const outcomes = [];
+    leftOutcomes.forEach(l => {
+        rightOutcomes.forEach(r => {
+            const leftData = normalizedLookup[normalizeTeamName(l.survivor)];
+            const rightData = normalizedLookup[normalizeTeamName(r.survivor)];
+            outcomes.push({
+                survivor: l.survivor,
+                locked: l.locked + r.locked + capMaxAtStage(rightData, node.stage),
+            });
+            outcomes.push({
+                survivor: r.survivor,
+                locked: l.locked + r.locked + capMaxAtStage(leftData, node.stage),
+            });
+        });
+    });
+    return outcomes;
+}
+
+// Best combined ceiling for a set of alive roster teams that all sit in the
+// same bracket, accounting for every way they could eliminate each other
+// before any one of them could reach champion.
+function resolveEntangledMax(teamNames, normalizedLookup, matches) {
+    if (teamNames.length === 0) return 0;
+    if (teamNames.length === 1) {
+        const team = normalizedLookup[normalizeTeamName(teamNames[0])];
+        return calculateMaxPossiblePoints(team, teamNames[0], matches);
+    }
+    const tree = buildMergeTree(teamNames, matches);
+    const outcomes = enumerateMaxOutcomes(tree, normalizedLookup, matches);
+    return Math.max(...outcomes.map(o => {
+        const survivorData = normalizedLookup[normalizeTeamName(o.survivor)];
+        return o.locked + calculateMaxPossiblePoints(survivorData, o.survivor, matches);
+    }));
 }
 
 // The round bonus is banked for *reaching* a round, win or lose (see
@@ -254,31 +347,18 @@ export function calculateParticipantMinScore(selectedTeams, normalizedLookup, ma
 }
 
 export function calculateParticipantMaxScore(selectedTeams, normalizedLookup, matches) {
-    const scheduled = findRosterCollisions(selectedTeams, matches);
-    const predicted = findFutureRosterCollisions(selectedTeams, normalizedLookup, matches);
-    const resolvedKeys = new Set();
-    let total = 0;
-
-    scheduled.forEach(m => {
-        total += resolveMaxCollisionPair(m.home, m.away, m.stage, normalizedLookup, matches);
-        resolvedKeys.add(normalizeTeamName(m.home));
-        resolvedKeys.add(normalizeTeamName(m.away));
-    });
-
-    predicted.forEach(m => {
-        total += resolveMaxCollisionPair(m.home, m.away, m.stage, normalizedLookup, matches);
-        resolvedKeys.add(normalizeTeamName(m.home));
-        resolvedKeys.add(normalizeTeamName(m.away));
-    });
-
+    const eliminated = [];
+    const alive = [];
     selectedTeams.forEach(name => {
-        const key = normalizeTeamName(name);
-        if (resolvedKeys.has(key)) return;
-        const team = normalizedLookup[key];
-        total += calculateMaxPossiblePoints(team, name, matches);
+        const team = normalizedLookup[normalizeTeamName(name)];
+        (team && !team.eliminated ? alive : eliminated).push(name);
     });
 
-    return total;
+    const eliminatedTotal = eliminated.reduce((sum, name) => {
+        return sum + calculateMaxPossiblePoints(normalizedLookup[normalizeTeamName(name)], name, matches);
+    }, 0);
+
+    return eliminatedTotal + resolveEntangledMax(alive, normalizedLookup, matches);
 }
 
 // Best (lowest-numbered) rank a participant could still finish at: assumes
