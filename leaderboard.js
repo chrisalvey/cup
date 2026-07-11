@@ -162,7 +162,7 @@ function renderParticipants() {
                         <div class="score-current">${p.score}</div>
                         <div class="score-range">
                             <span>${p.minScore}–${p.maxScore}</span>
-                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Range of remaining outcomes. Low end assumes every team loses its very next match; high end assumes every team wins out. Either way, bonuses aren't cumulative — only the furthest round reached counts. If two of your own picks are on a collision course, only one can advance past that match, so the range accounts for that instead of double-counting both (⚔️ in View Details) — including a matchup that hasn't been drawn yet but is guaranteed by the bracket if both teams keep winning.</span></span>
+                            <span class="info-icon" tabindex="0">ⓘ<span class="tooltip">Range of remaining outcomes. Low end assumes every team loses its very next match; high end assumes every team wins out. Either way, bonuses aren't cumulative — only the furthest round reached counts. When several of your own picks are all funneling toward the same eventual matchup — even a few rounds apart — only one of them can actually win it all, so the high end resolves that properly instead of letting more than one reach champion (⚔️ in View Details) — including matchups that haven't been drawn yet but are guaranteed by the fixed bracket if they keep winning.</span></span>
                         </div>
                         ${hasStarted ? `<div class="score-best-rank ${bestRankClass}">best: #${p.bestRank}</div>` : ''}
                     </div>
