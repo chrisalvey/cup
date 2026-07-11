@@ -305,11 +305,11 @@
     "Norway": {
       "w": 4,
       "d": 0,
-      "l": 1,
-      "gf": 12,
-      "ga": 9,
-      "eliminated": false,
-      "round": "round_of_16"
+      "l": 2,
+      "gf": 13,
+      "ga": 11,
+      "eliminated": true,
+      "round": "quarterfinal"
     },
     "Argentina": {
       "w": 5,
@@ -382,13 +382,13 @@
       "round": "round_of_16"
     },
     "England": {
-      "w": 4,
+      "w": 5,
       "d": 1,
       "l": 0,
-      "gf": 11,
-      "ga": 5,
+      "gf": 13,
+      "ga": 6,
       "eliminated": false,
-      "round": "round_of_16"
+      "round": "quarterfinal"
     },
     "Croatia": {
       "w": 2,
@@ -1537,14 +1537,14 @@
     {
       "home": "Norway",
       "away": "England",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 2,
       "stage": "quarterfinal",
       "stageLabel": "Quarterfinals",
       "penalties": null,
       "date": "2026-07-11",
       "venue": "Hard Rock Stadium, Miami Gardens",
-      "played": false
+      "played": true
     },
     {
       "home": "Argentina",
@@ -1572,8 +1572,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-11T22:54:09.996Z",
-    "matchesPlayed": 98,
+    "lastUpdated": "2026-07-11T23:59:20.093Z",
+    "matchesPlayed": 99,
     "stage": "knockout",
     "source": "Wikipedia"
   }
