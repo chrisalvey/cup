@@ -63,11 +63,11 @@
     "Switzerland": {
       "w": 4,
       "d": 1,
-      "l": 0,
-      "gf": 9,
-      "ga": 3,
-      "eliminated": false,
-      "round": "round_of_16"
+      "l": 1,
+      "gf": 10,
+      "ga": 6,
+      "eliminated": true,
+      "round": "quarterfinal"
     },
     "Brazil": {
       "w": 3,
@@ -312,13 +312,13 @@
       "round": "quarterfinal"
     },
     "Argentina": {
-      "w": 5,
+      "w": 6,
       "d": 0,
       "l": 0,
-      "gf": 14,
-      "ga": 5,
+      "gf": 17,
+      "ga": 6,
       "eliminated": false,
-      "round": "round_of_16"
+      "round": "quarterfinal"
     },
     "Algeria": {
       "w": 1,
@@ -1549,14 +1549,14 @@
     {
       "home": "Argentina",
       "away": "Switzerland",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 3,
+      "awayScore": 1,
       "stage": "quarterfinal",
       "stageLabel": "Quarterfinals",
       "penalties": null,
       "date": "2026-07-11",
       "venue": "Arrowhead Stadium, Kansas City",
-      "played": false
+      "played": true
     },
     {
       "home": "France",
@@ -1569,11 +1569,23 @@
       "date": "2026-07-14",
       "venue": "AT&T Stadium, Arlington",
       "played": false
+    },
+    {
+      "home": "England",
+      "away": "Argentina",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "semifinal",
+      "stageLabel": "Semifinals",
+      "penalties": null,
+      "date": "2026-07-15",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
+      "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-11T23:59:20.093Z",
-    "matchesPlayed": 99,
+    "lastUpdated": "2026-07-12T11:13:31.447Z",
+    "matchesPlayed": 100,
     "stage": "knockout",
     "source": "Wikipedia"
   }
