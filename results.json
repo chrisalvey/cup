@@ -243,13 +243,13 @@
       "eliminated": true
     },
     "Spain": {
-      "w": 5,
+      "w": 6,
       "d": 1,
       "l": 0,
-      "gf": 11,
+      "gf": 13,
       "ga": 1,
       "eliminated": false,
-      "round": "quarterfinal"
+      "round": "semifinal"
     },
     "Cape Verde": {
       "w": 0,
@@ -279,11 +279,11 @@
     "France": {
       "w": 6,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 16,
-      "ga": 2,
+      "ga": 4,
       "eliminated": false,
-      "round": "quarterfinal"
+      "round": "semifinal"
     },
     "Senegal": {
       "w": 1,
@@ -1561,14 +1561,14 @@
     {
       "home": "France",
       "away": "Spain",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 0,
+      "awayScore": 2,
       "stage": "semifinal",
       "stageLabel": "Semifinals",
       "penalties": null,
       "date": "2026-07-14",
       "venue": "AT&T Stadium, Arlington",
-      "played": false
+      "played": true
     },
     {
       "home": "England",
@@ -1584,8 +1584,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-14T20:38:46.441Z",
-    "matchesPlayed": 100,
+    "lastUpdated": "2026-07-14T22:01:40.654Z",
+    "matchesPlayed": 101,
     "stage": "knockout",
     "source": "Wikipedia"
   }
