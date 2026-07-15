@@ -249,7 +249,7 @@
       "gf": 13,
       "ga": 1,
       "eliminated": false,
-      "round": "semifinal"
+      "round": "runner_up"
     },
     "Cape Verde": {
       "w": 0,
@@ -312,13 +312,13 @@
       "round": "quarterfinal"
     },
     "Argentina": {
-      "w": 6,
+      "w": 7,
       "d": 0,
       "l": 0,
-      "gf": 17,
-      "ga": 6,
+      "gf": 19,
+      "ga": 7,
       "eliminated": false,
-      "round": "quarterfinal"
+      "round": "champion"
     },
     "Algeria": {
       "w": 1,
@@ -384,11 +384,11 @@
     "England": {
       "w": 5,
       "d": 1,
-      "l": 0,
-      "gf": 13,
-      "ga": 6,
+      "l": 1,
+      "gf": 14,
+      "ga": 8,
       "eliminated": false,
-      "round": "quarterfinal"
+      "round": "semifinal"
     },
     "Croatia": {
       "w": 2,
@@ -1573,19 +1573,43 @@
     {
       "home": "England",
       "away": "Argentina",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 2,
       "stage": "semifinal",
       "stageLabel": "Semifinals",
       "penalties": null,
       "date": "2026-07-15",
       "venue": "Mercedes-Benz Stadium, Atlanta",
+      "played": true
+    },
+    {
+      "home": "France",
+      "away": "England",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "third_place",
+      "stageLabel": "Match for third place",
+      "penalties": null,
+      "date": "2026-07-18",
+      "venue": "Hard Rock Stadium, Miami Gardens",
+      "played": false
+    },
+    {
+      "home": "Spain",
+      "away": "Argentina",
+      "homeScore": null,
+      "awayScore": null,
+      "stage": "final",
+      "stageLabel": "Final",
+      "penalties": null,
+      "date": "2026-07-19",
+      "venue": "MetLife Stadium, East Rutherford",
       "played": false
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-15T19:45:56.327Z",
-    "matchesPlayed": 101,
+    "lastUpdated": "2026-07-15T21:03:45.759Z",
+    "matchesPlayed": 102,
     "stage": "knockout",
     "source": "Wikipedia"
   }
