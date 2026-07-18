@@ -279,11 +279,11 @@
     "France": {
       "w": 6,
       "d": 0,
-      "l": 1,
-      "gf": 16,
-      "ga": 4,
-      "eliminated": false,
-      "round": "semifinal"
+      "l": 2,
+      "gf": 20,
+      "ga": 10,
+      "eliminated": true,
+      "round": "third_place"
     },
     "Senegal": {
       "w": 1,
@@ -382,13 +382,13 @@
       "round": "round_of_16"
     },
     "England": {
-      "w": 5,
+      "w": 6,
       "d": 1,
       "l": 1,
-      "gf": 14,
-      "ga": 8,
-      "eliminated": false,
-      "round": "semifinal"
+      "gf": 20,
+      "ga": 12,
+      "eliminated": true,
+      "round": "third_place"
     },
     "Croatia": {
       "w": 2,
@@ -1585,14 +1585,14 @@
     {
       "home": "France",
       "away": "England",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 4,
+      "awayScore": 6,
       "stage": "third_place",
       "stageLabel": "Match for third place",
       "penalties": null,
       "date": "2026-07-18",
       "venue": "Hard Rock Stadium, Miami Gardens",
-      "played": false
+      "played": true
     },
     {
       "home": "Spain",
@@ -1608,8 +1608,8 @@
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-18T22:24:38.615Z",
-    "matchesPlayed": 102,
+    "lastUpdated": "2026-07-18T23:27:50.732Z",
+    "matchesPlayed": 103,
     "stage": "knockout",
     "source": "Wikipedia"
   }
