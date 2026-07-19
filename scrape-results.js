@@ -398,7 +398,7 @@ function parseKnockoutStage(html, teamStats) {
 
     // Special case: final winner = champion
     const finalMatch = matches.find(m => m.stage === 'final');
-    if (finalMatch) {
+    if (finalMatch && finalMatch.played) {
         const finalHome = finalMatch.penalties ? finalMatch.penalties.home : finalMatch.homeScore;
         const finalAway = finalMatch.penalties ? finalMatch.penalties.away : finalMatch.awayScore;
         const winner = finalHome > finalAway ? finalMatch.home : finalMatch.away;

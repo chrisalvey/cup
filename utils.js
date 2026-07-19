@@ -273,11 +273,18 @@ function resolveEntangledMax(teamNames, normalizedLookup, matches) {
 // loses that match outright. A semifinal loss doesn't end a run (there's
 // still a third-place match), so the guaranteed floor after a quarterfinal
 // win skips straight to third-place rather than stopping at semifinal.
+// `final` never appears as a real teamData.round (a played final resolves
+// straight to 'champion'/'runner_up' — see scrape-results.js), but
+// minIfWinsMatch below looks this table up keyed by the stage of an
+// upcoming match, and that match can itself be the final when two roster
+// picks are the two finalists. Winning the final IS becoming champion, so
+// the "guaranteed bonus" there is exact, not a worst case.
 const WORST_CASE_BONUS_IF_WON = {
     round_of_32: ROUND_BONUS.round_of_16,
     round_of_16: ROUND_BONUS.quarterfinal,
     quarterfinal: ROUND_BONUS.third_place,
     semifinal: ROUND_BONUS.runner_up,
+    final: ROUND_BONUS.champion,
 };
 
 // Guaranteed minimum remaining points for a team: assumes it loses at the
