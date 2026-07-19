@@ -243,13 +243,13 @@
       "eliminated": true
     },
     "Spain": {
-      "w": 6,
+      "w": 7,
       "d": 1,
       "l": 0,
-      "gf": 13,
+      "gf": 14,
       "ga": 1,
       "eliminated": false,
-      "round": "semifinal"
+      "round": "champion"
     },
     "Cape Verde": {
       "w": 0,
@@ -314,11 +314,11 @@
     "Argentina": {
       "w": 7,
       "d": 0,
-      "l": 0,
+      "l": 1,
       "gf": 19,
-      "ga": 7,
-      "eliminated": false,
-      "round": "semifinal"
+      "ga": 8,
+      "eliminated": true,
+      "round": "runner_up"
     },
     "Algeria": {
       "w": 1,
@@ -1597,19 +1597,19 @@
     {
       "home": "Spain",
       "away": "Argentina",
-      "homeScore": null,
-      "awayScore": null,
+      "homeScore": 1,
+      "awayScore": 0,
       "stage": "final",
       "stageLabel": "Final",
       "penalties": null,
       "date": "2026-07-19",
       "venue": "MetLife Stadium, East Rutherford",
-      "played": false
+      "played": true
     }
   ],
   "metadata": {
-    "lastUpdated": "2026-07-19T21:57:38.665Z",
-    "matchesPlayed": 103,
+    "lastUpdated": "2026-07-19T23:01:56.442Z",
+    "matchesPlayed": 104,
     "stage": "knockout",
     "source": "Wikipedia"
   }
